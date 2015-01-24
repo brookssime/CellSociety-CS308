@@ -7,5 +7,9 @@
 =======
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin1"/>
+<<<<<<< HEAD
 >>>>>>> master
+=======
+>>>>>>> 57b1450774fca0d21eba46381a8e3ea5b1499d80
+>>>>>>> 435556e771c6b7a7587a61b6030882fc6fe5a158
 </classpath>
