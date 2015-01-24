@@ -1,5 +1,7 @@
 CS 308: Cell Society Plan
 
+====================
+
 ###Introduction
 
 ###Overview
