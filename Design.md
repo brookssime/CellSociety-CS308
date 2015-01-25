@@ -9,6 +9,8 @@ CS 308: Cell Society Plan
 
 ###Design Details
 
+
 ###Design Considerations
+
 
 ###Team Responsibilities
