@@ -23,8 +23,29 @@ CS 308: Cell Society Plan
 
 ###User Interface
 
+
 ###Design Details
+**Cell**
+Each cell will have a String or int instance variable to denote its current state. In addition, it will also have a Shape instance variable. Thus when changing the state, we can change both the String variable and the shape color.
+As such, it may be helpful to have the Cell class extend a Shape or Group so that they can be added to the Grid.
+
+**Grid**
+The grid may be implemented in a GridPane although this may change since it would limit the shapes to squares. The grid will also have a 2D Cell array which keeps track of which Cell is in which position.
+We will assume that the neighborhood for each of the cell will be the same so we can store this as int[][2] instance variable. This Grid class can have a getNeighbors() method which determines the neighbors of each cell by finding the cells at valid positions.
+The Grid class will also have a checkBounds method which will act as a helper function for the getNeighbors, making sure the position found is valid.
+
+
+
+
+**User Interface**
+To allow the user to pause and play the animation, we can simply create a Button with a setOnMousePressed(e -> animation.pause()) and similarly for the play Button.
+To speed up or slow down the animation, we can use a Button such that when it is pressed it can change the rate perhaps something like setRate(getRate()*1.25)
+Stepping forward is the same idea. It's a button that when it is pressed it calls the update() function which checks which rules apply and then applies the changes.
+
+
 
 ###Design Considerations
+One decision the group made was not to include a States class as of now. Had one been made, a States class most likely would've included two ArrayLists. One of which will contains the cells that currently hold the cell and one that holds the cells that will be in that state in the next run. This class would allow you to add to the ArrayList for updating in addition to updating all the cells. As our current method for updating cells appears to work, we decided not to go with this method since creating State classes may add to memory. An advantage is that it creates another object which may be used for other activities. It also gives an easy way to count how many cells are in each state in addition to accessing cells of a certain state.
+Overall since it seems not needed for now, we decided not to incorporate into the project but this may change when we start coding.
 
 ###Team Responsibilities
