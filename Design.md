@@ -4,6 +4,10 @@ CS 308: Cell Society Plan
 ###Introduction
 
 ###Overview
+
+**Main**
+	Sets up the stage and plays the animation.
+	
 **Cell**
 	Each cell in our cell automata system must be assigned some state at all times. Cells will individually need to keep track of this state, though the state will depend on the states of cells around it. Therefore, it will be useful to create a Cell class which creates a new cell object that can be updated. When a grid is created, the Cell class is repeatedly called so all cells needed for that grid are created. Examples of information the cell object will contain about itself include its current state within the context of the game (on, off, burning, burned, etc.) , its size, its shape, and pointers to its neighbors. States of the cell can generally be stored as int values, but it would need to keep track of its neighbors with by using pointers to them inside of an ArrayList. 
 	Additionally, the Cell class will contain methods that allow values of the cell to be changed or checked. The Cell class will contain set and get methods so that the state of the Cell can be accessed. This will be used by the Grid class which needs to check the state of each cell in order to visually display its state. There will be an updateValues method. If the Grid class checks for and finds a rules change then the cell will need to update pertaining values. 
@@ -25,27 +29,48 @@ CS 308: Cell Society Plan
 
 
 ###Design Details
+**Main**
+This will set up the stage and play the animation. We can set the stage scene from the group or scene that we get from the grid class.
+
+
 **Cell**
-Each cell will have a String or int instance variable to denote its current state. In addition, it will also have a Shape instance variable. Thus when changing the state, we can change both the String variable and the shape color.
+Each cell will have two int variables denoting its position. This will be used for determining its neighbors. Each cell will have a String or int instance variable to denote its current state. In addition, it will also have a Shape instance variable. Thus when changing the state, we can change both the String variable and the shape color.
 As such, it may be helpful to have the Cell class extend a Shape or Group so that they can be added to the Grid.
+The Cell class will have a method update which updates both its state and its current color.  
 
 **Grid**
-The grid may be implemented in a GridPane although this may change since it would limit the shapes to squares. The grid will also have a 2D Cell array which keeps track of which Cell is in which position.
-We will assume that the neighborhood for each of the cell will be the same so we can store this as int[][2] instance variable. This Grid class can have a getNeighbors() method which determines the neighbors of each cell by finding the cells at valid positions.
-The Grid class will also have a checkBounds method which will act as a helper function for the getNeighbors, making sure the position found is valid.
+As instance variables, this class will have a String name, an int[][] which determines which cells are neighbors. For example, if {0,1} is an element in the array. Then we know the cell at position (i, j+1) is a neighbor of (i, j).
+We will also be using a 2D Cell[][] to store all the cells are in what position. 
+This class will have a getNeighbors(Cell) which returns an ArrayList of cells that are its neighbors. 
+The Grid will be have a checkRules() function which loops over all cells and determines which changes to make.
+The handleUpdate() method will then apply those changes. We can have a method update() which calls both of these functions.
+This grid will has have an init method which initializes the instance variables, make the grid, and returns either the scene or the group that corresponds for the group. 
+This class may have a subclass that will deal 
 
+**Rules**
+We were unsure exactly what this class would be. For now, we plane for Rules to be a class that simply holds all the rules for each specific game.
+If we do make a class for each rule, then rules would apply some change to a parameter cell. They could have instance variables of an initial condition.
 
+**ReadFile**
+We will most likely format our files so that they tell us which game and rules to use. 
+This format will allow us to get and set the various parameters that our methods need such as grid size, what type of grid, what kind of neighborhoods to use. 
 
 
 **User Interface**
 To allow the user to pause and play the animation, we can simply create a Button with a setOnMousePressed(e -> animation.pause()) and similarly for the play Button.
 To speed up or slow down the animation, we can use a Button such that when it is pressed it can change the rate perhaps something like setRate(getRate()*1.25)
-Stepping forward is the same idea. It's a button that when it is pressed it calls the update() function which checks which rules apply and then applies the changes.
-
+Stepping forward is the same idea. It's a button that when it is pressed it calls the update() function which checks which rules apply and then applies the changes.\
+We can use one function makeUIButton(String, EventHandler) to handle the create of all these buttons.
+There should also be a button that opens up a file chooser. From there we can choose a file which would then be parsed by the ReadFile class.
 
 
 ###Design Considerations
 One decision the group made was not to include a States class as of now. Had one been made, a States class most likely would've included two ArrayLists. One of which will contains the cells that currently hold the cell and one that holds the cells that will be in that state in the next run. This class would allow you to add to the ArrayList for updating in addition to updating all the cells. As our current method for updating cells appears to work, we decided not to go with this method since creating State classes may add to memory. An advantage is that it creates another object which may be used for other activities. It also gives an easy way to count how many cells are in each state in addition to accessing cells of a certain state.
 Overall since it seems not needed for now, we decided not to incorporate into the project but this may change when we start coding.
+There was also the possibility of creating an abstract CellAutomata class. Pros of this would it make implementing the specific games noted in the basic implementation easier. However we determined the main differences between the games to be different grids, different neighborhoods, and different rules. 
+In order to make our project more flexible, we believe that it would be better not to have an abstract CellAutomata class since it was not needed. We could deal with different grids by having different grid subclasses. Neighborhoods can differ by a parameter and we simply need a way to store the rules. 
+This way of organizing the project also allows us to play the various games with different mixture of neighborhoods and games.
 
 ###Team Responsibilities
+We will divide each section in sprint 2 to a different person. However most coding will probably be done together and thus each section will have contributions from each person. Each person will be expected to review the other member's code.
+
