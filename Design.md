@@ -2,10 +2,10 @@ CS 308: Cell Society Plan
 ====================
 
 ###Introduction
-	“A cellular automaton is a model of a system of “cell” objects.” – The Nature of Code, in this project, we will design a grid system capable of hosting four different types of cellular automata – Schelling’s model of segregation, Wa-Tor World model of predator-prey relationships, spread of fire model, and Conway’s Game of Life. The basis of these models relies on the formation of grids, cells, and locality. Each model has a grid with cells that are affected by their neighbors based on a certain set of rules. For example, in Conway’s Game of Life, every cell either is *alive* or *dead*. For every cell, if there are 2 or 3 cells surrounding them that are alive, than that cell becomes alive. Otherwise, it remains dead or dies.
 
-	The primary design goal will be to create a grid that handles all of the models at any grid size. Its flexibility will be crucial in creating useful simulations of the different CA. As we lay down the basic groundwork for this data structure, it will be necessary to be able to add rules to each game that allow for increased complexity of each model. The architecture of the rules must be as open as possible as we move through the project in order to properly create large and complex models.
+“A cellular automaton is a model of a system of “cell” objects.” – The Nature of Code, in this project, we will design a grid system capable of hosting four different types of cellular automata – Schelling’s model of segregation, Wa-Tor World model of predator-prey relationships, spread of fire model, and Conway’s Game of Life. The basis of these models relies on the formation of grids, cells, and locality. Each model has a grid with cells that are affected by their neighbors based on a certain set of rules. For example, in Conway’s Game of Life, every cell either is *alive* or *dead*. For every cell, if there are 2 or 3 cells surrounding them that are alive, than that cell becomes alive. Otherwise, it remains dead or dies.
 
+The primary design goal will be to create a grid that handles all of the models at any grid size. Its flexibility will be crucial in creating useful simulations of the different CA. As we lay down the basic groundwork for this data structure, it will be necessary to be able to add rules to each game that allow for increased complexity of each model. The architecture of the rules must be as open as possible as we move through the project in order to properly create large and complex models.
 
 ###Overview
 
