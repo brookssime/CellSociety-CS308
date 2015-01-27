@@ -34,6 +34,15 @@ This section actually consists of several classes. Each one will be written for 
 
 ###User Interface
 
+The user interface will open up a Menu Scene from which 3 main options will be given to the user as well as a “go” button. In the first, one of the four types of games will be chosen from a menu. In the second, a number will be typed in that will create an n-by-n grid. This option will have an upper cap. In the third, the frame rate of the model will be chosen with options for slow, normal, and fast.
+
+![Image of Menu Screen]
+(http://i.imgur.com/2X8nAcg.jpg)
+
+After each field has a value, the go button will move to the model. If not all fields have values; the interface will present an error message. In the model, the grid will be shown with a side bar to its right. On the side bar, there will be five buttons – a play button, a pause button, a next frame button, which will move the grid one generation forward from the paused state, a file upload button that will open up the option to upload a scenario for the model, and a quit button that will return the user to the main menu.
+
+![Image of Play Screen]
+(http://i.imgur.com/FdRewVD.jpg)
 
 ###Design Details
 **Main**
