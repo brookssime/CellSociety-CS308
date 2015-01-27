@@ -16,6 +16,9 @@ CS 308: Cell Society Plan
 	All games that this project will be capable of handling will be of the cell automata format. As such the project is designed to handle specifically these kinds of games. In terms of visualizing the game itself, it is clear that we will need a Grid class that represents all cells in the system and their states. Once the game is running, the user will be able to see specific cells in the grid changing their state. This would be manifested visually by the Grid class changing the cell's color in the grid. 
 	The grid would have some size assigned to it which represents the numbers of cells created and in the grid. A game's Grid uses a 2D Cell array to organize every instance of Cell so that each cell in the grid can be called to be updated. Since each cell is contained within the array, the Grid class effectively keeps track of the entire game state. When the user pauses the game or switches the rules, the Grid class would use the array to remember the current states of all cells in the simulation. Grid would have a checkRules method to that the simulation to adapt to changes in the rules during a game. 
 
+**Simulations**
+This section actually consists of several classes. Each one will be written for a specific simulation to be played. One will be called by default by reading in the XML file, but the user can select any of the types of simulations available. The default simulation will be Conway's Game of Life. Each of these classes is algorithmically different in determining the state of a cell, determined by simulation it represents. Each changes the settings of the Rules class. 
+
 **Rules**
 	The Rules class stores the current settings of the game. This class can be updated by reading a file containing desired rules settings or the user can change them through the UI. The rules are constantly checked throughout the game to make sure game settings (game type, grid size, etc.) do not need to be changed. 
 
