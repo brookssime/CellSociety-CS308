@@ -72,5 +72,5 @@ In order to make our project more flexible, we believe that it would be better n
 This way of organizing the project also allows us to play the various games with different mixture of neighborhoods and games.
 
 ###Team Responsibilities
-We will divide each section in sprint 2 to a different person. However most coding will probably be done together and thus each section will have contributions from each person. Each person will be expected to review the other member's code.
+We will divide each section in sprint 2 to a different person. However most coding will probably be done together and thus each section will have contributions from each person. Each person will be expected to review the other member's code. In addition, we will review as a group when closing an issue or merge problem.
 
