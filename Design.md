@@ -3,6 +3,10 @@ CS 308: Cell Society Plan
 
 ###Introduction
 
+“A cellular automaton is a model of a system of “cell” objects.” – The Nature of Code, in this project, we will design a grid system capable of hosting four different types of cellular automata – Schelling’s model of segregation, Wa-Tor World model of predator-prey relationships, spread of fire model, and Conway’s Game of Life. The basis of these models relies on the formation of grids, cells, and locality. Each model has a grid with cells that are affected by their neighbors based on a certain set of rules. For example, in Conway’s Game of Life, every cell either is *alive* or *dead*. For every cell, if there are 2 or 3 cells surrounding them that are alive, than that cell becomes alive. Otherwise, it remains dead or dies.
+
+The primary design goal will be to create a grid that handles all of the models at any grid size. Its flexibility will be crucial in creating useful simulations of the different CA. As we lay down the basic groundwork for this data structure, it will be necessary to be able to add rules to each game that allow for increased complexity of each model. The architecture of the rules must be as open as possible as we move through the project in order to properly create large and complex models.
+
 ###Overview
 
 **Main**
@@ -16,6 +20,9 @@ CS 308: Cell Society Plan
 	All games that this project will be capable of handling will be of the cell automata format. As such the project is designed to handle specifically these kinds of games. In terms of visualizing the game itself, it is clear that we will need a Grid class that represents all cells in the system and their states. Once the game is running, the user will be able to see specific cells in the grid changing their state. This would be manifested visually by the Grid class changing the cell's color in the grid. 
 	The grid would have some size assigned to it which represents the numbers of cells created and in the grid. A game's Grid uses a 2D Cell array to organize every instance of Cell so that each cell in the grid can be called to be updated. Since each cell is contained within the array, the Grid class effectively keeps track of the entire game state. When the user pauses the game or switches the rules, the Grid class would use the array to remember the current states of all cells in the simulation. Grid would have a checkRules method to that the simulation to adapt to changes in the rules during a game. 
 
+**Simulations**
+This section actually consists of several classes. Each one will be written for a specific simulation to be played. One will be called by default by reading in the XML file, but the user can select any of the types of simulations available. The default simulation will be Conway's Game of Life. Each of these classes is algorithmically different in determining the state of a cell, determined by simulation it represents. Each changes the settings of the Rules class. 
+
 **Rules**
 	The Rules class stores the current settings of the game. This class can be updated by reading a file containing desired rules settings or the user can change them through the UI. The rules are constantly checked throughout the game to make sure game settings (game type, grid size, etc.) do not need to be changed. 
 
@@ -27,6 +34,15 @@ CS 308: Cell Society Plan
 
 ###User Interface
 
+The user interface will open up a Menu Scene from which 3 main options will be given to the user as well as a “go” button. In the first, one of the four types of games will be chosen from a menu. In the second, a number will be typed in that will create an n-by-n grid. This option will have an upper cap. In the third, the frame rate of the model will be chosen with options for slow, normal, and fast.
+
+![Image of Menu Screen]
+(http://i.imgur.com/2X8nAcg.jpg)
+
+After each field has a value, the go button will move to the model. If not all fields have values; the interface will present an error message. In the model, the grid will be shown with a side bar to its right. On the side bar, there will be five buttons – a play button, a pause button, a next frame button, which will move the grid one generation forward from the paused state, a file upload button that will open up the option to upload a scenario for the model, and a quit button that will return the user to the main menu.
+
+![Image of Play Screen]
+(http://i.imgur.com/FdRewVD.jpg)
 
 ###Design Details
 **Main**
