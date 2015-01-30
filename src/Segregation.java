@@ -1,90 +1,77 @@
 import java.util.ArrayList;
 
-
-
-
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Random;
-
-import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
 
-public class Segregation extends CellularAutomata {
-
+public class Segregation extends MoveCellularAutomata {
+	private ArrayList<Cell> emptyCells;
+	private Color blue = Color.BLUE;
+	private Color red = Color.RED;
+	private Color white = Color.WHITE;
 	
-	public Segregation(){
-		super("Segregation", new int[][] {{-1, -1}, {-1, 0}, {-1, 1}, {0, -1}, {0, 1}, {1,-1}, {1, 0}, {1,1}}, .3);
+	public Segregation(int size){
+		super("Segregation", size, new int[][] {{0, -1}, {0,1}, {1, 0}, {1, 1}, {-1, 1}},  .75);
+		setEmptyColor(white);
+		emptyCells = new ArrayList<Cell>();
+		setUpInitialConfig();
 	}
 
-	
-	@Override
-	public Scene init(int size, int width, int height) {
-		Group root = new Group();
-		setMyStates(new HashMap<String, State>());
-		VBox buttons= new VBox();
-		buttons.setTranslateX(width);
-		buttons.getChildren().addAll(pause(), play(), stepForward(), fastForward(), slowDown());
-		root.getChildren().add(buttons);
-		setMyRoot(root);
 
-		setGrid(new Grid(size, height, width, getMyNeighborhood()));
-		
-		addState("red", Color.RED);
-		addState("blue", Color.BLUE);
-		addState("empty", Color.WHITE);
-
-		return new Scene(getMyRoot(), width+buttons.getWidth(), height, Color.WHITE);
-	}
-
-	@Override
-	public void applyRules() {
+	public void setUpInitialConfig(){
 		for (Cell[] c: getGrid().getCells()){
 			for (Cell cell: c){
-				ruleOne(cell);
+				double x = getRandomDouble();
+				if (x <0.25){
+					addMover(new Mover(cell, red));
+				}
+				else if(x <0.5){
+					addMover(new Mover(cell, blue));
+				}
+				else{
+					cell.setNextState(white);
+					emptyCells.add(cell);
+				}
+				cell.update();
 			}
 		}
 	}
 	
-	public void ruleOne(Cell cell){
-		Random random = new Random();
-		if (!findState("empty").contains(cell)){
+	public void checkRules(Mover mover){
+		ruleOne(mover);
+	}
+
+	private void ruleOne(Mover mover){
+		if (mover.isState(white)){
 			return;
 		}
 		
-		ArrayList<Cell> neighbors = getGrid().getNeighbors(cell);
-		double count = 0;
-		for (Cell neighbor: neighbors){
-			if (neighbor.getState() == cell.getState()){
-				count ++;
-			}
+		double samePercent = getSamePercent(mover.getCell());
+		
+		if (samePercent < getMyProb()){
+			Cell moveTo = getRandomCell(emptyCells);
+			move(mover, moveTo);
 		}
 		
-		double samePercent = count/8;
-		
-		if (samePercent > getMyProb()){
-			findState("empty").addToUpdate(cell);
-			ArrayList<Cell> empty = findState("empty").getMyCurrent();
-			Cell randomCell = empty.get(random.nextInt(empty.size()));
-			empty.remove(randomCell);
-			findState(cell.getState()).addToUpdate(randomCell);
+	}
+	
+	public void move(Mover mover, Cell moveTo){
+		emptyCells.add(mover.getCell());
+		super.move(mover, moveTo);
+		emptyCells.remove(moveTo);
+	}
+	
+	private double getSamePercent(Cell cell) {
+		int count = getGrid().findNeighbors(cell, cell.getState()).size();
+		int total = getGrid().findNeighbors(cell, white).size() + count;
+		double samePercent;
+		//avoid division by zero
+		if (total ==0){
+			samePercent = 1;
 		}
 		else{
-			findState(cell.getState()).addToUpdate(cell);
+			samePercent = count/total;
 		}
+		return samePercent;
 	}
 	
-
-	
-
-	@Override
-	public void handleUpdate() {
-		Collections.shuffle(findState("empty").getMyCurrent());
-		
-	}
-
 }

@@ -1,25 +1,39 @@
-import javafx.scene.Group;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Shape;
+import javafx.scene.paint.Paint;
 
 
-public class Cell extends Group{
-	private String state;
-	private String nextState;
-	private Shape shape;
+
+public class Cell{
+	private Paint nextColor;
+	private Paint currentColor;
 	private int x;
 	private int y;
 	
-	public Cell(int posX, int posY, Shape s){
+	public Cell(int posX, int posY){
 		x = posX;
 		y = posY;
-		shape = s;
-		getChildren().add(shape);
 	}
 	
-	public void update(String name, Color color){
-		state = name;
-		shape.setFill(color);
+	public void setState(Paint paint){
+		setNextState(paint);
+		update();
+	}
+	
+	public void update(){
+		//if it doesn't need to be updated
+		if (nextColor == null){
+			return;
+		}
+		
+		currentColor = nextColor;
+		nextColor = null;
+	}
+	
+	public void setNextState(Paint paint){
+		nextColor = paint;
+	}
+	
+	public boolean isState(Paint paint){
+		return currentColor == paint;
 	}
 	
 	public int getPosX(){
@@ -30,8 +44,9 @@ public class Cell extends Group{
 		return y;
 	}
 	
-	public String getState(){
-		return state;
+	public Paint getState(){
+		return currentColor;
 	}
+
 
 }
