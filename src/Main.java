@@ -12,6 +12,8 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	private int FRAME_TIME = 10000;
 	private CellularAutomata myCA;
+	//hello world
+	
 	
 	@Override
 	public void start(Stage s) throws Exception {
