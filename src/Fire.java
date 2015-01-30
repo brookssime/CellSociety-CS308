@@ -1,60 +1,40 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Random;
-
-import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
 
 public class Fire extends CellularAutomata {
+	private Color onFire = Color.RED;
+	private Color tree = Color.GREEN;
+	private Color empty = Color.YELLOW;
 	
-	public Fire(){
-		super("Fire", new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}}, .15);
-	}
-
-	@Override
-	public Scene init(int size, int width, int height) {
-		setName("Fire");
-		setMyRoot(new Group());
-		setMyStates(new HashMap<String, State>());
-		VBox buttons= new VBox();
-		buttons.setTranslateX(width);
-		buttons.getChildren().addAll(pause(), play(), stepForward(), fastForward(), slowDown());
-		getMyRoot().getChildren().add(buttons);
-		setGrid(new Grid(size, width, height, getMyNeighborhood()));
-		
-		addState("empty", Color.YELLOW);
-		addState("tree", Color.GREEN);
-		addState("burning", Color.RED);
-		
+	public Fire(int size){
+		super("Fire", size, new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}}, .5);
 		setUpInitialConfig();
-		
-		Scene scene = new Scene(getMyRoot(), width+ buttons.getWidth(), height, Color.WHITE);
-		return scene;
 	}
 	
 	public void setUpInitialConfig(){
 		int x = getGrid().getCells().length/2;
 		int y = getGrid().getCells()[0].length/2;
 		Cell fire = getGrid().getCellAt(x,y);
-		findState("burning").addToUpdate(fire);
+		fire.setNextState(onFire);
 		for (Cell[] c: getGrid().getCells()){
 			for(Cell cell: c){
 				if (cell == fire){
 					continue;
 				}
-				findState("tree").addToUpdate(cell);
+				if (getRandomDouble() <.001){
+					cell.setNextState(onFire);
+				}
+				else{
+					cell.setNextState(tree);
+				}
 			}
 		}
 		
 		handleUpdate();
 	}
+	
 
-	@Override
-	public void applyRules() {
+	public void checkRules() {
 		for (Cell[] c: getGrid().getCells()){
 			for (Cell cell: c){
 				ruleOne(cell);
@@ -64,38 +44,26 @@ public class Fire extends CellularAutomata {
 
 	}
 	
-	public void ruleOne(Cell cell){
-		if (!findState("burning").contains(cell)){
+	private void ruleOne(Cell cell){
+		if (!cell.isState(onFire)){
 			return;
 		}
-		findState("empty").addToUpdate(cell);
+		cell.setNextState(empty);
 	}
 	
-	public void ruleTwo(Cell cell){
-		if (!findState("tree").contains(cell)){
+	private void ruleTwo(Cell cell){
+		if (!cell.isState(tree)){
 			return;
 		}
-		ArrayList<Cell> neighbors = getGrid().getNeighbors(cell);
-		boolean nextToFire = false;
-		for (Cell neighbor: neighbors){
-			if (findState("burning").contains(neighbor)){
-				nextToFire = true;
-			}
-		}
-		Random random = new Random();
-		if (nextToFire && random.nextDouble() > getMyProb()){
-			findState("burning").addToUpdate(cell);
-		}
-		else{
-			findState("tree").addToUpdate(cell);
+		
+		boolean nextToFire = checkNextToFire(cell);
+		
+		if (nextToFire && getRandomDouble() < getMyProb()){
+			cell.setNextState(onFire);
 		}
 	}
-	
 
-	@Override
-	public void handleUpdate() {
-		for (State s: getMyStates().values()){
-			s.update();
-		}
+	private boolean checkNextToFire(Cell cell) {
+		return !getGrid().findNeighbors(cell, onFire).isEmpty();
 	}
 }

@@ -1,0 +1,168 @@
+Design:
+CellularAutomata
+	Summary
+		Grid with cells
+		Cells have finite states
+		Cells have neighborhoods
+	Variables
+		Color States
+		Grid
+		generation
+		animation?
+		rules?
+	Methods
+		checkRules(cell)
+		nextGen()
+	Subclasses
+		GameOfLife
+		Fire
+		MoveCellularAutomata
+			Checks rule and then updates instantly. 
+			Segregation
+			Wator
+			
+MoveCellularAutomata?
+	Summary
+		applying rules moves some figure
+		checking rules and then updating in same step
+	Variables
+		Collection movers
+	Methods
+		nextGen - loops over movers and resets movers when finished
+		getRandomMove
+	Subclasses
+		Segregation
+		Water
+		
+Movers
+	Summary
+	Variables
+		moved
+		Cell myCell
+	Methods
+		getType
+		move
+		isMoved
+		reset
+
+Fish extends Movers
+	Variables
+		spawnTime
+	Methods
+		canBreed
+		breed
+		survive
+		
+Shark extends Fish
+	Variables
+		energySpent
+	Methods
+		spendEnergy
+		checkOutofEnegy
+
+Cell (abstract)
+	Summary
+		Have neighborhoods
+		Have a certain shape
+		Have a state
+		Have a position
+	Variables
+		Shape - covers both shape and current state
+		nextState - next generation color
+	Methods
+		drawShape
+		setNextState
+		isState
+		update
+	Subclasses
+		SquareCell
+		HexagonCell
+		TriangleCell
+		
+Grid
+	Summary
+	Variables
+		Size of cells
+		size of grid
+		2d cell array
+	Methods
+		calculateCellSize
+		makeGrid
+		createIterator
+		getNeighbors
+			checkBounds
+			gridPoint
+	Subclasses
+		TorusGrid
+			makes the grid a torus shape.
+			changes gridPoint
+			
+Animation?
+	Summary
+		Animations grid and has buttons
+	Variables
+	Methods
+		makeTimeline
+		makeButtons
+		makeUIButton
+		
+Rules?
+	Summary
+		Each rule has a condition based upon initial state and states of neighbors
+	Variables
+		initalState
+		neighborCondition
+	Method
+		checkInitialState
+		checkNeighborStates
+		applyChange
+	Comments
+		sometimes we need the arraylist that we create in checkneighborstates
+		
+Parameters:
+	Type of grid (torus or not)
+	Shape of cell (square, triangle, hexagon)
+	Grid size (possibly infinite)
+	Rules/States/Games
+	Initial configuration
+	
+
+Cell:
+Not sure if this is completely needed but most likely it's better to have.
+Need to check if all getters/method are needed.
+
+Wator and Segregation.
+Trouble when dealing with cells to move.
+Problems: need to keep track which cells hold things that have moved
+Also need to change the nextGen method so that it doesn't all happen at once.
+Possible solutions: 
+Creating an Movers (abstract?) that extends Cell? Then we can ignore the cells,
+and simply cover over the empty ones.
+Let's us loop through the movers
+Let's us deal with all classes that move better
+Complicates through how to move an object (mostly bad in triangle class)
+-actually may not be that difficult, update based on position of cell
+-sketch of implementation
+
+Movers:
+Variables
+boolean moved;
+ArrayList<Paint> validMoves
+Methods
+isMoved
+move(Cell from, Cell to)
+
+For now will not deal with this problem.
+Alternatives/questions:
+should this be in the cell class or perhaps the grid class
+
+CellularAutomata/Grid:
+which class should hold the nextGen method
+-should consider reabstracting and considering more objects
+
+Grid
+Should create an iterator class?
+How do we change the shape of the grid based on a parameter
+
+
+
