@@ -1,0 +1,10 @@
+<map id="Cell.getPosX" name="Cell.getPosX">
+<area shape="rect" id="node2" href="$da/d74/class_grid.html#a33b84a1d6b40a447bdd4a33fa3daf555" title="Grid.getNeighbors" alt="" coords="155,81,293,108"/>
+<area shape="rect" id="node3" href="$d9/df1/class_fire.html#accc21ae2162fd526d8ca66c472a62a28" title="Fire.ruleTwo" alt="" coords="371,5,466,32"/>
+<area shape="rect" id="node5" href="$d8/d84/class_game_of_life.html#aca7cd11a349cf14c940011021f91127f" title="GameOfLife.ruleOne" alt="" coords="343,56,494,83"/>
+<area shape="rect" id="node7" href="$d8/d84/class_game_of_life.html#a6b6c946c47342fd7e4595710d72a9217" title="GameOfLife.ruleTwo" alt="" coords="345,107,492,133"/>
+<area shape="rect" id="node8" href="$da/d1e/class_segregation.html#a49b8fcb38373080b203a974f5c24d166" title="Segregation.ruleOne" alt="" coords="341,157,496,184"/>
+<area shape="rect" id="node4" href="$d9/df1/class_fire.html#a7e440468aacc413772a274bb8029e8bb" title="Fire.applyRules" alt="" coords="572,5,687,32"/>
+<area shape="rect" id="node6" href="$d8/d84/class_game_of_life.html#a8085307c182bb4d9149f98dfc8f26979" title="GameOfLife.applyRules" alt="" coords="545,81,713,108"/>
+<area shape="rect" id="node9" href="$da/d1e/class_segregation.html#a45e57140276ed3b1897cf8212b6283d4" title="Segregation.applyRules" alt="" coords="544,157,715,184"/>
+</map>
