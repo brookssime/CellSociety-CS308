@@ -55,8 +55,8 @@ As such, it may be helpful to have the Cell class extend a Shape or Group so tha
 The Cell class will have a method update which updates both its state and its current color.  
 
 **Grid**
-As instance variables, this class will have a String name, an int[][] which determines which cells are neighbors. For example, if {0,1} is an element in the array. Then we know the cell at position (i, j+1) is a neighbor of (i, j).
-We will also be using a 2D Cell[][] to store all the cells are in what position. 
+As instance variables, this class will have a String name, an 2D int array which determines which cells are neighbors. For example, if {0,1} is an element in the array. Then we know the cell at position (i, j+1) is a neighbor of (i, j).
+We will also be using a 2D Cell array to store all the cells are in what position. 
 This class will have a getNeighbors(Cell) which returns an ArrayList of cells that are its neighbors. 
 The Grid will be have a checkRules() function which loops over all cells and determines which changes to make.
 The handleUpdate() method will then apply those changes. We can have a method update() which calls both of these functions.
