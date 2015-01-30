@@ -1,9 +1,0 @@
-<map id="Fire.setUpInitialConfig" name="Fire.setUpInitialConfig">
-<area shape="rect" id="node2" href="$d0/d8b/class_state.html#ad60b238c28b23c6e04c5d2be9b525b4c" title="State.addToUpdate" alt="" coords="238,5,383,32"/>
-<area shape="rect" id="node3" href="$d2/d40/class_cellular_automata.html#a5f076a375459bb648b121e1b34b2ef17" title="CellularAutomata.findState" alt="" coords="213,56,408,83"/>
-<area shape="rect" id="node4" href="$da/d74/class_grid.html#a2f2ccb1511e367a7d6e9bcb3f708cd38" title="Grid.getCellAt" alt="" coords="255,107,366,133"/>
-<area shape="rect" id="node5" href="$da/d74/class_grid.html#aba1e1b4dba7072955cad21806ef1c753" title="Grid.getCells" alt="" coords="259,157,362,184"/>
-<area shape="rect" id="node6" href="$d2/d40/class_cellular_automata.html#a34ceed434c942d34ff03169b92684726" title="CellularAutomata.getGrid" alt="" coords="219,208,403,235"/>
-<area shape="rect" id="node7" href="$d9/df1/class_fire.html#aa8c0ca014747cf0c47e1e19e354a2675" title="Fire.handleUpdate" alt="" coords="241,259,380,285"/>
-<area shape="rect" id="node8" href="$d2/d40/class_cellular_automata.html#a30b0063e34ebf6ee66b68acd1b86d5da" title="CellularAutomata.getMyStates" alt="" coords="456,259,675,285"/>
-</map>

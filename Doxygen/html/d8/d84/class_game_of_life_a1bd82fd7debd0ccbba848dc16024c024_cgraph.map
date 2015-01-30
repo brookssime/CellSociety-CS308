@@ -1,7 +1,0 @@
-<map id="GameOfLife.setUpInitialConfig" name="GameOfLife.setUpInitialConfig">
-<area shape="rect" id="node2" href="$d0/d8b/class_state.html#ad60b238c28b23c6e04c5d2be9b525b4c" title="State.addToUpdate" alt="" coords="291,5,437,32"/>
-<area shape="rect" id="node3" href="$d2/d40/class_cellular_automata.html#a5f076a375459bb648b121e1b34b2ef17" title="CellularAutomata.findState" alt="" coords="267,56,461,83"/>
-<area shape="rect" id="node4" href="$d2/d40/class_cellular_automata.html#a34ceed434c942d34ff03169b92684726" title="CellularAutomata.getGrid" alt="" coords="272,107,456,133"/>
-<area shape="rect" id="node5" href="$d8/d84/class_game_of_life.html#a42e957d8b9180f09f288a47bc4fd4dad" title="GameOfLife.handleUpdate" alt="" coords="269,157,459,184"/>
-<area shape="rect" id="node6" href="$d2/d40/class_cellular_automata.html#a30b0063e34ebf6ee66b68acd1b86d5da" title="CellularAutomata.getMyStates" alt="" coords="509,157,728,184"/>
-</map>

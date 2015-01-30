@@ -1,8 +1,0 @@
-<map id="Main.start" name="Main.start">
-<area shape="rect" id="node2" href="$d2/d40/class_cellular_automata.html#ad8e068dc2395ca5598e5e4164ecfe6b2" title="CellularAutomata.getName" alt="" coords="156,5,353,32"/>
-<area shape="rect" id="node3" href="$d2/d40/class_cellular_automata.html#a50f00cb421e5e9cf83444c05d16c6b80" title="CellularAutomata.init" alt="" coords="177,56,333,83"/>
-<area shape="rect" id="node4" href="$d2/d40/class_cellular_automata.html#abe82e6f03caff539c579448cb3bcbb25" title="CellularAutomata.makeTimeline" alt="" coords="141,107,368,133"/>
-<area shape="rect" id="node5" href="$d2/d40/class_cellular_automata.html#ae8ef63af0ee6db6d22b32ce6b586e3cd" title="CellularAutomata.update" alt="" coords="417,107,599,133"/>
-<area shape="rect" id="node6" href="$d2/d40/class_cellular_automata.html#a378c64d09ace5a17d91052387801c2e8" title="CellularAutomata.applyRules" alt="" coords="659,81,863,108"/>
-<area shape="rect" id="node7" href="$d2/d40/class_cellular_automata.html#ad611b3b173c822a7d0a0ca5f7a0e48c4" title="CellularAutomata.handleUpdate" alt="" coords="648,132,875,159"/>
-</map>
