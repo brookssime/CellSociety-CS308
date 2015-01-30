@@ -1,0 +1,5 @@
+<map id="GameOfLife.setUpInitialConfig" name="GameOfLife.setUpInitialConfig">
+<area shape="rect" id="node2" href="$d2/d40/class_cellular_automata.html#a34ceed434c942d34ff03169b92684726" title="CellularAutomata.getGrid" alt="" coords="541,32,725,59"/>
+<area shape="rect" id="node3" href="$d2/d40/class_cellular_automata.html#a3e303e691cc17b9a478a3e0e167a37e6" title="CellularAutomata.getRandom\lDouble" alt="" coords="275,25,485,66"/>
+<area shape="rect" id="node4" href="$d2/d40/class_cellular_automata.html#ab39b5164764f20382801aa9a4663eb4b" title="CellularAutomata.handleUpdate" alt="" coords="267,91,493,118"/>
+</map>

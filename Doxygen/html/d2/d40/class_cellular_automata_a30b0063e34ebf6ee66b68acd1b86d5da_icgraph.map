@@ -1,0 +1,9 @@
+<map id="CellularAutomata.getMyStates" name="CellularAutomata.getMyStates">
+<area shape="rect" id="node2" href="$d8/d84/class_game_of_life.html#a8085307c182bb4d9149f98dfc8f26979" title="GameOfLife.applyRules" alt="" coords="284,5,452,32"/>
+<area shape="rect" id="node3" href="$d9/df1/class_fire.html#aa8c0ca014747cf0c47e1e19e354a2675" title="Fire.handleUpdate" alt="" coords="299,56,437,83"/>
+<area shape="rect" id="node6" href="$d8/d84/class_game_of_life.html#a42e957d8b9180f09f288a47bc4fd4dad" title="GameOfLife.handleUpdate" alt="" coords="273,107,463,133"/>
+<area shape="rect" id="node4" href="$d9/df1/class_fire.html#afd16418c5ea360c815613862a4ea1c33" title="Fire.setUpInitialConfig" alt="" coords="539,56,698,83"/>
+<area shape="rect" id="node5" href="$d9/df1/class_fire.html#a22e1b892843e691d4e6e3fcf8e6a893a" title="Fire.init" alt="" coords="800,56,867,83"/>
+<area shape="rect" id="node7" href="$d8/d84/class_game_of_life.html#a1bd82fd7debd0ccbba848dc16024c024" title="GameOfLife.setUpInitialConfig" alt="" coords="513,107,725,133"/>
+<area shape="rect" id="node8" href="$d8/d84/class_game_of_life.html#a9ffd6f1b93454f54600e1db30540c21d" title="GameOfLife.init" alt="" coords="773,107,893,133"/>
+</map>

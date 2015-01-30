@@ -1,0 +1,6 @@
+<map id="State.getMyCurrent" name="State.getMyCurrent">
+<area shape="rect" id="node2" href="$d0/d8b/class_state.html#a419b3f1c97ab4d5d6f4e3ea66b468099" title="State.contains" alt="" coords="223,5,337,32"/>
+<area shape="rect" id="node3" href="$da/d1e/class_segregation.html#a49b8fcb38373080b203a974f5c24d166" title="Segregation.ruleOne" alt="" coords="203,56,357,83"/>
+<area shape="rect" id="node5" href="$d0/d8b/class_state.html#a5ecbb69eb3048cc49aeadfc6e71a15b0" title="State.update" alt="" coords="227,107,333,133"/>
+<area shape="rect" id="node4" href="$da/d1e/class_segregation.html#a45e57140276ed3b1897cf8212b6283d4" title="Segregation.applyRules" alt="" coords="405,56,576,83"/>
+</map>
