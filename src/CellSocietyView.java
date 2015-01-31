@@ -1,3 +1,5 @@
+import java.util.ResourceBundle;
+
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -11,14 +13,18 @@ import javafx.util.Duration;
 
 
 public class CellSocietyView {
+    private static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
+	
 	private CellularAutomata myCA;
 	private GridDrawer myGridView;
 	private Timeline myAnimation;
 	private Scene myScene;
-	
+	private ResourceBundle myButtonNames;
+
 	public CellSocietyView(CellularAutomata CA, int width, int height, String shape){
 		myCA = CA;
 		BorderPane root = new BorderPane();
+		myButtonNames = ResourceBundle.getBundle(DEFAULT_RESOURCE_PACKAGE + "UIButtons");
 		myGridView = new GridDrawer(CA.getGrid(), shape);
 		root.setCenter(myGridView.makeGrid(width, height));
 		root.setRight(makeButtons());
@@ -46,11 +52,11 @@ public class CellSocietyView {
 	
 	private VBox makeButtons(){
 		VBox buttons = new VBox();
-		Button play = makeUIButton("play", e -> myAnimation.play());
-		Button pause = makeUIButton("pause", e -> myAnimation.pause());
-		Button fastForward = makeUIButton("Speed Up", e -> myAnimation.setRate(myAnimation.getRate()*1.25));
-		Button slowDown = makeUIButton("Slow Down", e-> myAnimation.setRate(myAnimation.getRate()*.8));
-		Button step = makeUIButton("Step", e-> updateView());
+		Button play = makeUIButton(myButtonNames.getString("PlayCommand"), e -> myAnimation.play());
+		Button pause = makeUIButton(myButtonNames.getString("PauseCommand"), e -> myAnimation.pause());
+		Button fastForward = makeUIButton(myButtonNames.getString("AccelerateCommand"), e -> myAnimation.setRate(myAnimation.getRate()*1.25));
+		Button slowDown = makeUIButton(myButtonNames.getString("SlowCommand"), e-> myAnimation.setRate(myAnimation.getRate()*.8));
+		Button step = makeUIButton(myButtonNames.getString("StepCommand"), e-> updateView());
 		buttons.getChildren().addAll(play, pause, fastForward, slowDown, step);
 		return buttons;
 	}
