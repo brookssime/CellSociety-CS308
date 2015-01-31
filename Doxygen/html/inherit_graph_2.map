@@ -1,8 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$d2/d40/class_cellular_automata.html" title="CellularAutomata" alt="" coords="5,56,139,83"/>
-<area shape="rect" id="node2" href="$d9/df1/class_fire.html" title="Fire" alt="" coords="249,5,293,32"/>
-<area shape="rect" id="node3" href="$d8/d84/class_game_of_life.html" title="GameOfLife" alt="" coords="222,56,319,83"/>
-<area shape="rect" id="node4" href="$da/de8/class_move_cellular_automata.html" title="MoveCellularAutomata" alt="" coords="187,107,354,133"/>
-<area shape="rect" id="node5" href="$da/d1e/class_segregation.html" title="Segregation" alt="" coords="403,81,503,108"/>
-<area shape="rect" id="node6" href="$d0/db0/class_wator.html" title="Wator" alt="" coords="424,132,483,159"/>
-</map>

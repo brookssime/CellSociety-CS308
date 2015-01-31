@@ -1,8 +1,0 @@
-<map id="Cell.isState" name="Cell.isState">
-<area shape="rect" id="node2" href="$d8/d84/class_game_of_life.html#aca7cd11a349cf14c940011021f91127f" title="GameOfLife.ruleOne" alt="" coords="150,5,301,32"/>
-<area shape="rect" id="node4" href="$d9/df1/class_fire.html#a08de9a15877f76fa5bc6c8872559f79f" title="Fire.ruleOne" alt="" coords="176,107,275,133"/>
-<area shape="rect" id="node6" href="$d8/d84/class_game_of_life.html#a6b6c946c47342fd7e4595710d72a9217" title="GameOfLife.ruleTwo" alt="" coords="152,56,299,83"/>
-<area shape="rect" id="node7" href="$d9/df1/class_fire.html#accc21ae2162fd526d8ca66c472a62a28" title="Fire.ruleTwo" alt="" coords="178,157,273,184"/>
-<area shape="rect" id="node3" href="$d8/d84/class_game_of_life.html#a0100556ddb7f59c44404450b7c386190" title="GameOfLife.checkRules" alt="" coords="349,44,520,71"/>
-<area shape="rect" id="node5" href="$d9/df1/class_fire.html#a28764fd7310f7be3a246f5eaefd8887c" title="Fire.checkRules" alt="" coords="375,120,494,147"/>
-</map>
