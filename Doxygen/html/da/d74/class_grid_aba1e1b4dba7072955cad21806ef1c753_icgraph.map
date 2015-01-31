@@ -1,0 +1,10 @@
+<map id="Grid.getCells" name="Grid.getCells">
+<area shape="rect" id="node2" href="$d9/df1/class_fire.html#afd16418c5ea360c815613862a4ea1c33" title="Fire.setUpInitialConfig" alt="" coords="177,5,335,32"/>
+<area shape="rect" id="node4" href="$dd/d97/class_grid_drawer.html#a8853ef53b515fd60ca524f05a3dbf897" title="GridDrawer.updateNextGen" alt="" coords="157,56,355,83"/>
+<area shape="rect" id="node3" href="$d9/df1/class_fire.html#a70453ac9610d3591355b1f07432f6fc8" title="Fire.Fire" alt="" coords="467,5,538,32"/>
+<area shape="rect" id="node5" href="$df/df8/class_cell_society_view.html#abe7bcd77ca077f5e5e0f9946eea96406" title="CellSocietyView.CellSocietyView" alt="" coords="913,81,1135,108"/>
+<area shape="rect" id="node6" href="$df/df8/class_cell_society_view.html#ad52b914fa03b45d8bc9d64fc407660f3" title="CellSocietyView.updateView" alt="" coords="403,107,602,133"/>
+<area shape="rect" id="node7" href="$df/df8/class_cell_society_view.html#a7bdbd4e8fd3893e672eb22015603f6dc" title="CellSocietyView.makeButtons" alt="" coords="652,107,863,133"/>
+<area shape="rect" id="node8" href="$df/df8/class_cell_society_view.html#a3ebde62294a33f32af2abf897e1be666" title="CellSocietyView.makeTimeline" alt="" coords="651,157,864,184"/>
+<area shape="rect" id="node9" href="$d0/d4b/class_main.html#a7595d13c514a02c35aca322dd91d2063" title="Main.start" alt="" coords="981,157,1067,184"/>
+</map>

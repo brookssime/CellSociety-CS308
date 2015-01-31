@@ -1,0 +1,5 @@
+<map id="CellularAutomata.getMyNeighborhood" name="CellularAutomata.getMyNeighborhood">
+<area shape="rect" id="node2" href="$d9/df1/class_fire.html#a22e1b892843e691d4e6e3fcf8e6a893a" title="Fire.init" alt="" coords="348,5,415,32"/>
+<area shape="rect" id="node3" href="$da/d1e/class_segregation.html#abbf23897b2ba933ff6d6c20200178ba3" title="Segregation.init" alt="" coords="320,56,443,83"/>
+<area shape="rect" id="node4" href="$d8/d84/class_game_of_life.html#a9ffd6f1b93454f54600e1db30540c21d" title="GameOfLife.init" alt="" coords="321,107,441,133"/>
+</map>

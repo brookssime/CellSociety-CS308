@@ -1,0 +1,8 @@
+<map id="CellularAutomata.update" name="CellularAutomata.update">
+<area shape="rect" id="node2" href="$d2/d40/class_cellular_automata.html#abe82e6f03caff539c579448cb3bcbb25" title="CellularAutomata.makeTimeline" alt="" coords="237,19,464,45"/>
+<area shape="rect" id="node4" href="$d2/d40/class_cellular_automata.html#a68732247a66b6d9f32eb8fcfda70bda2" title="CellularAutomata.stepForward" alt="" coords="243,95,458,121"/>
+<area shape="rect" id="node3" href="$d0/d4b/class_main.html#a7595d13c514a02c35aca322dd91d2063" title="Main.start" alt="" coords="530,5,617,32"/>
+<area shape="rect" id="node5" href="$d9/df1/class_fire.html#a22e1b892843e691d4e6e3fcf8e6a893a" title="Fire.init" alt="" coords="540,56,607,83"/>
+<area shape="rect" id="node6" href="$da/d1e/class_segregation.html#abbf23897b2ba933ff6d6c20200178ba3" title="Segregation.init" alt="" coords="512,107,635,133"/>
+<area shape="rect" id="node7" href="$d8/d84/class_game_of_life.html#a9ffd6f1b93454f54600e1db30540c21d" title="GameOfLife.init" alt="" coords="513,157,633,184"/>
+</map>
