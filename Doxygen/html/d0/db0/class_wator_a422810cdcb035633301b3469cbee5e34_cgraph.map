@@ -1,0 +1,31 @@
+<map id="Wator.checkRules" name="Wator.checkRules">
+<area shape="rect" id="node2" href="$d0/db0/class_wator.html#a0afccb8f97e33c1d21e51ee1a3f4922b" title="Wator.ruleOne" alt="" coords="185,351,295,377"/>
+<area shape="rect" id="node27" href="$d0/db0/class_wator.html#aa8dba59120d9d6d7d7521f3a4ee7b454" title="Wator.ruleTwo" alt="" coords="187,489,293,516"/>
+<area shape="rect" id="node3" href="$dc/d06/class_mover.html#a52bee7a2004ca1e44356ce6c5867a2fc" title="Mover.isState" alt="" coords="393,271,503,297"/>
+<area shape="rect" id="node4" href="$dc/d06/class_mover.html#adf476a60dad6e0feb9bedb3f6af313b5" title="Mover.getCell" alt="" coords="643,556,751,583"/>
+<area shape="rect" id="node5" href="$dd/d11/class_cell.html#aac3ac473652b817fe344534f4bec7e6f" title="Cell.getState" alt="" coords="395,68,501,95"/>
+<area shape="rect" id="node6" href="$da/de8/class_move_cellular_automata.html#a9347828c2d21393d75afa8b5f0409794" title="MoveCellularAutomata.add\lToRemove" alt="" coords="351,373,545,414"/>
+<area shape="rect" id="node7" href="$de/d70/class_fish.html#a3968096ff7e7ecdfc63783894c3bda33" title="Fish.surviveTurn" alt="" coords="387,439,509,465"/>
+<area shape="rect" id="node8" href="$d2/d40/class_cellular_automata.html#a34ceed434c942d34ff03169b92684726" title="CellularAutomata.getGrid" alt="" coords="356,489,540,516"/>
+<area shape="rect" id="node9" href="$da/d74/class_grid.html#a43e84876ecfc5265a5e37a39e64e794e" title="Grid.findNeighbors" alt="" coords="378,119,518,145"/>
+<area shape="rect" id="node15" href="$da/de8/class_move_cellular_automata.html#a51d0684d1393a9ad01e371119f37c039" title="MoveCellularAutomata.get\lRandomCell" alt="" coords="352,541,544,582"/>
+<area shape="rect" id="node16" href="$da/de8/class_move_cellular_automata.html#a90e79ebdb8723f3674bd90a264a143b8" title="MoveCellularAutomata.move" alt="" coords="345,657,551,684"/>
+<area shape="rect" id="node22" href="$de/d70/class_fish.html#a01a85441ee77bd4ea5c517daadbd913f" title="Fish.canBreed" alt="" coords="393,321,503,348"/>
+<area shape="rect" id="node23" href="$d0/db0/class_wator.html#a7b49e449f5277f27fc84287bc5e88357" title="Wator.breed" alt="" coords="399,169,497,196"/>
+<area shape="rect" id="node10" href="$da/d74/class_grid.html#a33b84a1d6b40a447bdd4a33fa3daf555" title="Grid.getNeighbors" alt="" coords="628,107,767,133"/>
+<area shape="rect" id="node11" href="$da/d74/class_grid.html#ab87098d7bfaf1eaf367e4342a5bce0ae" title="Grid.checkBounds" alt="" coords="843,157,981,184"/>
+<area shape="rect" id="node12" href="$dd/d11/class_cell.html#a4725094202cf38c727f2adcc3cf8b96f" title="Cell.getPosX" alt="" coords="861,5,963,32"/>
+<area shape="rect" id="node13" href="$dd/d11/class_cell.html#ac445ab365d1ec19483e98841be73d11e" title="Cell.getPosY" alt="" coords="862,56,962,83"/>
+<area shape="rect" id="node14" href="$da/d74/class_grid.html#a669941947881f795a6ab4a70adf05172" title="Grid.getTorusPoint" alt="" coords="843,107,981,133"/>
+<area shape="rect" id="node17" href="$dc/d06/class_mover.html#aa8711e427647a7c980d42a89588270ba" title="Mover.getState" alt="" coords="852,464,972,491"/>
+<area shape="rect" id="node18" href="$dc/d06/class_mover.html#a074c563641e724872aa0274000ddb0a0" title="Mover.move" alt="" coords="647,607,747,633"/>
+<area shape="rect" id="node19" href="$dd/d11/class_cell.html#aaaf321e273ef5b6ac3fae80e36d19629" title="Cell.setState" alt="" coords="645,708,749,735"/>
+<area shape="rect" id="node20" href="$dd/d11/class_cell.html#a6ddc434a1826fac1599a7d901ff2d162" title="Cell.setNextState" alt="" coords="845,683,979,709"/>
+<area shape="rect" id="node21" href="$dd/d11/class_cell.html#adfc3c76d1f230a143057441eb6eabb62" title="Cell.update" alt="" coords="865,733,959,760"/>
+<area shape="rect" id="node24" href="$da/de8/class_move_cellular_automata.html#a9be2acf22d28c48fe4551940af37e454" title="MoveCellularAutomata.add\lNewMover" alt="" coords="600,246,795,287"/>
+<area shape="rect" id="node25" href="$de/d70/class_fish.html#a8a5f5246900a3d430f62267e5346384b" title="Fish.breed" alt="" coords="654,195,741,221"/>
+<area shape="rect" id="node26" href="$de/d70/class_fish.html#af61b5d1f8872e5e3f744c1593d70ac69" title="Fish.Fish" alt="" coords="875,208,949,235"/>
+<area shape="rect" id="node28" href="$d5/dec/class_shark.html#a35a57f2ce82d678f366e4e9b8a763773" title="Shark.spendEnergy" alt="" coords="375,809,521,836"/>
+<area shape="rect" id="node29" href="$d5/dec/class_shark.html#ade5d1220d23679c1a074fb85dd921f27" title="Shark.checkEnergy" alt="" coords="376,860,520,887"/>
+<area shape="rect" id="node30" href="$d5/dec/class_shark.html#a84f39127419daa16b9c539eab53bf05e" title="Shark.eat" alt="" coords="406,759,490,785"/>
+</map>
