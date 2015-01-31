@@ -1,0 +1,5 @@
+<map id="CellularAutomata.updateNextGen" name="CellularAutomata.updateNextGen">
+<area shape="rect" id="node2" href="$d2/d40/class_cellular_automata.html#adad8aede6a18cf243c40492a96316a4b" title="CellularAutomata.checkRules" alt="" coords="303,5,510,32"/>
+<area shape="rect" id="node3" href="$d2/d40/class_cellular_automata.html#ab39b5164764f20382801aa9a4663eb4b" title="CellularAutomata.handleUpdate" alt="" coords="293,56,520,83"/>
+<area shape="rect" id="node4" href="$d2/d40/class_cellular_automata.html#a34ceed434c942d34ff03169b92684726" title="CellularAutomata.getGrid" alt="" coords="568,56,752,83"/>
+</map>

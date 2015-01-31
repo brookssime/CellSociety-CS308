@@ -1,0 +1,12 @@
+<map id="CellularAutomata.handleUpdate" name="CellularAutomata.handleUpdate">
+<area shape="rect" id="node2" href="$d8/d84/class_game_of_life.html#aab00ca120baa15de020654ba9fe5d6d4" title="GameOfLife.setUpInitialConfig" alt="" coords="294,5,506,32"/>
+<area shape="rect" id="node4" href="$d9/df1/class_fire.html#afd16418c5ea360c815613862a4ea1c33" title="Fire.setUpInitialConfig" alt="" coords="321,56,479,83"/>
+<area shape="rect" id="node6" href="$d2/d40/class_cellular_automata.html#a8f4c8a2f32137db67dd31f5afb4b62c3" title="CellularAutomata.updateNextGen" alt="" coords="281,107,519,133"/>
+<area shape="rect" id="node3" href="$d8/d84/class_game_of_life.html#ac0303caccaa6837b908bc295d75addc8" title="GameOfLife.GameOfLife" alt="" coords="580,5,756,32"/>
+<area shape="rect" id="node5" href="$d9/df1/class_fire.html#a70453ac9610d3591355b1f07432f6fc8" title="Fire.Fire" alt="" coords="633,56,703,83"/>
+<area shape="rect" id="node7" href="$df/df8/class_cell_society_view.html#ad52b914fa03b45d8bc9d64fc407660f3" title="CellSocietyView.updateView" alt="" coords="569,107,767,133"/>
+<area shape="rect" id="node8" href="$df/df8/class_cell_society_view.html#a7bdbd4e8fd3893e672eb22015603f6dc" title="CellSocietyView.makeButtons" alt="" coords="817,81,1028,108"/>
+<area shape="rect" id="node10" href="$df/df8/class_cell_society_view.html#a3ebde62294a33f32af2abf897e1be666" title="CellSocietyView.makeTimeline" alt="" coords="816,132,1029,159"/>
+<area shape="rect" id="node9" href="$df/df8/class_cell_society_view.html#abe7bcd77ca077f5e5e0f9946eea96406" title="CellSocietyView.CellSocietyView" alt="" coords="1078,81,1301,108"/>
+<area shape="rect" id="node11" href="$d0/d4b/class_main.html#a7595d13c514a02c35aca322dd91d2063" title="Main.start" alt="" coords="1146,132,1233,159"/>
+</map>
