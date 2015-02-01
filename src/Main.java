@@ -1,38 +1,30 @@
-
-
-import javafx.animation.Animation;
-import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
-import javafx.geometry.Rectangle2D;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-
 public class Main extends Application {
+<<<<<<< HEAD
 	private int FRAME_TIME = 10000;
 	private CellularAutomata myCA;
-	//hello world
 	
 	
+	
+=======
+	private int FRAME_TIME = 2000;
+
+>>>>>>> a2ce82a45356942ef319ccb45037e13e27a04392
 	@Override
 	public void start(Stage s) throws Exception {
-		myCA = new GameOfLife();
-		s.setTitle(myCA.getName());
-		s.setScene(myCA.init(100, 400, 400));
-		Screen screen = Screen.getPrimary();
-	    Rectangle2D bounds = screen.getVisualBounds();
-	    s.setWidth(bounds.getWidth() / 2);
-	    s.setHeight(bounds.getHeight() / 2);
 
+		CellularAutomata myCA = new Wator(100);
+		CellSocietyView display = new CellSocietyView(myCA, 300, 300, "square");
+		s.setTitle(myCA.getName());
+		s.setScene(display.getScene());
 		s.show();
-		
-		
-	    
-		
-		Timeline animation = myCA.makeTimeline(FRAME_TIME);
+
+		Timeline animation = display.makeTimeline(FRAME_TIME);
 		animation.play();
-		
+
 	}
 
 	public static void main(String[] args) {

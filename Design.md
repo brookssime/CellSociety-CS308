@@ -3,7 +3,7 @@ CS 308: Cell Society Plan
 
 ###Introduction
 
-“A cellular automaton is a model of a system of “cell” objects.” – The Nature of Code, in this project, we will design a grid system capable of hosting four different types of cellular automata – Schelling’s model of segregation, Wa-Tor World model of predator-prey relationships, spread of fire model, and Conway’s Game of Life. The basis of these models relies on the formation of grids, cells, and locality. Each model has a grid with cells that are affected by their neighbors based on a certain set of rules. For example, in Conway’s Game of Life, every cell either is *alive* or *dead*. For every cell, if there are 2 or 3 cells surrounding them that are alive, than that cell becomes alive. Otherwise, it remains dead or dies.
+â€œA cellular automaton is a model of a system of â€œcellâ€� objects.â€� â€“ The Nature of Code, in this project, we will design a grid system capable of hosting four different types of cellular automata â€“ Schellingâ€™s model of segregation, Wa-Tor World model of predator-prey relationships, spread of fire model, and Conwayâ€™s Game of Life. The basis of these models relies on the formation of grids, cells, and locality. Each model has a grid with cells that are affected by their neighbors based on a certain set of rules. For example, in Conwayâ€™s Game of Life, every cell either is *alive* or *dead*. For every cell, if there are 2 or 3 cells surrounding them that are alive, than that cell becomes alive. Otherwise, it remains dead or dies.
 
 The primary design goal will be to create a grid that handles all of the models at any grid size. Its flexibility will be crucial in creating useful simulations of the different CA. As we lay down the basic groundwork for this data structure, it will be necessary to be able to add rules to each game that allow for increased complexity of each model. The architecture of the rules must be as open as possible as we move through the project in order to properly create large and complex models.
 
@@ -34,12 +34,12 @@ This section actually consists of several classes. Each one will be written for 
 
 ###User Interface
 
-The user interface will open up a Menu Scene from which 3 main options will be given to the user as well as a “go” button. In the first, one of the four types of games will be chosen from a menu. In the second, a number will be typed in that will create an n-by-n grid. This option will have an upper cap. In the third, the frame rate of the model will be chosen with options for slow, normal, and fast.
+The user interface will open up a Menu Scene from which 3 main options will be given to the user as well as a â€œgoâ€� button. In the first, one of the four types of games will be chosen from a menu. In the second, a number will be typed in that will create an n-by-n grid. This option will have an upper cap. In the third, the frame rate of the model will be chosen with options for slow, normal, and fast.
 
 ![Image of Menu Screen]
 (http://i.imgur.com/2X8nAcg.jpg)
 
-After each field has a value, the go button will move to the model. If not all fields have values; the interface will present an error message. In the model, the grid will be shown with a side bar to its right. On the side bar, there will be five buttons – a play button, a pause button, a next frame button, which will move the grid one generation forward from the paused state, a file upload button that will open up the option to upload a scenario for the model, and a quit button that will return the user to the main menu.
+After each field has a value, the go button will move to the model. If not all fields have values; the interface will present an error message. In the model, the grid will be shown with a side bar to its right. On the side bar, there will be five buttons â€“ a play button, a pause button, a next frame button, which will move the grid one generation forward from the paused state, a file upload button that will open up the option to upload a scenario for the model, and a quit button that will return the user to the main menu.
 
 ![Image of Play Screen]
 (http://i.imgur.com/FdRewVD.jpg)
@@ -55,8 +55,8 @@ As such, it may be helpful to have the Cell class extend a Shape or Group so tha
 The Cell class will have a method update which updates both its state and its current color.  
 
 **Grid**
-As instance variables, this class will have a String name, an int[][] which determines which cells are neighbors. For example, if {0,1} is an element in the array. Then we know the cell at position (i, j+1) is a neighbor of (i, j).
-We will also be using a 2D Cell[][] to store all the cells are in what position. 
+As instance variables, this class will have a String name, an 2D int array which determines which cells are neighbors. For example, if {0,1} is an element in the array. Then we know the cell at position (i, j+1) is a neighbor of (i, j).
+We will also be using a 2D Cell array to store all the cells are in what position. 
 This class will have a getNeighbors(Cell) which returns an ArrayList of cells that are its neighbors. 
 The Grid will be have a checkRules() function which loops over all cells and determines which changes to make.
 The handleUpdate() method will then apply those changes. We can have a method update() which calls both of these functions.
@@ -80,6 +80,7 @@ We can use one function makeUIButton(String, EventHandler) to handle the create 
 There should also be a button that opens up a file chooser. From there we can choose a file which would then be parsed by the ReadFile class.
 
 
+
 ###Design Considerations
 One decision the group made was not to include a States class as of now. Had one been made, a States class most likely would've included two ArrayLists. One of which will contains the cells that currently hold the cell and one that holds the cells that will be in that state in the next run. This class would allow you to add to the ArrayList for updating in addition to updating all the cells. As our current method for updating cells appears to work, we decided not to go with this method since creating State classes may add to memory. An advantage is that it creates another object which may be used for other activities. It also gives an easy way to count how many cells are in each state in addition to accessing cells of a certain state.
 Overall since it seems not needed for now, we decided not to incorporate into the project but this may change when we start coding.
@@ -89,4 +90,5 @@ This way of organizing the project also allows us to play the various games with
 
 ###Team Responsibilities
 We will divide each section in sprint 2 to a different person. However most coding will probably be done together and thus each section will have contributions from each person. Each person will be expected to review the other member's code. In addition, we will review as a group when closing an issue or merge problem.
+
 
