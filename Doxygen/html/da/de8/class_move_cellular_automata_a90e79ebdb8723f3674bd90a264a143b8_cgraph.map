@@ -1,8 +1,0 @@
-<map id="MoveCellularAutomata.move" name="MoveCellularAutomata.move">
-<area shape="rect" id="node2" href="$dc/d06/class_mover.html#adf476a60dad6e0feb9bedb3f6af313b5" title="Mover.getCell" alt="" coords="267,5,375,32"/>
-<area shape="rect" id="node3" href="$dc/d06/class_mover.html#aa8711e427647a7c980d42a89588270ba" title="Mover.getState" alt="" coords="261,56,381,83"/>
-<area shape="rect" id="node4" href="$dc/d06/class_mover.html#a074c563641e724872aa0274000ddb0a0" title="Mover.move" alt="" coords="271,107,371,133"/>
-<area shape="rect" id="node5" href="$dd/d11/class_cell.html#aaaf321e273ef5b6ac3fae80e36d19629" title="Cell.setState" alt="" coords="269,157,373,184"/>
-<area shape="rect" id="node6" href="$dd/d11/class_cell.html#a6ddc434a1826fac1599a7d901ff2d162" title="Cell.setNextState" alt="" coords="430,132,565,159"/>
-<area shape="rect" id="node7" href="$dd/d11/class_cell.html#adfc3c76d1f230a143057441eb6eabb62" title="Cell.update" alt="" coords="450,183,545,209"/>
-</map>
