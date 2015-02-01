@@ -16,8 +16,8 @@ public class Main extends Application {
 		
 		
 		
-		CellularAutomata myCA = new Wator(XMLReader.cellNumber);
-		CellSocietyView display = new CellSocietyView(myCA,XMLReader.gameSize, XMLReader.gameSize, "square");
+		CellularAutomata myCA = new Wator(50);
+		CellSocietyView display = new CellSocietyView(myCA,300,300, "square");
 		s.setTitle(myCA.getName());
 		s.setScene(display.getScene());
 		s.show();
