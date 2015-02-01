@@ -13,7 +13,8 @@ import javafx.util.Duration;
 
 
 public class CellSocietyView {
-    private static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
+
+    public static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
 	
 	private CellularAutomata myCA;
 	private GridDrawer myGridView;

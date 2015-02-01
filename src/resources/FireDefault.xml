@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<Simulation>
+		   <Parameters name="Fire"> 
+		   			<Author></Author>
+		   			<GameSize>500</GameSize>
+		   			<CellNumber>50</CellNumber>
+		   			<GridType>Grid</GridType>
+		   </Parameters>
+</Simulation>
