@@ -8,13 +8,16 @@ public class Main extends Application {
 	private CellularAutomata myCA;
 	
 	
+	
 
 
 	@Override
 	public void start(Stage s) throws Exception {
-
-		CellularAutomata myCA = new Wator(100);
-		CellSocietyView display = new CellSocietyView(myCA, 300, 300, "square");
+		
+		
+		
+		CellularAutomata myCA = new Wator(XMLReader.cellNumber);
+		CellSocietyView display = new CellSocietyView(myCA,XMLReader.gameSize, XMLReader.gameSize, "square");
 		s.setTitle(myCA.getName());
 		s.setScene(display.getScene());
 		s.show();
@@ -25,6 +28,7 @@ public class Main extends Application {
 	}
 
 	public static void main(String[] args) {
+		
 		launch(args);
 	}
 
