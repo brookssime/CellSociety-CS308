@@ -8,13 +8,9 @@ public class Wator extends MoveCellularAutomata {
 	private Color shark = Color.PURPLE;
 	private Color fish = Color.YELLOW;
 	
-	private final int breedTime =5;
-	private final int fishEnergy =5;
-	
-	public Wator(int size){
-		super("Wator", size, new int[][] {{-1,0}, {1,0}, {0, 1}, {0, -1}} , 0);
+	public Wator(){
+		super("Wator");
 		setEmptyColor(water);
-		setUpInitialConfig();
 	}
 
 	public void ruleOne(Fish f) {
@@ -24,44 +20,34 @@ public class Wator extends MoveCellularAutomata {
 		
 		Cell current = f.getCell();
 		if (current.getState() != fish){
-			addToRemove(f);
+			removeMover(f);
 			return;
 		}
 		
 		f.surviveTurn();
 		//finds possible moves
 		ArrayList<Cell> possibleMoves = getGrid().findNeighbors(current, water);
-
 		
-		if (possibleMoves.isEmpty()){
+		move(f, possibleMoves);
+		breedIfCan(f, current);
+	}
+
+	public void breedIfCan(Fish f, Cell current){
+		if (!f.canBreed()||f.getCell() == current){
 			return;
 		}
-		
-		Cell end = getRandomCell(possibleMoves);
-		move(f, end);
-		if (f.canBreed(breedTime)){
-			breed(f, current);
-		}
-	}
-	
-	
-
-	public void breed(Fish f, Cell current){
 		Fish born = f.breed(current);
-		addNewMover(born);
+		addMover(born);
 	}
 	
 	public void ruleTwo(Fish f){
 		if(!f.isState(shark)){
 			return ;
 		}
-		Shark s = (Shark) f;
-		
-		Cell current = s.getCell();
-		s.surviveTurn();
-		s.spendEnergy();
-		if (s.checkEnergy()){
-			addToRemove(s);
+		Cell current = f.getCell();
+		f.surviveTurn();
+		if (f.checkEnergy()){
+			removeMover(f);
 			current.setState(water);
 			return;
 		}
@@ -70,21 +56,24 @@ public class Wator extends MoveCellularAutomata {
 		ArrayList<Cell> otherMoves = getGrid().findNeighbors(current, water);
 		
 		if (!fishToEat.isEmpty()){
-			Cell eatenFish = getRandomCell(fishToEat);
-			move(s, eatenFish);
-			s.eat(fishEnergy);
+			move(f, fishToEat);
+			f.eat();
 		}
+		
 		else if(!otherMoves.isEmpty()){
-			Cell moveTo = getRandomCell(otherMoves);
-			move(s, moveTo);
+			move(f, otherMoves);
 		}
 		else{
 			return;
 		}
-		
-		if (s.canBreed(breedTime)){
-			breed(s, current);
+		move(f, fishToEat);
+		if (f.getCell()!= current){
+			f.eat();
 		}
+		else{
+			move(f, otherMoves);
+		}
+		breedIfCan(f, current);
 	}
 
 	@Override
@@ -93,15 +82,14 @@ public class Wator extends MoveCellularAutomata {
 			for (Cell cell: c){
 				double x = getRandomDouble();
 				if (x <0.25){
-					addMover(new Fish(cell, fish));
+					addMover(new Fish(cell, fish, (int) (5*getRandomDouble()), (int) (5*getRandomDouble())));
 				}
 				else if(x <0.5){
-					addMover(new Shark(cell, shark, (int) (5*getRandomDouble())));
+					addMover(new Fish(cell, shark, (int) (5*getRandomDouble()), (int) (5*getRandomDouble())));
 				}
 				else{
-					cell.setNextState(water);
+					cell.setState(water);
 				}
-				cell.update();
 			}
 		}
 	}
@@ -112,5 +100,4 @@ public class Wator extends MoveCellularAutomata {
 		ruleOne(f);
 		ruleTwo(f);
 	}
-
 }

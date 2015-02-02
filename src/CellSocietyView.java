@@ -1,9 +1,6 @@
 import java.io.File;
-import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
 import java.util.ResourceBundle;
-
-import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
 
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
@@ -15,44 +12,81 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
-import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class CellSocietyView {
 
 	private static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
-
+	
 	private static final int FRAME_RATE = 2000;
-
-
+	
 	private CellularAutomata myCA;
 	private GridDrawer myGridView;
 	private Timeline myAnimation;
 	private Scene myScene;
+	private int myWidth;
+	private int myHeight;
 	private ResourceBundle myButtonNames;
 	private BorderPane myRoot;
+	private HashMap<String, CellularAutomata> gameTypes;
+	private HashMap<String, Grid> gridTypes;
+	private HashMap<String, int[][]> nbhoodTypes;
 
 	public CellSocietyView(int width, int height, String shape) {
 		myRoot = new BorderPane();
 		myButtonNames = ResourceBundle.getBundle(DEFAULT_RESOURCE_PACKAGE
 				+ "UIButtons");
+		setUp();
+		myWidth = width;
+		myHeight = height;
 		myRoot.setCenter(new Rectangle(width, height));
-		myRoot.setRight(makeButtons());;
+		myRoot.setRight(makeLoadButton());;
 		myScene = new Scene(myRoot);
 	}
-
+	
+	private void setUp(){
+		setUpGameTypes();
+		setUpGridTypes();
+		setUpNbhoodTypes();
+	}
+	
+	private void setUpGameTypes(){
+		gameTypes = new HashMap<>();
+		addGameType(new GameOfLife());
+		addGameType(new Fire());
+		addGameType(new Segregation());
+		addGameType(new Wator());
+	}
+	
+	private void addGameType(CellularAutomata ca){
+		gameTypes.put(ca.getName(), ca);
+	}
+	
+	private void setUpGridTypes(){
+		gridTypes = new HashMap<>();
+		gridTypes.put("default", new Grid());
+		gridTypes.put("torus", new TorusGrid());
+	}
+	
+	private void setUpNbhoodTypes(){
+		nbhoodTypes = new HashMap<>();
+		nbhoodTypes.put("Moore", new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}, {-1, -1}, {-1, 1}, {1, -1}, {1, 1}});
+		nbhoodTypes.put("nearest", new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}});
+	}
+	
 	public Scene getScene() {
 		return myScene;
 	}
 
-	public void loadNewFile() {
+	private void loadNewFile() {
 		if (myAnimation != null) {
 			myAnimation.stop();
 		}
 		JFileChooser chooser = new JFileChooser(System.getProperty("user.dir"));
-		FileNameExtensionFilter filter = new FileNameExtensionFilter("txt",
-				"txt");
-		chooser.setFileFilter(filter);
+		chooser.setFileFilter(new FileNameExtensionFilter("XML","xml"));
 		int returnVal = chooser.showOpenDialog(null);
 		if (returnVal != JFileChooser.APPROVE_OPTION) {
 			return;
@@ -60,31 +94,23 @@ public class CellSocietyView {
 		parseFile(chooser.getSelectedFile());
 	}
 
-	public void parseFile(File file) {
-		int gameSize = 500;
+	private void parseFile(File file) {
 		int cellNum = 20;
+		String neighborhood = "Moore";
+		double prob = .3;
+		String gridType = "torus";
 		String gameName = "Wator";
-		makeCA(gameName, cellNum);
+		makeCAGame(gameName, cellNum, neighborhood, prob, gridType);
 	}
 	
-	public void makeCA(String gameName, int cellNum){
-		myCA = getCAFromString(gameName, cellNum);
+	private void makeCAGame(String gameName, int cellNum, String neighborhood, double prob, String gridType){
+		Grid grid = gridTypes.get(gridType).init(cellNum, nbhoodTypes.get(neighborhood));
+		myCA = gameTypes.get(gameName).init(grid, prob);
 		myGridView = new GridDrawer(myCA.getGrid(), "square");
-		myRoot.setCenter(myGridView.makeGrid(300, 300));
+		myRoot.setCenter(myGridView.makeGrid(myWidth, myHeight));
+		myRoot.setRight(makeButtons());
 		myGridView.updateNextGen();
 		makeTimeline(FRAME_RATE);
-	}
-	
-	public CellularAutomata getCAFromString(String gameName, int cellNum) {
-		try {
-			return (CellularAutomata) Class.forName(gameName).getConstructors()[0]
-					.newInstance(cellNum);
-		} catch (InstantiationException | IllegalAccessException
-				| IllegalArgumentException | InvocationTargetException
-				| SecurityException | ClassNotFoundException e) {
-			System.out.println("Not valid game type");
-		}
-		return null;
 	}
 
 	// runs next generation
@@ -93,14 +119,18 @@ public class CellSocietyView {
 		myGridView.updateNextGen();
 	}
 
-	public void makeTimeline(int time) {
+	private void makeTimeline(int time) {
 		myAnimation = new Timeline();
 		myAnimation.setCycleCount(Animation.INDEFINITE);
 		KeyFrame frame = new KeyFrame(Duration.millis(time), e -> updateView());
 		myAnimation.getKeyFrames().add(frame);
 		myAnimation.play();
 	}
-
+	
+	private Button makeLoadButton(){
+		return makeUIButton(myButtonNames.getString("LoadCommand"), e-> loadNewFile());
+	}
+	
 	private VBox makeButtons() {
 		VBox buttons = new VBox();
 		Button play = makeUIButton(myButtonNames.getString("PlayCommand"),
@@ -114,9 +144,8 @@ public class CellSocietyView {
 				e -> myAnimation.setRate(myAnimation.getRate() * .8));
 		Button step = makeUIButton(myButtonNames.getString("StepCommand"),
 				e -> updateView());
-		Button newFile = makeUIButton(myButtonNames.getString("LoadCommand"), e -> loadNewFile());
-		buttons.getChildren().addAll(play, pause, fastForward, slowDown, step,
-				newFile);
+		Button newFile = makeLoadButton();
+		buttons.getChildren().addAll(newFile, play, pause, fastForward, slowDown, step);
 		return buttons;
 	}
 
