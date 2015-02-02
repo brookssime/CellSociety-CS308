@@ -1,10 +1,10 @@
 
 public class TorusGrid extends Grid {
 
-	public TorusGrid(int size, int[][] neighborhood) {
-		super(size, neighborhood);
+	public TorusGrid() {
+		super();
 	}
-	
+
 	public int getTorusPoint(int x){
 		int size = getGridSize();
 		int result = x% size;
