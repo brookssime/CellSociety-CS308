@@ -1,0 +1,8 @@
+<map id="MoveCellularAutomata.addMover" name="MoveCellularAutomata.addMover">
+<area shape="rect" id="node2" href="$d0/db0/class_wator.html#a48bebe2ccefc55d2e433578eb0c22684" title="Wator.breedIfCan" alt="" coords="271,31,401,57"/>
+<area shape="rect" id="node6" href="$da/d1e/class_segregation.html#aa98703181490b07669037a419e52041c" title="Segregation.setUpInitial\lConfig" alt="" coords="249,82,423,123"/>
+<area shape="rect" id="node7" href="$d0/db0/class_wator.html#a4ea39aef9488c7e03af93e711fe2e61e" title="Wator.setUpInitialConfig" alt="" coords="250,148,422,175"/>
+<area shape="rect" id="node3" href="$d0/db0/class_wator.html#a0afccb8f97e33c1d21e51ee1a3f4922b" title="Wator.ruleOne" alt="" coords="473,5,583,32"/>
+<area shape="rect" id="node5" href="$d0/db0/class_wator.html#aa8dba59120d9d6d7d7521f3a4ee7b454" title="Wator.ruleTwo" alt="" coords="475,56,581,83"/>
+<area shape="rect" id="node4" href="$d0/db0/class_wator.html#a422810cdcb035633301b3469cbee5e34" title="Wator.checkRules" alt="" coords="632,31,763,57"/>
+</map>
