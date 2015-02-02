@@ -1,6 +1,0 @@
-<map id="Mover.move" name="Mover.move">
-<area shape="rect" id="node2" href="$da/de8/class_move_cellular_automata.html#a90e79ebdb8723f3674bd90a264a143b8" title="MoveCellularAutomata.move" alt="" coords="155,31,362,57"/>
-<area shape="rect" id="node3" href="$d0/db0/class_wator.html#a0afccb8f97e33c1d21e51ee1a3f4922b" title="Wator.ruleOne" alt="" coords="411,5,522,32"/>
-<area shape="rect" id="node5" href="$d0/db0/class_wator.html#aa8dba59120d9d6d7d7521f3a4ee7b454" title="Wator.ruleTwo" alt="" coords="413,56,520,83"/>
-<area shape="rect" id="node4" href="$d0/db0/class_wator.html#a422810cdcb035633301b3469cbee5e34" title="Wator.checkRules" alt="" coords="571,31,701,57"/>
-</map>

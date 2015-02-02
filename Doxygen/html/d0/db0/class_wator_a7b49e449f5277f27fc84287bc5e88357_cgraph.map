@@ -1,6 +1,0 @@
-<map id="Wator.breed" name="Wator.breed">
-<area shape="rect" id="node2" href="$da/de8/class_move_cellular_automata.html#a9be2acf22d28c48fe4551940af37e454" title="MoveCellularAutomata.add\lNewMover" alt="" coords="152,5,347,46"/>
-<area shape="rect" id="node3" href="$de/d70/class_fish.html#a8a5f5246900a3d430f62267e5346384b" title="Fish.breed" alt="" coords="206,71,293,97"/>
-<area shape="rect" id="node4" href="$de/d70/class_fish.html#af61b5d1f8872e5e3f744c1593d70ac69" title="Fish.Fish" alt="" coords="417,45,492,72"/>
-<area shape="rect" id="node5" href="$dc/d06/class_mover.html#aa8711e427647a7c980d42a89588270ba" title="Mover.getState" alt="" coords="395,96,515,123"/>
-</map>
