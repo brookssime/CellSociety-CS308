@@ -19,9 +19,11 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class CellSocietyView {
+
 	private static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
 
 	private static final int FRAME_RATE = 2000;
+
 
 	private CellularAutomata myCA;
 	private GridDrawer myGridView;
