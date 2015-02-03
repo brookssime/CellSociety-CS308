@@ -4,8 +4,8 @@ import javafx.scene.paint.Color;
 
 
 public class GameOfLife extends CellularAutomata{
-	private Color alive = Color.BLACK;
-	private Color dead = Color.WHITE;
+	private Color alive;
+	private Color dead;
 	
 	public GameOfLife(){
 		super("Game of Life");
@@ -16,8 +16,6 @@ public class GameOfLife extends CellularAutomata{
 		alive = Color.web(colors[0]); 
 		dead = Color.web(colors[1]);
 	}
-	
-
 	
 	public void setUpInitialConfig(){
 		for (Cell[] c: getGrid().getCells()){
