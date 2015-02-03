@@ -6,7 +6,7 @@
 		   <Grid>
 		   		<cellNum>50</cellNum>
 		   		<GridType>torus</GridType>
-		   		<neighborhood>Moore 8</neighborhood>
+		   		<neighborhood>nearest</neighborhood>
 		   </Grid>
 		   <number>
 		   		<breedTime>5</breedTime>

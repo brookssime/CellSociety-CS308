@@ -3,6 +3,9 @@ import java.util.Map;
 
 import javafx.scene.paint.Color;
 
+/**
+ * Creates rules for Wator simulation
+ */
 
 public class Wator extends MoveCellularAutomata {
 	private Color water;
@@ -14,7 +17,7 @@ public class Wator extends MoveCellularAutomata {
 	
 	public Wator(){
 		super("Wator");
-		setEmptyColor(water);
+		
 	}
 	
 	public void init(Grid grid, Map<String, Integer> parameters, String[] colors){
@@ -22,6 +25,7 @@ public class Wator extends MoveCellularAutomata {
 		water = Color.web(colors[0]);
 		shark = Color.web(colors[2]);
 		fish = Color.web(colors[1]);
+		setEmptyColor(water);
 		startEnergy = parameters.get("startEnergy");
 		fishEnergy = parameters.get("fishEnergy");
 		breedTime = parameters.get("breedTime");
@@ -80,15 +84,15 @@ public class Wator extends MoveCellularAutomata {
 	}
 
 	@Override
-	public void setUpInitialConfig() {
+	public void setUpInitialConfig(String[] colors, double[] probs) {
 		for (Cell[] c: getGrid().getCells()){
 			for (Cell cell: c){
 				double x = getRandomDouble();
-				if (x <0.25){
-					addMover(new Fish(cell, fish, (int) (startEnergy*getRandomDouble()), (int) (5*getRandomDouble())));
+				if (x <probs[1]){
+					addMover(new Fish(cell, fish, 0, startEnergy));
 				}
-				else if(x <0.5){
-					addMover(new Fish(cell, shark, (int) (startEnergy*getRandomDouble()), (int) (5*getRandomDouble())));
+				else if(x < probs[1] + probs[2]){
+					addMover(new Fish(cell, shark, 0, startEnergy));
 				}
 				else{
 					cell.setState(water);
@@ -103,4 +107,6 @@ public class Wator extends MoveCellularAutomata {
 		ruleOne(f);
 		ruleTwo(f);
 	}
+
+
 }

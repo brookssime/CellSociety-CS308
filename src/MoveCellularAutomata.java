@@ -3,6 +3,9 @@ import java.util.Collections;
 
 import javafx.scene.paint.Paint;
 
+/**
+ * Abstract for simulations that need to move cell states
+ */
 
 public abstract class MoveCellularAutomata extends CellularAutomata {
 
