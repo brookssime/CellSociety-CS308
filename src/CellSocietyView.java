@@ -1,5 +1,3 @@
-import java.io.File;
-import java.util.HashMap;
 import java.util.ResourceBundle;
 
 import javafx.animation.Animation;
@@ -14,8 +12,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
-import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
+
 
 
 /**
@@ -26,8 +23,7 @@ public class CellSocietyView {
 
 	private static final double ACCELERATE_RATE = 1.25;
 	private static final double SLOW_RATE = .8;
-	private static final int[][] NEAR_NEIGHBORHOOD = new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
-	private static final int[][] MOORE_NEIGHBORHOOD = new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}, {-1, -1}, {-1, 1}, {1, -1}, {1, 1}};
+
 	//resource package contains backend button labels and xml files
 	private static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
 	private static final int FRAME_RATE = 2000;

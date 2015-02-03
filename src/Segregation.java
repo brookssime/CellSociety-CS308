@@ -11,9 +11,9 @@ public class Segregation extends MoveCellularAutomata {
 	
 
 	private ArrayList<Cell> emptyCells;
-	private Color color1 = Color.RED;
-	private Color color2 = Color.BLUE;
-	private Color empty = Color.WHITE;
+	private Color color1;
+	private Color color2;
+	private Color empty;
 	
 	public Segregation(){
 		super("Segregation");
@@ -77,7 +77,7 @@ public class Segregation extends MoveCellularAutomata {
 	
 	private double getSamePercent(Cell cell) {
 		double count = getGrid().findNeighbors(cell, cell.getState()).size();
-		double total = getGrid().findNeighbors(cell, empty).size() + getGrid().findNeighbors(cell, color2).size();
+		double total = getGrid().findNeighbors(cell, color1).size() + getGrid().findNeighbors(cell, color2).size();
 		double samePercent;
 		//avoid division by zero
 		if (total ==0){

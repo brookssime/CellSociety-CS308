@@ -3,14 +3,11 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-	private int FRAME_TIME = 10000;
-	private CellularAutomata myCA;	
 
 	@Override
 	public void start(Stage s) throws Exception {	
 
-		CellularAutomata myCA = new Wator();
-		s.setTitle(myCA.getName());
+		
 		CellSocietyView display = new CellSocietyView(300, 300, "square");
 		s.setScene(display.getScene());
 		s.show();

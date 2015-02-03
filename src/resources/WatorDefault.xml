@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <Simulation>
+
 		   <Type>Wator</Type>
 		   <Author>Brooks Sime, Tony Qiao, and James Mosca</Author>
 		   <Grid>
@@ -18,4 +19,5 @@
 		   		<fishColor color = "yellow">0.25</fishColor>
 		   		<sharkColor color= "purple" >0.25</sharkColor>
 		   </Colors>
+
 </Simulation>
