@@ -3,8 +3,11 @@
 		   <Parameters name="Segregation"> 
 		   			<Author>Brooks Sime, Tony Qiao, and James Mosca</Author>
 		   			<GameSize>500</GameSize>
-		   			<CellNumber>50</CellNumber>
+		   			<cellNum>50</cellNum>
 		   			<GridType>Grid</GridType>
 		   			<prob></prob>
+		   			<empty>COLOR.WHITE</empty>
+		   			<color1>COLOR.BLUE</color1>
+		   			<color2>COLOR.RED</color2>
 		   </Parameters>
 </Simulation>

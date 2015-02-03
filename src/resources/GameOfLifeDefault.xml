@@ -3,7 +3,10 @@
 		   <Parameters name="GameOfLife"> 
 		   			<Author>Brooks Sime, Tony Qiao, and James Mosca</Author>
 		   			<GameSize>500</GameSize>
-		   			<CellNumber>50</CellNumber>
+		   			<cellNum>50</cellNum>
 		   			<GridType>Grid</GridType>
+		   			<neighborhood></neighborhood>
+		   			<alive>COLOR.BLACK</alive>
+		   			<dead>COLOR.WHITE</dead>
 		   </Parameters>
 </Simulation>

@@ -13,10 +13,10 @@ import org.xml.sax.*;
 public class XMLReader {
 	File f = null;
 	Document doc = null;
-	public static int gameSize;
-	public static int cellNumber;
-	public static String gridType;
-	public static String gameName;
+	private static int gameSize;
+	private static int cellNumber;
+	private static String gridType;
+	private static String gameName;
 	
 	public XMLReader() {
 		f = chooseFile();
@@ -59,7 +59,7 @@ public class XMLReader {
 			Node param = Scenario.item(0);
 			Element el = (Element)param;
 			gameSize = Integer.parseInt(getTextValue(el, "GameSize" ));
-			cellNumber = Integer.parseInt(getTextValue(el, "CellNumber"));
+			cellNumber = Integer.parseInt(getTextValue(el, "cellNum"));
 			gridType = getTextValue(el, "GridType");
 			gameName = el.getAttribute("name");
 						
