@@ -5,13 +5,16 @@
 		   			<GameSize>500</GameSize>
 		   			<cellNum>50</cellNum>
 		   			<GridType>torus</GridType>
-		   			<breedTime></breedTime>
-		   			<fishEnergy></fishEnergy>
-		   			<startEnergy></startEnergy>
 		   			<neighborhood>Moore 8</neighborhood>
 		   			<prob></prob>
 		   			<cellNum>20</cellNum>
 		   			<waterColor></waterColor>
 		   			<sharkColor></sharkColor>
 		   </Parameters>
+		<Numbers>
+					
+		   			<breedTime></breedTime>
+		   			<fishEnergy></fishEnergy>
+		   			<startEnergy></startEnergy>
+		
 </Simulation>

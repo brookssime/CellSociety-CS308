@@ -13,10 +13,13 @@ import org.xml.sax.*;
 public class XMLReader {
 	File f = null;
 	Document doc = null;
+
 	private static int gameSize;
 	private static int cellNumber;
 	private static String gridType;
 	private static String gameName;
+
+	
 	
 	public XMLReader() {
 		f = chooseFile();
@@ -31,17 +34,21 @@ public class XMLReader {
 	    int returnVal = chooser.showOpenDialog(null);
 	    if(returnVal == JFileChooser.APPROVE_OPTION) {
 	       f= chooser.getSelectedFile();
-	       return f;
+	     
+	       
 	    }
-	    return null;
+	    return f;
+	   
 	}
 
 	public void parseXML() {
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		try {
 			DocumentBuilder db = dbf.newDocumentBuilder();
-
-			doc = db.parse(f);
+			
+				
+				doc = db.parse(f);
+			
 
 		}catch(ParserConfigurationException pce) {
 			pce.printStackTrace();
@@ -53,6 +60,7 @@ public class XMLReader {
 	}
 	public void parseDocument (){
 		Element docEle = doc.getDocumentElement();
+
 		NodeList Scenario = docEle.getElementsByTagName("Parameters");
 
 		if(Scenario != null && Scenario.getLength() > 0) {
@@ -64,6 +72,7 @@ public class XMLReader {
 			gameName = el.getAttribute("name");
 						
 		}
+
 	}
 
 	private String getTextValue(Element ele, String tagName) {
@@ -77,12 +86,15 @@ public class XMLReader {
 		return textVal;
 	}
 
+
 	public static void main(String[] args) {
 		XMLReader x = new XMLReader();
 		x.parseXML();
 		x.parseDocument();
 		System.out.println(gameName);
 		System.out.println(gridType);
+
+
 	}
 
 }
