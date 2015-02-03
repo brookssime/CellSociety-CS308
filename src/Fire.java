@@ -1,5 +1,8 @@
 import javafx.scene.paint.Color;
 
+/**
+ * Creates rules for Fire simulation
+ */
 
 public class Fire extends CellularAutomata {
 	private Color onFire = Color.RED;
