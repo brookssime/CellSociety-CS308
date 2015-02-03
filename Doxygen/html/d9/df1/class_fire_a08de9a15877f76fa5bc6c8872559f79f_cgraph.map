@@ -1,0 +1,4 @@
+<map id="Fire.ruleOne" name="Fire.ruleOne">
+<area shape="rect" id="node2" href="$dd/d11/class_cell.html#aa625dbd39334a9a13a7bb87c98d5fcbe" title="Cell.isState" alt="" coords="173,5,267,32"/>
+<area shape="rect" id="node3" href="$dd/d11/class_cell.html#a6ddc434a1826fac1599a7d901ff2d162" title="Cell.setNextState" alt="" coords="153,56,287,83"/>
+</map>

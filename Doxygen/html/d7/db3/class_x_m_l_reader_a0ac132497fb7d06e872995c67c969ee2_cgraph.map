@@ -1,0 +1,8 @@
+<map id="XMLReader.XMLReader" name="XMLReader.XMLReader">
+<area shape="rect" id="node2" href="$d7/db3/class_x_m_l_reader.html#a8c0ab8826ba3315ba3899e050967ecfa" title="XMLReader.setUpTypes" alt="" coords="219,56,387,83"/>
+<area shape="rect" id="node3" href="$d7/db3/class_x_m_l_reader.html#ac9e41bf7f824b9068b5c15538f724908" title="XMLReader.setUpGameTypes" alt="" coords="441,5,647,32"/>
+<area shape="rect" id="node6" href="$d7/db3/class_x_m_l_reader.html#a28c3980bfa6ce65624304c89c37d229e" title="XMLReader.setUpGridTypes" alt="" coords="447,56,641,83"/>
+<area shape="rect" id="node7" href="$d7/db3/class_x_m_l_reader.html#a69cb8c74efb5d7b221375ccc232a9f53" title="XMLReader.setUpNbhoodTypes" alt="" coords="435,107,653,133"/>
+<area shape="rect" id="node4" href="$d7/db3/class_x_m_l_reader.html#a73f0ed30c2f1dc7614f7732f7ec868ea" title="XMLReader.addGameType" alt="" coords="701,5,888,32"/>
+<area shape="rect" id="node5" href="$d2/d40/class_cellular_automata.html#ad8e068dc2395ca5598e5e4164ecfe6b2" title="CellularAutomata.getName" alt="" coords="936,5,1133,32"/>
+</map>
