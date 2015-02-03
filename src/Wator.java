@@ -108,5 +108,4 @@ public class Wator extends MoveCellularAutomata {
 		ruleTwo(f);
 	}
 
-
 }

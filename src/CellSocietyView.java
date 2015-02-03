@@ -12,8 +12,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
-
-
 /**
  * Displays the grid and contained cells for each simulation
  */
@@ -23,11 +21,10 @@ public class CellSocietyView {
 	private static final double ACCELERATE_RATE = 1.25;
 	private static final double SLOW_RATE = .8;
 
-	//resource package contains backend button labels and xml files
+	// resource package contains backend button labels and xml files
 	private static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
 	private static final int FRAME_RATE = 2000;
 
-	
 	private CellularAutomata myCA;
 	private GridDrawer myGridView;
 	private Timeline myAnimation;
@@ -38,7 +35,6 @@ public class CellSocietyView {
 	private ResourceBundle myButtonNames;
 	private BorderPane myRoot;
 
-
 	public CellSocietyView(int width, int height, String shape) {
 		myRoot = new BorderPane();
 		myButtonNames = ResourceBundle.getBundle(DEFAULT_RESOURCE_PACKAGE
@@ -48,14 +44,11 @@ public class CellSocietyView {
 		myHeight = height;
 		myReader = new XMLReader();
 		myRoot.setCenter(new Rectangle(width, height));
-		myRoot.setRight(makeLoadButton());;
+		myRoot.setRight(makeLoadButton());
+		;
 		myScene = new Scene(myRoot);
 	}
-	
 
-
-	
-	
 	public Scene getScene() {
 		return myScene;
 	}
@@ -70,19 +63,18 @@ public class CellSocietyView {
 
 	}
 
+	/*
+	 * private void makeCAGame(String gameName, int cellNum, String
+	 * neighborhood, String gridType, String[] colors, int[][][] points){ Grid
+	 * grid = gridTypes.get(gridType).init(cellNum,
+	 * nbhoodTypes.get(neighborhood)); myCA = gameTypes.get(gameName).init(grid,
+	 * parameters, colors, points); myGridView = new GridDrawer(myCA.getGrid(),
+	 * "square"); myRoot.setCenter(myGridView.makeGrid(myWidth, myHeight));
+	 * myRoot.setRight(makeButtons()); myGridView.updateNextGen();
+	 * makeTimeline(FRAME_RATE); }
+	 */
 
-	
-/*	private void makeCAGame(String gameName, int cellNum, String neighborhood, String gridType, String[] colors, int[][][] points){
-		Grid grid = gridTypes.get(gridType).init(cellNum, nbhoodTypes.get(neighborhood));
-		myCA = gameTypes.get(gameName).init(grid, parameters, colors, points);
-		myGridView = new GridDrawer(myCA.getGrid(), "square");
-		myRoot.setCenter(myGridView.makeGrid(myWidth, myHeight));
-		myRoot.setRight(makeButtons());
-		myGridView.updateNextGen();
-		makeTimeline(FRAME_RATE);
-	}*/
-	
-	private void makeCAGame(){
+	private void makeCAGame() {
 		myCA = myReader.makeCA();
 		myGridView = new GridDrawer(myCA.getGrid(), "square");
 		myRoot.setCenter(myGridView.makeGrid(myWidth, myHeight));
@@ -104,12 +96,15 @@ public class CellSocietyView {
 		myAnimation.getKeyFrames().add(frame);
 		myAnimation.play();
 	}
-	
-	private Button makeLoadButton(){
-		return makeUIButton(myButtonNames.getString("LoadCommand"), e-> loadNewFile());
+
+	private Button makeLoadButton() {
+		return makeUIButton(myButtonNames.getString("LoadCommand"),
+				e -> loadNewFile());
 	}
-	
-	//adds buttons as UI on right side of screen
+
+	/** 
+	 * Adds buttons as UI on right side of screen
+	 */
 	private VBox makeButtons() {
 		VBox buttons = new VBox();
 		Button play = makePlayButton();
@@ -118,7 +113,8 @@ public class CellSocietyView {
 		Button slowDown = makeSlowButton();
 		Button step = makeStepButton();
 		Button newFile = makeLoadButton();
-		buttons.getChildren().addAll(newFile, play, pause, fastForward, slowDown, step);
+		buttons.getChildren().addAll(newFile, play, pause, fastForward,
+				slowDown, step);
 		return buttons;
 	}
 
@@ -137,7 +133,8 @@ public class CellSocietyView {
 	private Button makeFFButton() {
 		Button fastForward = makeUIButton(
 				myButtonNames.getString("AccelerateCommand"),
-				e -> myAnimation.setRate(myAnimation.getRate() * ACCELERATE_RATE));
+				e -> myAnimation.setRate(myAnimation.getRate()
+						* ACCELERATE_RATE));
 		return fastForward;
 	}
 
