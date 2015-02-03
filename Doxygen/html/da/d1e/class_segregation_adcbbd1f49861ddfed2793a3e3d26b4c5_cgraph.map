@@ -1,0 +1,7 @@
+<map id="Segregation.Segregation" name="Segregation.Segregation">
+<area shape="rect" id="node2" href="$da/de8/class_move_cellular_automata.html#a17158cd108e1476059d1a07835e888a8" title="MoveCellularAutomata.set\lEmptyColor" alt="" coords="238,5,429,46"/>
+<area shape="rect" id="node3" href="$da/d1e/class_segregation.html#a983021f5ba3fc800655cb0c9de0ba08f" title="Segregation.setUpInitial\lConfig" alt="" coords="246,70,421,111"/>
+<area shape="rect" id="node4" href="$d2/d40/class_cellular_automata.html#a34ceed434c942d34ff03169b92684726" title="CellularAutomata.getGrid" alt="" coords="491,19,675,45"/>
+<area shape="rect" id="node5" href="$d2/d40/class_cellular_automata.html#a3e303e691cc17b9a478a3e0e167a37e6" title="CellularAutomata.getRandom\lDouble" alt="" coords="477,70,688,111"/>
+<area shape="rect" id="node6" href="$da/de8/class_move_cellular_automata.html#a1661ace25a08d9cb4bec54bfde40424e" title="MoveCellularAutomata.add\lMover" alt="" coords="485,135,680,177"/>
+</map>
