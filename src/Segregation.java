@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Map;
 
 import javafx.scene.paint.Color;
 
@@ -11,22 +12,25 @@ public class Segregation extends MoveCellularAutomata {
 	
 	public Segregation(){
 		super("Segregation");
-		setEmptyColor(white);
 		emptyCells = new ArrayList<Cell>();
 	}
-
-	public void setUpInitialConfig(){
-		setUpInitialConfig(0.25, 0.25);
+	
+	public void init(Grid grid, Map<String, Integer> parameters, String[] colors){
+		super.init(grid, parameters, colors);
+		blue = Color.web(colors[1]);
+		red = Color.web(colors[0]);
+		white = Color.web(colors[2]);
+		setEmptyColor(white);
 	}
 	
-	public void setUpInitialConfig(double probA, double probB){
+	public void setUpInitialConfig(String[] colors, double[] probs){
 		for (Cell[] c: getGrid().getCells()){
 			for (Cell cell: c){
 				double x= getRandomDouble();
-				if (x < probA){
+				if (x < probs[0]){		
 					addMover(new Mover(cell, red));
 				}
-				else if (x< probA + probB){
+				else if (x< probs[0]+ probs[1]){		
 					addMover(new Mover(cell, blue));
 				}
 				else{

@@ -34,9 +34,6 @@ public abstract class CellularAutomata {
 		setUpInitialConfig(colors, points);
 		return this;
 	}
-
-	
-	public abstract void setUpInitialConfig();
 	
 	public void setUpInitialConfig(String[] colors, double[] probs){
 		for (Cell[] c: getGrid().getCells()){

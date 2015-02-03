@@ -1,13 +1,18 @@
 <?xml version="1.0"?>
 <Simulation>
-		   <Parameters name="Segregation"> 
-		   			<Author>Brooks Sime, Tony Qiao, and James Mosca</Author>
-		   			<GameSize>500</GameSize>
-		   			<cellNum>50</cellNum>
-		   			<GridType>Grid</GridType>
-		   			<prob></prob>
-		   			<empty>COLOR.WHITE</empty>
-		   			<color1>COLOR.BLUE</color1>
-		   			<color2>COLOR.RED</color2>
-		   </Parameters>
+		   <Type>Segregation</Type>
+		   <Author>Brooks Sime, Tony Qiao, and James Mosca</Author>
+		   <Grid>
+		   		<cellNum>50</cellNum>
+		   		<GridType>default</GridType>
+		   		<neighborhood>Moore 8</neighborhood>
+		   </Grid>
+		   <number>
+				<prob>30</prob>
+		   </number>
+		   <Colors>
+		   		<red color = "red"> 0.1</red>
+		   		<blue color = "blue">0.1</blue>
+		   		<white color= "white">0.8</white>
+		   </Colors>
 </Simulation>
