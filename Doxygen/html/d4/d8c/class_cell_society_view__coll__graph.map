@@ -1,7 +1,0 @@
-<map id="CellSocietyView" name="CellSocietyView">
-<area shape="rect" id="node4" href="$dd/d97/class_grid_drawer.html" title="GridDrawer" alt="" coords="700,107,793,133"/>
-<area shape="rect" id="node5" href="$da/d74/class_grid.html" title="Grid" alt="" coords="424,148,472,175"/>
-<area shape="rect" id="node11" href="$d2/d40/class_cellular_automata.html" title="CellularAutomata" alt="" coords="680,208,813,235"/>
-<area shape="rect" id="node7" href="$dd/d11/class_cell.html" title="Cell" alt="" coords="195,151,240,177"/>
-<area shape="rect" id="node13" href="$d7/db3/class_x_m_l_reader.html" title="XMLReader" alt="" coords="701,259,793,285"/>
-</map>

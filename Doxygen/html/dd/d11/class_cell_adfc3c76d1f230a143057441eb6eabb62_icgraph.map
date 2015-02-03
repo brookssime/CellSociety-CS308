@@ -1,8 +1,0 @@
-<map id="Cell.update" name="Cell.update">
-<area shape="rect" id="node2" href="$dd/d11/class_cell.html#aaaf321e273ef5b6ac3fae80e36d19629" title="Cell.setState" alt="" coords="149,81,253,108"/>
-<area shape="rect" id="node3" href="$da/de8/class_move_cellular_automata.html#a90e79ebdb8723f3674bd90a264a143b8" title="MoveCellularAutomata.move" alt="" coords="302,5,509,32"/>
-<area shape="rect" id="node4" href="$dc/d06/class_mover.html#af157bc60c3ea8c2f1eb4672489251d57" title="Mover.Mover" alt="" coords="354,56,457,83"/>
-<area shape="rect" id="node5" href="$d0/db0/class_wator.html#aa8dba59120d9d6d7d7521f3a4ee7b454" title="Wator.ruleTwo" alt="" coords="352,107,459,133"/>
-<area shape="rect" id="node7" href="$d2/d40/class_cellular_automata.html#a36aec0679e06662be2e1a89ac9c88cfa" title="CellularAutomata.setUpInitial\lConfig" alt="" coords="301,158,509,199"/>
-<area shape="rect" id="node6" href="$d0/db0/class_wator.html#a422810cdcb035633301b3469cbee5e34" title="Wator.checkRules" alt="" coords="557,107,688,133"/>
-</map>

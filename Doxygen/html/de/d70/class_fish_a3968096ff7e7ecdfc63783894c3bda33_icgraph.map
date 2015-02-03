@@ -1,5 +1,0 @@
-<map id="Fish.surviveTurn" name="Fish.surviveTurn">
-<area shape="rect" id="node2" href="$d0/db0/class_wator.html#a0afccb8f97e33c1d21e51ee1a3f4922b" title="Wator.ruleOne" alt="" coords="177,5,287,32"/>
-<area shape="rect" id="node4" href="$d0/db0/class_wator.html#aa8dba59120d9d6d7d7521f3a4ee7b454" title="Wator.ruleTwo" alt="" coords="179,56,285,83"/>
-<area shape="rect" id="node3" href="$d0/db0/class_wator.html#a422810cdcb035633301b3469cbee5e34" title="Wator.checkRules" alt="" coords="336,31,467,57"/>
-</map>
