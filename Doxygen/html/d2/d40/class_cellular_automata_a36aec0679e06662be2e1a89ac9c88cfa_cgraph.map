@@ -1,7 +1,0 @@
-<map id="CellularAutomata.setUpInitialConfig" name="CellularAutomata.setUpInitialConfig">
-<area shape="rect" id="node2" href="$da/d74/class_grid.html#a2f2ccb1511e367a7d6e9bcb3f708cd38" title="Grid.getCellAt" alt="" coords="298,5,409,32"/>
-<area shape="rect" id="node3" href="$d2/d40/class_cellular_automata.html#a34ceed434c942d34ff03169b92684726" title="CellularAutomata.getGrid" alt="" coords="261,56,445,83"/>
-<area shape="rect" id="node4" href="$dd/d11/class_cell.html#aaaf321e273ef5b6ac3fae80e36d19629" title="Cell.setState" alt="" coords="301,107,405,133"/>
-<area shape="rect" id="node5" href="$dd/d11/class_cell.html#a6ddc434a1826fac1599a7d901ff2d162" title="Cell.setNextState" alt="" coords="494,81,629,108"/>
-<area shape="rect" id="node6" href="$dd/d11/class_cell.html#adfc3c76d1f230a143057441eb6eabb62" title="Cell.update" alt="" coords="514,132,609,159"/>
-</map>
