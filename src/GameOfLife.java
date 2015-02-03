@@ -32,25 +32,7 @@ public class GameOfLife extends CellularAutomata{
 				c -> c.setNextState(dead));
 	}
 	
-	private void ruleOne(Cell cell){
-		if (!cell.isState(dead)){
-			return;
-		}
-		int count = getGrid().findNeighbors(cell, alive).size();
-		if (count ==3){
-			cell.setNextState(alive);
-		}
-	}
 	
-	private void ruleTwo(Cell cell){
-		if (!cell.isState(alive)){
-			return;
-		}
-		int count = getGrid().findNeighbors(cell, alive).size();
-		if (count != 3 && count !=2){
-			cell.setNextState(dead);
-		}
-	}
 
 
 

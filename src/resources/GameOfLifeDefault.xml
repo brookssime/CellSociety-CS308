@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <Simulation>
+
 		   <Type>Game of Life</Type>
 		   <Author>Brooks Sime, Tony Qiao, and James Mosca</Author>
 		   <Grid>
@@ -14,5 +15,6 @@
 		   			<alive color = "black">.5</alive>
 		   			<dead color = "white">.5</dead>
 		   	</Colors>
+
 		   
 </Simulation>
