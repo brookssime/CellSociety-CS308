@@ -5,9 +5,9 @@ import javafx.scene.paint.Color;
 
 
 public class Wator extends MoveCellularAutomata {
-	private Color water = Color.BLUE;
-	private Color shark = Color.PURPLE;
-	private Color fish = Color.YELLOW;
+	private Color water;
+	private Color shark;
+	private Color fish;
 	private int startEnergy;
 	private int fishEnergy;
 	private int breedTime;
@@ -17,12 +17,14 @@ public class Wator extends MoveCellularAutomata {
 		setEmptyColor(water);
 	}
 	
-	public CellularAutomata init(Grid grid, Map<String, Integer> parameters){
-		init(grid, parameters);
+	public void init(Grid grid, Map<String, Integer> parameters, String[] colors){
+		super.init(grid, parameters, colors);
+		water = Color.web(colors[0]);
+		shark = Color.web(colors[2]);
+		fish = Color.web(colors[1]);
 		startEnergy = parameters.get("startEnergy");
 		fishEnergy = parameters.get("fishEnergy");
 		breedTime = parameters.get("breedTime");
-		return this;
 	}
 
 	public void ruleOne(Fish f) {
