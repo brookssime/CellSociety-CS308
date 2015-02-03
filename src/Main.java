@@ -9,7 +9,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage s) throws Exception {	
 
-		CellularAutomata myCA = new Wator(100);
+		CellularAutomata myCA = new Wator();
 		s.setTitle(myCA.getName());
 		CellSocietyView display = new CellSocietyView(300, 300, "square");
 		s.setScene(display.getScene());

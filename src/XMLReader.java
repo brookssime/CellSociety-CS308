@@ -20,6 +20,8 @@ public class XMLReader {
 	
 	public XMLReader() {
 		f = chooseFile();
+		parseXML();
+		parseDocument();
 	}
 	
 	public File chooseFile(){
@@ -63,7 +65,6 @@ public class XMLReader {
 						
 		}
 	}
-
 
 	private String getTextValue(Element ele, String tagName) {
 		String textVal = null;

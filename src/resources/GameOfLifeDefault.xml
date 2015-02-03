@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Simulation>
 		   <Parameters name="GameOfLife"> 
-		   			<Author></Author>
+		   			<Author>Brooks Sime, Tony Qiao, and James Mosca</Author>
 		   			<GameSize>500</GameSize>
 		   			<CellNumber>50</CellNumber>
 		   			<GridType>Grid</GridType>
