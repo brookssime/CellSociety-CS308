@@ -1,8 +1,0 @@
-<map id="Mover.getState" name="Mover.getState">
-<area shape="rect" id="node2" href="$de/d70/class_fish.html#a8a5f5246900a3d430f62267e5346384b" title="Fish.breed" alt="" coords="234,31,321,57"/>
-<area shape="rect" id="node7" href="$da/de8/class_move_cellular_automata.html#a90e79ebdb8723f3674bd90a264a143b8" title="MoveCellularAutomata.move" alt="" coords="174,81,381,108"/>
-<area shape="rect" id="node3" href="$d0/db0/class_wator.html#a48bebe2ccefc55d2e433578eb0c22684" title="Wator.breedIfCan" alt="" coords="429,31,560,57"/>
-<area shape="rect" id="node4" href="$d0/db0/class_wator.html#a0afccb8f97e33c1d21e51ee1a3f4922b" title="Wator.ruleOne" alt="" coords="609,5,719,32"/>
-<area shape="rect" id="node6" href="$d0/db0/class_wator.html#aa8dba59120d9d6d7d7521f3a4ee7b454" title="Wator.ruleTwo" alt="" coords="611,56,717,83"/>
-<area shape="rect" id="node5" href="$d0/db0/class_wator.html#a422810cdcb035633301b3469cbee5e34" title="Wator.checkRules" alt="" coords="768,31,899,57"/>
-</map>
