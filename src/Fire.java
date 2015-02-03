@@ -13,26 +13,6 @@ public class Fire extends CellularAutomata {
 		super("Fire");
 	}
 	
-	public void setUpInitialConfig(){
-		int x = getGrid().getCells().length/2;
-		int y = getGrid().getCells()[0].length/2;
-		Cell fire = getGrid().getCellAt(x,y);
-		fire.setState(onFire);
-		for (Cell[] c: getGrid().getCells()){
-			for(Cell cell: c){
-				if (cell == fire){
-					continue;
-				}
-				if (getRandomDouble() <.001){
-					cell.setState(onFire);
-				}
-				else{
-					cell.setState(tree);
-				}
-			}
-		}	
-	}
-	
 
 	public void checkRules(Cell cell) {
 		rule(cell, 
