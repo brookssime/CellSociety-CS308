@@ -42,24 +42,8 @@ public class Fire extends CellularAutomata {
 		//ruleTwo(cell);
 	}
 	
-	private void ruleOne(Cell cell){
-		if (!cell.isState(onFire)){
-			return;
-		}
-		cell.setNextState(empty);
-	}
+
 	
-	private void ruleTwo(Cell cell){
-		if (!cell.isState(tree)){
-			return;
-		}
-		
-		boolean nextToFire = checkNextToFire(cell);
-		
-		if (nextToFire && getRandomDouble() < getProb()){
-			cell.setNextState(onFire);
-		}
-	}
 
 	private boolean checkNextToFire(Cell cell) {
 		return !getGrid().findNeighbors(cell, onFire).isEmpty();

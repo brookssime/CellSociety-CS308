@@ -13,15 +13,19 @@ import org.xml.sax.*;
 
 
 public class XMLReader {
+
 	private Element docEle;
+
 	private static int gameSize;
 	private static int cellNumber;
 	private static String gridType;
 	private static String gameName;
+
 	private HashMap<String, CellularAutomata> gameTypes;
 	private HashMap<String, Grid> gridTypes;
 	private HashMap<String, int[][]> nbhoodTypes;
 	private HashMap<String, Integer> parameters;
+
 	
 	public XMLReader() {
 		setUpTypes();
@@ -32,18 +36,22 @@ public class XMLReader {
 		FileNameExtensionFilter filter = new FileNameExtensionFilter("XML", "xml");
 		chooser.setFileFilter(filter);
 	    int returnVal = chooser.showOpenDialog(null);
+
 	    if(returnVal != JFileChooser.APPROVE_OPTION) {
 	       return;
 	    }
 	    parseXML(chooser.getSelectedFile());
+
 	}
 
 	public void parseXML(File f) {
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		try {
 			DocumentBuilder db = dbf.newDocumentBuilder();
+
 			Document doc = db.parse(f);
 			docEle = doc.getDocumentElement();
+
 		}catch(ParserConfigurationException pce) {
 			pce.printStackTrace();
 		}catch(SAXException se) {
@@ -52,6 +60,7 @@ public class XMLReader {
 			ioe.printStackTrace();
 		}
 	}
+
 	
 	public Grid makeGrid(){
 		NodeList nl = docEle.getElementsByTagName("Grid");
@@ -72,6 +81,7 @@ public class XMLReader {
 			param.put(el.getTagName(), Integer.parseInt(getTextValue(number, el.getTagName())));
 		}
 		return param;
+
 	}
 	
 	public CellularAutomata makeCA(){
@@ -101,6 +111,7 @@ public class XMLReader {
 		return textVal;
 	}
 
+
 	private void setUpTypes(){
 		setUpGameTypes();
 		setUpGridTypes();
@@ -129,6 +140,7 @@ public class XMLReader {
 		nbhoodTypes = new HashMap<>();
 		nbhoodTypes.put("Moore 8", new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}, {-1, -1}, {-1, 1}, {1, -1}, {1, 1}});
 		nbhoodTypes.put("nearest", new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}});
+
 	}
 
 }
