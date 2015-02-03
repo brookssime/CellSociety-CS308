@@ -48,7 +48,7 @@ public class XMLReader {
 	}
 	public void parseDocument (){
 		Element docEle = doc.getDocumentElement();
-		NodeList Scenario = docEle.getElementsByTagName("Parameter");
+		NodeList Scenario = docEle.getElementsByTagName("Parameters");
 
 		if(Scenario != null && Scenario.getLength() > 0) {
 			Node param = Scenario.item(0);
@@ -57,10 +57,7 @@ public class XMLReader {
 			cellNumber = Integer.parseInt(getTextValue(el, "CellNumber"));
 			gridType = getTextValue(el, "GridType");
 			gameName = el.getAttribute("name");
-			
-				
-	
-			
+						
 		}
 	}
 
