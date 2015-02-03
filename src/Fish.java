@@ -1,10 +1,14 @@
 import javafx.scene.paint.Paint;
 
+/**
+ * Keeps track of fish stats
+ */
 
 public class Fish extends Mover {
-	private static final int startEnergy = 5;
-	private static final int fishEnergy =5;
-	private static final int breedTime = 5;
+	private static final int START_ENERGY = 5;
+	private static final int FISH_ENERGY =5;
+	private static final int BREED_TIME = 5;
+	
 	private int spawnTime;
 	private int energyLeft;
 	
@@ -15,12 +19,12 @@ public class Fish extends Mover {
 	}
 	
 	public boolean canBreed(){
-		return (spawnTime >= breedTime);
+		return (spawnTime >= BREED_TIME);
 	}
 	
 	public Fish breed(Cell cell){
 		spawnTime = 0;
-		return new Fish(cell, getState(), 0, startEnergy);
+		return new Fish(cell, getState(), 0, START_ENERGY);
 	}
 	
 	public void surviveTurn(){
@@ -33,6 +37,6 @@ public class Fish extends Mover {
 	}
 	
 	public void eat(){
-		energyLeft += fishEnergy;
+		energyLeft += FISH_ENERGY;
 	}
 }

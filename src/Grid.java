@@ -4,11 +4,10 @@ import javafx.scene.Group;
 import javafx.scene.paint.Paint;
 
 /**
- * Grid contains 2D array of cells
- * Creates the grid for simulation
+ * Holds all cells in 2D array
+ * Keeps track of neighbors for given cell
  */
-//in order to possibly apply this for other shapes, we may need to remove the GridPane part
-//for other shapes, we may want to manually position each thing based on its position (x,y)
+
 public class Grid extends Group{
 	private int myGridSize;
 	private Cell[][] myCells;

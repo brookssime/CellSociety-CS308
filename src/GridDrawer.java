@@ -3,7 +3,7 @@ import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Shape;
 
 /**
- * Draws grid with correct shapes
+ * Creates visual representation of grid for simulation
  */
 
 public class GridDrawer {

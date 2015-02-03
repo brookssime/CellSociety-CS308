@@ -2,7 +2,9 @@ import java.util.Random;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
-
+/**
+ * Abstract class for all simulations to be run
+ */
 
 public abstract class CellularAutomata {
 	private String myName;
