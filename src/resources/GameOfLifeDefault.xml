@@ -1,12 +1,20 @@
 <?xml version="1.0"?>
 <Simulation>
-		   <Parameters name="GameOfLife"> 
-		   			<Author>Brooks Sime, Tony Qiao, and James Mosca</Author>
-		   			<GameSize>500</GameSize>
-		   			<cellNum>50</cellNum>
-		   			<GridType>Grid</GridType>
-		   			<neighborhood></neighborhood>
-		   			<alive>COLOR.BLACK</alive>
-		   			<dead>COLOR.WHITE</dead>
-		   </Parameters>
+
+		   <Type>Game of Life</Type>
+		   <Author>Brooks Sime, Tony Qiao, and James Mosca</Author>
+		   <Grid>
+		   		<cellNum>50</cellNum>
+		   		<GridType>default</GridType>
+		   			<neighborhood>Moore 8</neighborhood>
+		   </Grid>
+		  		 <number>
+		   			<prob>1</prob>
+		   		</number>
+		   <Colors>
+		   			<alive color = "black">.5</alive>
+		   			<dead color = "white">.5</dead>
+		   	</Colors>
+
+		   
 </Simulation>

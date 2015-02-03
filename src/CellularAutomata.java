@@ -3,6 +3,9 @@ import java.util.Random;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Color;
+
+
 
 /**
  * Abstract class for all simulations to be run
@@ -36,9 +39,6 @@ public abstract class CellularAutomata {
 		setUpInitialConfig(colors, points);
 		return this;
 	}
-
-	
-	public abstract void setUpInitialConfig();
 	
 	public void setUpInitialConfig(String[] colors, double[] probs){
 		for (Cell[] c: getGrid().getCells()){

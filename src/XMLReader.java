@@ -13,15 +13,15 @@ import org.xml.sax.*;
 
 
 public class XMLReader {
+
 	private Element docEle;
-	private static int gameSize;
-	private static int cellNumber;
-	private static String gridType;
-	private static String gameName;
+
 	private HashMap<String, CellularAutomata> gameTypes;
 	private HashMap<String, Grid> gridTypes;
 	private HashMap<String, int[][]> nbhoodTypes;
-	private HashMap<String, Integer> parameters;
+	private static final int[][] NEAR_NEIGHBORHOOD = new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
+	private static final int[][] MOORE_NEIGHBORHOOD = new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}, {-1, -1}, {-1, 1}, {1, -1}, {1, 1}};
+
 	
 	public XMLReader() {
 		setUpTypes();
@@ -32,18 +32,22 @@ public class XMLReader {
 		FileNameExtensionFilter filter = new FileNameExtensionFilter("XML", "xml");
 		chooser.setFileFilter(filter);
 	    int returnVal = chooser.showOpenDialog(null);
+
 	    if(returnVal != JFileChooser.APPROVE_OPTION) {
 	       return;
 	    }
 	    parseXML(chooser.getSelectedFile());
+
 	}
 
 	public void parseXML(File f) {
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		try {
 			DocumentBuilder db = dbf.newDocumentBuilder();
+
 			Document doc = db.parse(f);
 			docEle = doc.getDocumentElement();
+
 		}catch(ParserConfigurationException pce) {
 			pce.printStackTrace();
 		}catch(SAXException se) {
@@ -52,8 +56,9 @@ public class XMLReader {
 			ioe.printStackTrace();
 		}
 	}
+
 	
-	public Grid makeGrid(){
+	private Grid makeGrid(){
 		NodeList nl = docEle.getElementsByTagName("Grid");
 		Element grid = (Element) nl.item(0);
 		int cellNum = Integer.parseInt(getTextValue(grid, "cellNum"));
@@ -63,7 +68,7 @@ public class XMLReader {
 		return gridTypes.get(gridType).init(cellNum, nbhoodTypes.get(neighborhood));
 	}
 	
-	public Map<String, Integer> makeParam(){
+	private Map<String, Integer> makeParam(){
 		Element number  = (Element) docEle.getElementsByTagName("number").item(0);
 		NodeList nl = number.getElementsByTagName("*");
 		Map<String, Integer> param = new HashMap<>();
@@ -72,6 +77,7 @@ public class XMLReader {
 			param.put(el.getTagName(), Integer.parseInt(getTextValue(number, el.getTagName())));
 		}
 		return param;
+
 	}
 	
 	public CellularAutomata makeCA(){
@@ -101,6 +107,7 @@ public class XMLReader {
 		return textVal;
 	}
 
+
 	private void setUpTypes(){
 		setUpGameTypes();
 		setUpGridTypes();
@@ -127,8 +134,10 @@ public class XMLReader {
 	
 	private void setUpNbhoodTypes(){
 		nbhoodTypes = new HashMap<>();
-		nbhoodTypes.put("Moore 8", new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}, {-1, -1}, {-1, 1}, {1, -1}, {1, 1}});
-		nbhoodTypes.put("nearest", new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}});
+
+		nbhoodTypes.put("Moore 8", MOORE_NEIGHBORHOOD);
+		nbhoodTypes.put("nearest", NEAR_NEIGHBORHOOD);
+
 	}
 
 }

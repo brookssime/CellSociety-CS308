@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Map;
 
 import javafx.scene.paint.Color;
 
@@ -8,32 +9,39 @@ import javafx.scene.paint.Color;
 
 public class Segregation extends MoveCellularAutomata {
 	
-	private double percentColorTwo = 0.25;
-	private double percentColorOne = 0.25;
+
 	private ArrayList<Cell> emptyCells;
-	private Color color1 = Color.RED;
-	private Color color2 = Color.BLUE;
-	private Color empty = Color.WHITE;
+	private Color color1;
+	private Color color2;
+	private Color empty;
 	
 	public Segregation(){
 		super("Segregation");
+
+		emptyCells = new ArrayList<Cell>();
+	}
+	
+	public void init(Grid grid, Map<String, Integer> parameters, String[] colors){
+		super.init(grid, parameters, colors);
+		color1 = Color.web(colors[1]);
+		color2 = Color.web(colors[0]);
+		empty = Color.web(colors[2]);
+		setEmptyColor(empty);
 		setEmptyColor(empty);
 		emptyCells = new ArrayList<Cell>();
 	}
-
-	public void setUpInitialConfig(){
-		setUpInitialConfig(percentColorOne, percentColorTwo);
-	}
 	
-	public void setUpInitialConfig(double probA, double probB){
+	public void setUpInitialConfig(String[] colors, double[] probs){
 		for (Cell[] c: getGrid().getCells()){
 			for (Cell cell: c){
 				double x= getRandomDouble();
-				if (x < probA){
-					addMover(new Mover(cell, color1));
-				}
-				else if (x< probA + probB){
+
+				if (x < probs[0]){		
 					addMover(new Mover(cell, color2));
+				}
+				else if (x< probs[0]+ probs[1]){		
+					addMover(new Mover(cell, color1));
+
 				}
 				else{
 					cell.setState(empty);
@@ -69,7 +77,7 @@ public class Segregation extends MoveCellularAutomata {
 	
 	private double getSamePercent(Cell cell) {
 		double count = getGrid().findNeighbors(cell, cell.getState()).size();
-		double total = getGrid().findNeighbors(cell, empty).size() + getGrid().findNeighbors(cell, color2).size();
+		double total = getGrid().findNeighbors(cell, color1).size() + getGrid().findNeighbors(cell, color2).size();
 		double samePercent;
 		//avoid division by zero
 		if (total ==0){

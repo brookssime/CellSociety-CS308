@@ -1,5 +1,3 @@
-import java.io.File;
-import java.util.HashMap;
 import java.util.ResourceBundle;
 
 import javafx.animation.Animation;
@@ -14,8 +12,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
-import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  * Loads grid viewer for simulation
@@ -28,6 +24,12 @@ public class CellSocietyView {
 	private static final int FRAME_RATE = 2000;
 	private static final double SLOW_RATE = .8;
 	private static final double ACCELERATE_RATE = 1.2;		
+
+
+	//resource package contains backend button labels and xml files
+	
+
+	
 	private CellularAutomata myCA;
 	private GridDrawer myGridView;
 	private Timeline myAnimation;
@@ -83,6 +85,7 @@ public class CellSocietyView {
 		//"Nearest" neighborhood includes only vert. and horiz. cells
 		nbhoodTypes.put("nearest", NEAR_NEIGHBORHOOD);
 	}
+
 	
 	public Scene getScene() {
 		return myScene;
@@ -94,6 +97,11 @@ public class CellSocietyView {
 		}
 		myReader.chooseFile();
 		makeCAGame();
+
+		myReader.chooseFile();
+		makeCAGame();
+
+>>>>>>> b3483cfc21bde14e954db8e015f8ddf8cfb1a54f
 	}
 
 

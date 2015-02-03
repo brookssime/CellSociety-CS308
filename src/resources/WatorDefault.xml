@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
 <Simulation>
+
 		   <Type>Wator</Type>
 		   <Author>Brooks Sime, Tony Qiao, and James Mosca</Author>
 		   <Grid>
 		   		<cellNum>50</cellNum>
 		   		<GridType>torus</GridType>
-		   		<neighborhood>Moore 8</neighborhood>
+		   		<neighborhood>nearest</neighborhood>
 		   </Grid>
 		   <number>
 		   		<breedTime>5</breedTime>
@@ -18,4 +19,5 @@
 		   		<fishColor color = "yellow">0.25</fishColor>
 		   		<sharkColor color= "purple" >0.25</sharkColor>
 		   </Colors>
+
 </Simulation>
