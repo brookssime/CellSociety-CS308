@@ -109,6 +109,7 @@ XMLReader -
 	uses constructor to set file chosen
 	parses xml into doc and then parses doc
 	establishes variables from xml files so can be used by CellSocietyView
+	set text and int values
 			
 Animation?
 	Summary

@@ -1,5 +1,8 @@
 import javafx.scene.paint.Color;
 
+/**
+ * Creates rules for GameOfLife 
+ */
 
 public class GameOfLife extends CellularAutomata{
 	private Color alive = Color.BLACK;

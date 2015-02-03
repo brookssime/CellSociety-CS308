@@ -2,6 +2,9 @@ import java.util.ArrayList;
 
 import javafx.scene.paint.Color;
 
+/**
+ * Creates rules for Segregation simulation
+ */
 
 public class Segregation extends MoveCellularAutomata {
 	private ArrayList<Cell> emptyCells;

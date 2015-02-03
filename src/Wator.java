@@ -2,6 +2,9 @@ import java.util.ArrayList;
 
 import javafx.scene.paint.Color;
 
+/**
+ * Creates rules for Wator simulation
+ */
 
 public class Wator extends MoveCellularAutomata {
 	private Color water = Color.BLUE;

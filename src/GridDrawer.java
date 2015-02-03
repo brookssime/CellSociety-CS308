@@ -2,6 +2,9 @@ import javafx.scene.Group;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Shape;
 
+/**
+ * Draws grid with correct shapes
+ */
 
 public class GridDrawer {
 	private Grid myGrid;

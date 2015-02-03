@@ -3,6 +3,10 @@ import java.util.ArrayList;
 import javafx.scene.Group;
 import javafx.scene.paint.Paint;
 
+/**
+ * Grid contains 2D array of cells
+ * Creates the grid for simulation
+ */
 //in order to possibly apply this for other shapes, we may need to remove the GridPane part
 //for other shapes, we may want to manually position each thing based on its position (x,y)
 public class Grid extends Group{
@@ -40,6 +44,7 @@ public class Grid extends Group{
 		int x = c.getPosX();
 		int y = c.getPosY();
 		ArrayList<Cell> neighbors = new ArrayList<>();
+		//adding relevant neighbors to neighborhood
 		for (int[] a: myNeighborhood){
 			int m = getTorusPoint(a[0]+x);
 			int n = getTorusPoint(a[1]+y);
