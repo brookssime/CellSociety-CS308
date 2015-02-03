@@ -3,6 +3,7 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+
 	private int FRAME_TIME = 10000;
 	private CellularAutomata myCA;	
 
