@@ -6,42 +6,38 @@ public class Fire extends CellularAutomata {
 	private Color tree = Color.GREEN;
 	private Color empty = Color.YELLOW;
 	
-	public Fire(int size){
-		super("Fire", size, new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}}, .5);
-		setUpInitialConfig();
+	public Fire(){
+		super("Fire");
 	}
 	
 	public void setUpInitialConfig(){
 		int x = getGrid().getCells().length/2;
 		int y = getGrid().getCells()[0].length/2;
 		Cell fire = getGrid().getCellAt(x,y);
-		fire.setNextState(onFire);
+		fire.setState(onFire);
 		for (Cell[] c: getGrid().getCells()){
 			for(Cell cell: c){
 				if (cell == fire){
 					continue;
 				}
 				if (getRandomDouble() <.001){
-					cell.setNextState(onFire);
+					cell.setState(onFire);
 				}
 				else{
-					cell.setNextState(tree);
+					cell.setState(tree);
 				}
 			}
-		}
-		
-		handleUpdate();
+		}	
 	}
 	
 
-	public void checkRules() {
-		for (Cell[] c: getGrid().getCells()){
-			for (Cell cell: c){
-				ruleOne(cell);
-				ruleTwo(cell);
-			}
-		}
-
+	public void checkRules(Cell cell) {
+		rule(cell, c-> c.isState(onFire), c -> c.setNextState(empty));
+		rule(cell, 
+				c-> c.isState(tree) && checkNextToFire(c) && getRandomDouble()<getProb(),
+				c -> c.setNextState(onFire));
+		//ruleOne(cell);
+		//ruleTwo(cell);
 	}
 	
 	private void ruleOne(Cell cell){
@@ -58,7 +54,7 @@ public class Fire extends CellularAutomata {
 		
 		boolean nextToFire = checkNextToFire(cell);
 		
-		if (nextToFire && getRandomDouble() < getMyProb()){
+		if (nextToFire && getRandomDouble() < getProb()){
 			cell.setNextState(onFire);
 		}
 	}

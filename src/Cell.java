@@ -47,6 +47,4 @@ public class Cell{
 	public Paint getState(){
 		return currentColor;
 	}
-
-
 }

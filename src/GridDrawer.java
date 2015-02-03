@@ -8,19 +8,19 @@ public class GridDrawer {
 	private String myShape;
 	private Shape[][] myShapes;
 	private Group myRoot;
+	private int gridSize;
 	
 	public GridDrawer(Grid grid, String shape){
 		myGrid = grid;
 		myShape = shape;
-		int gridSize = grid.getGridSize();
+		gridSize = grid.getGridSize();
 		myShapes = new Shape [gridSize][gridSize];
 		myRoot = new Group();
 	}
 	
 	private void makeUnitGrid(){
-		int size = myGrid.getGridSize();
-		for (int i =0; i <size; i ++){
-			for (int j =0; j < size; j++){
+		for (int i =0; i <gridSize; i ++){
+			for (int j =0; j < gridSize; j++){
 				myShapes[i][j] = drawUnitCell(i, j);
 				myRoot.getChildren().add(myShapes[i][j]);
 			}
@@ -37,11 +37,9 @@ public class GridDrawer {
 	
 	
 	public void updateNextGen(){
-		Cell[][] cells = myGrid.getCells();
-		int size = myGrid.getGridSize();
-		for (int i =0; i < size; i ++){
-			for (int j = 0; j <size; j++){
-				myShapes[i][j].setFill(cells[i][j].getState());
+		for (int i =0; i < gridSize; i ++){
+			for (int j = 0; j <gridSize; j++){
+				myShapes[i][j].setFill(myGrid.getCellAt(i, j).getState());
 			}
 		}
 	}

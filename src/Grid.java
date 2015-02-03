@@ -10,11 +10,14 @@ public class Grid extends Group{
 	private Cell[][] myCells;
 	private int[][] myNeighborhood;
 	
-	public Grid(int size, int[][] neighborhood){
+	public Grid(){}
+	
+	public Grid init(int size, int[][] neighborhood) {
 		myGridSize = size;
 		myCells = new Cell[myGridSize][myGridSize];
 		myNeighborhood = neighborhood;
 		makeGrid();
+		return this;
 	}
 		
 	private void makeGrid(){
@@ -33,7 +36,7 @@ public class Grid extends Group{
 		return (x>=0 && x< myGridSize && y>=0 && y < myGridSize);
 	}
 	
-	private ArrayList<Cell> getNeighbors(Cell c){
+	public ArrayList<Cell> getNeighbors(Cell c){
 		int x = c.getPosX();
 		int y = c.getPosY();
 		ArrayList<Cell> neighbors = new ArrayList<>();
@@ -69,4 +72,6 @@ public class Grid extends Group{
 	public int getGridSize(){
 		return myGridSize;
 	}
+
+
 }

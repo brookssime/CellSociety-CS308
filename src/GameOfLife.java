@@ -4,10 +4,9 @@ import javafx.scene.paint.Color;
 public class GameOfLife extends CellularAutomata{
 	private Color alive = Color.BLACK;
 	private Color dead = Color.WHITE;
-
-	public GameOfLife(int size){
-		super("Game of Life", size, new int[][] {{-1, -1}, {-1, 0}, {-1, 1}, {0, -1}, {0, 1}, {1,-1}, {1, 0}, {1,1}},0);
-		setUpInitialConfig();
+	
+	public GameOfLife(){
+		super("Game of Life");
 	}
 	
 	public void setUpInitialConfig(){
@@ -24,13 +23,14 @@ public class GameOfLife extends CellularAutomata{
 		handleUpdate();
 	}
 	
-	public void checkRules(){
-		for (Cell[] c: getGrid().getCells()){
-			for (Cell cell: c){
-				ruleOne(cell);
-				ruleTwo(cell);
-			}
-		}
+	public void checkRules(Cell cell){
+		int count = getGrid().findNeighbors(cell, alive).size();
+		rule(cell,
+				c->count==3 && cell.isState(dead),
+				c ->c.setNextState(alive));
+		rule(cell,
+				c -> count !=2 && count !=3 && cell.isState(alive),
+				c -> c.setNextState(dead));
 	}
 	
 	private void ruleOne(Cell cell){

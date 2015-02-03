@@ -8,8 +8,7 @@ public class Mover {
 	public Mover(Cell cell, Paint color){
 		myCell = cell;
 		myColor = color;
-		myCell.setNextState(myColor);
-		myCell.update();
+		myCell.setState(color);
 	}
 	
 	public Cell getCell(){
