@@ -1,7 +1,0 @@
-<map id="Wator.Wator" name="Wator.Wator">
-<area shape="rect" id="node2" href="$da/de8/class_move_cellular_automata.html#a17158cd108e1476059d1a07835e888a8" title="MoveCellularAutomata.set\lEmptyColor" alt="" coords="153,5,343,46"/>
-<area shape="rect" id="node3" href="$d0/db0/class_wator.html#a4ea39aef9488c7e03af93e711fe2e61e" title="Wator.setUpInitialConfig" alt="" coords="162,71,334,97"/>
-<area shape="rect" id="node4" href="$d2/d40/class_cellular_automata.html#a34ceed434c942d34ff03169b92684726" title="CellularAutomata.getGrid" alt="" coords="405,12,589,39"/>
-<area shape="rect" id="node5" href="$d2/d40/class_cellular_automata.html#a3e303e691cc17b9a478a3e0e167a37e6" title="CellularAutomata.getRandom\lDouble" alt="" coords="392,63,603,105"/>
-<area shape="rect" id="node6" href="$da/de8/class_move_cellular_automata.html#a1661ace25a08d9cb4bec54bfde40424e" title="MoveCellularAutomata.add\lMover" alt="" coords="400,129,595,170"/>
-</map>
