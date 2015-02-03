@@ -17,6 +17,8 @@ import javafx.util.Duration;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import com.sun.prism.paint.Color;
+
 public class CellSocietyView {
 
 	private static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
@@ -34,12 +36,13 @@ public class CellSocietyView {
 	private HashMap<String, CellularAutomata> gameTypes;
 	private HashMap<String, Grid> gridTypes;
 	private HashMap<String, int[][]> nbhoodTypes;
+	private HashMap<String, Integer> parameters;
 
 	public CellSocietyView(int width, int height, String shape) {
 		myRoot = new BorderPane();
 		myButtonNames = ResourceBundle.getBundle(DEFAULT_RESOURCE_PACKAGE
 				+ "UIButtons");
-		setUp();
+		setUpTypes();
 		myWidth = width;
 		myHeight = height;
 		myRoot.setCenter(new Rectangle(width, height));
@@ -47,7 +50,7 @@ public class CellSocietyView {
 		myScene = new Scene(myRoot);
 	}
 	
-	private void setUp(){
+	private void setUpTypes(){
 		setUpGameTypes();
 		setUpGridTypes();
 		setUpNbhoodTypes();
@@ -73,7 +76,7 @@ public class CellSocietyView {
 	
 	private void setUpNbhoodTypes(){
 		nbhoodTypes = new HashMap<>();
-		nbhoodTypes.put("Moore", new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}, {-1, -1}, {-1, 1}, {1, -1}, {1, 1}});
+		nbhoodTypes.put("Moore 8", new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}, {-1, -1}, {-1, 1}, {1, -1}, {1, 1}});
 		nbhoodTypes.put("nearest", new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}});
 	}
 	
@@ -96,16 +99,22 @@ public class CellSocietyView {
 
 	private void parseFile(File file) {
 		int cellNum = 20;
-		String neighborhood = "Moore";
-		double prob = .3;
+		String neighborhood = "Moore 8";
 		String gridType = "torus";
 		String gameName = "Wator";
-		makeCAGame(gameName, cellNum, neighborhood, prob, gridType);
+		String[] colors = {"black", "white"};
+		int[][][] points = {{{1,0}}, {}};
+		parameters = new HashMap<>();
+		parameters.put("prob", 30);
+		parameters.put("startEnergy", 5);
+		parameters.put("breedTime", 5);
+		parameters.put("fishEnergy", 5);
+		makeCAGame(gameName, cellNum, neighborhood, gridType, colors, points);
 	}
 	
-	private void makeCAGame(String gameName, int cellNum, String neighborhood, double prob, String gridType){
+	private void makeCAGame(String gameName, int cellNum, String neighborhood, String gridType, String[] colors, int[][][] points){
 		Grid grid = gridTypes.get(gridType).init(cellNum, nbhoodTypes.get(neighborhood));
-		myCA = gameTypes.get(gameName).init(grid, prob);
+		myCA = gameTypes.get(gameName).init(grid, parameters, colors, points);
 		myGridView = new GridDrawer(myCA.getGrid(), "square");
 		myRoot.setCenter(myGridView.makeGrid(myWidth, myHeight));
 		myRoot.setRight(makeButtons());
