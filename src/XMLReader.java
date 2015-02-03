@@ -14,14 +14,14 @@ import org.xml.sax.*;
 
 public class XMLReader {
 
+	private static final int[][] NEAR_NEIGHBORHOOD = new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
+	private static final int[][] MOORE_NEIGHBORHOOD = new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}, {-1, -1}, {-1, 1}, {1, -1}, {1, 1}};
+	
 	private Element docEle;
-
 	private HashMap<String, CellularAutomata> gameTypes;
 	private HashMap<String, Grid> gridTypes;
 	private HashMap<String, int[][]> nbhoodTypes;
-	private static final int[][] NEAR_NEIGHBORHOOD = new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
-	private static final int[][] MOORE_NEIGHBORHOOD = new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}, {-1, -1}, {-1, 1}, {1, -1}, {1, 1}};
-
+	
 	
 	public XMLReader() {
 		setUpTypes();

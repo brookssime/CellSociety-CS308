@@ -14,7 +14,6 @@ import javafx.util.Duration;
 
 
 
-
 /**
  * Displays the grid and contained cells for each simulation
  */
@@ -110,6 +109,7 @@ public class CellSocietyView {
 		return makeUIButton(myButtonNames.getString("LoadCommand"), e-> loadNewFile());
 	}
 	
+	//adds buttons as UI on right side of screen
 	private VBox makeButtons() {
 		VBox buttons = new VBox();
 		Button play = makePlayButton();
@@ -118,7 +118,6 @@ public class CellSocietyView {
 		Button slowDown = makeSlowButton();
 		Button step = makeStepButton();
 		Button newFile = makeLoadButton();
-		//adds buttons as UI on right side of screen
 		buttons.getChildren().addAll(newFile, play, pause, fastForward, slowDown, step);
 		return buttons;
 	}
