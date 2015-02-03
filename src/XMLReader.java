@@ -18,6 +18,9 @@ public class XMLReader {
 	public static String gridType;
 	public static String gameName;
 	
+	public XMLReader() {
+		f = chooseFile();
+	}
 	
 	public File chooseFile(){
 		JFileChooser chooser = new JFileChooser(System.getProperty("user.dir"));
@@ -73,6 +76,13 @@ public class XMLReader {
 		return textVal;
 	}
 
+	public static void main(String[] args) {
+		XMLReader x = new XMLReader();
+		x.parseXML();
+		x.parseDocument();
+		System.out.println(gameName);
+		System.out.println(gridType);
+	}
 
 }
 
