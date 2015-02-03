@@ -18,38 +18,35 @@ import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
- * Displays the grid and contained cells for each simulation
+ * Loads grid viewer for simulation
  */
 
-public class CellSocietyView {
+import com.sun.prism.paint.Color;
 
-	private static final double ACCELERATE_RATE = 1.25;
-	private static final double SLOW_RATE = .8;
-	private static final int[][] NEAR_NEIGHBORHOOD = new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
-	private static final int[][] MOORE_NEIGHBORHOOD = new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}, {-1, -1}, {-1, 1}, {1, -1}, {1, 1}};
-	//resource package contains backend button labels and xml files
-	private static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
+public class CellSocietyView {
+    private static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
 	private static final int FRAME_RATE = 2000;
-	
+	private static final double SLOW_RATE = .8;
+	private static final double ACCELERATE_RATE = 1.2;		
 	private CellularAutomata myCA;
 	private GridDrawer myGridView;
 	private Timeline myAnimation;
 	private Scene myScene;
 	private int myWidth;
 	private int myHeight;
+	private XMLReader myReader;
 	private ResourceBundle myButtonNames;
 	private BorderPane myRoot;
-	private HashMap<String, CellularAutomata> gameTypes;
-	private HashMap<String, Grid> gridTypes;
-	private HashMap<String, int[][]> nbhoodTypes;
+
 
 	public CellSocietyView(int width, int height, String shape) {
 		myRoot = new BorderPane();
 		myButtonNames = ResourceBundle.getBundle(DEFAULT_RESOURCE_PACKAGE
 				+ "UIButtons");
-		setUp();
+
 		myWidth = width;
 		myHeight = height;
+		myReader = new XMLReader();
 		myRoot.setCenter(new Rectangle(width, height));
 		myRoot.setRight(makeLoadButton());;
 		myScene = new Scene(myRoot);
@@ -95,28 +92,24 @@ public class CellSocietyView {
 		if (myAnimation != null) {
 			myAnimation.stop();
 		}
-		//allows file to be chosen
-		JFileChooser chooser = new JFileChooser(System.getProperty("user.dir"));
-		chooser.setFileFilter(new FileNameExtensionFilter("XML","xml"));
-		int returnVal = chooser.showOpenDialog(null);
-		if (returnVal != JFileChooser.APPROVE_OPTION) {
-			return;
-		}
-		parseFile(chooser.getSelectedFile());
+		myReader.chooseFile();
+		makeCAGame();
 	}
 
-	private void parseFile(File file) {
-		int cellNum = 20;
-		String neighborhood = "Moore";
-		double prob = .3;
-		String gridType = "torus";
-		String gameName = "Wator";
-		makeCAGame(gameName, cellNum, neighborhood, prob, gridType);
-	}
+
 	
-	private void makeCAGame(String gameName, int cellNum, String neighborhood, double prob, String gridType){
+ /*private void makeCAGame(String gameName, int cellNum, String neighborhood, String gridType, String[] colors, int[][][] points){
 		Grid grid = gridTypes.get(gridType).init(cellNum, nbhoodTypes.get(neighborhood));
-		myCA = gameTypes.get(gameName).init(grid, prob);
+		myCA = gameTypes.get(gameName).init(grid, parameters, colors, points);
+		myGridView = new GridDrawer(myCA.getGrid(), "square");
+		myRoot.setCenter(myGridView.makeGrid(myWidth, myHeight));
+		myRoot.setRight(makeButtons());
+		myGridView.updateNextGen();
+		makeTimeline(FRAME_RATE);
+	}*/
+	
+	private void makeCAGame(){
+		myCA = myReader.makeCA();
 		myGridView = new GridDrawer(myCA.getGrid(), "square");
 		myRoot.setCenter(myGridView.makeGrid(myWidth, myHeight));
 		myRoot.setRight(makeButtons());

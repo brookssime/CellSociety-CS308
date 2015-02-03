@@ -35,9 +35,11 @@ public class Fire extends CellularAutomata {
 	
 
 	public void checkRules(Cell cell) {
-		rule(cell, c-> c.isState(onFire), c -> c.setNextState(empty));
 		rule(cell, 
-				c-> c.isState(tree) && checkNextToFire(c) && getRandomDouble()<getProb(),
+				c -> c.isState(onFire), 
+				c -> c.setNextState(empty));
+		rule(cell, 
+				c -> c.isState(tree) && checkNextToFire(c) && getRandomDouble()<getProb(),
 				c -> c.setNextState(onFire));
 		//ruleOne(cell);
 		//ruleTwo(cell);
