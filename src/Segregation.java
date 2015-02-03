@@ -9,29 +9,30 @@ public class Segregation extends MoveCellularAutomata {
 	private Color red = Color.RED;
 	private Color white = Color.WHITE;
 	
-	public Segregation(int size){
-		super("Segregation", size, new int[][] {{0, -1}, {0,1}, {1, 0}, {1, 1}, {-1, 1}},  .75);
+	public Segregation(){
+		super("Segregation");
 		setEmptyColor(white);
 		emptyCells = new ArrayList<Cell>();
-		setUpInitialConfig();
 	}
 
-
 	public void setUpInitialConfig(){
+		setUpInitialConfig(0.25, 0.25);
+	}
+	
+	public void setUpInitialConfig(double probA, double probB){
 		for (Cell[] c: getGrid().getCells()){
 			for (Cell cell: c){
-				double x = getRandomDouble();
-				if (x <0.25){
+				double x= getRandomDouble();
+				if (x < probA){
 					addMover(new Mover(cell, red));
 				}
-				else if(x <0.5){
+				else if (x< probA + probB){
 					addMover(new Mover(cell, blue));
 				}
 				else{
-					cell.setNextState(white);
+					cell.setState(white);
 					emptyCells.add(cell);
 				}
-				cell.update();
 			}
 		}
 	}
@@ -47,22 +48,22 @@ public class Segregation extends MoveCellularAutomata {
 		
 		double samePercent = getSamePercent(mover.getCell());
 		
-		if (samePercent < getMyProb()){
-			Cell moveTo = getRandomCell(emptyCells);
-			move(mover, moveTo);
+		if (samePercent < getProb()){
+			move(mover, emptyCells);
 		}
 		
 	}
 	
-	public void move(Mover mover, Cell moveTo){
+	public void move(Mover mover, ArrayList<Cell> possibleMoves){
 		emptyCells.add(mover.getCell());
-		super.move(mover, moveTo);
-		emptyCells.remove(moveTo);
+		super.move(mover, possibleMoves);
+		emptyCells.remove(mover.getCell());
 	}
 	
+	
 	private double getSamePercent(Cell cell) {
-		int count = getGrid().findNeighbors(cell, cell.getState()).size();
-		int total = getGrid().findNeighbors(cell, white).size() + count;
+		double count = getGrid().findNeighbors(cell, cell.getState()).size();
+		double total = getGrid().findNeighbors(cell, red).size() + getGrid().findNeighbors(cell, blue).size();
 		double samePercent;
 		//avoid division by zero
 		if (total ==0){

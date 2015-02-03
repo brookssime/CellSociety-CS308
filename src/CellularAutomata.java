@@ -1,30 +1,57 @@
 import java.util.Random;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
+
 
 
 public abstract class CellularAutomata {
 	private String myName;
-	private int[][] myNeighborhood;
 	private double myProb;
 	private Grid myGrid;
 	private Random myRandom;
 	
-	public CellularAutomata(String name, int size, int[][] neighborhood, double prob){
+	public CellularAutomata(String name){
 		myName = name;
-		myNeighborhood = neighborhood;
-		myProb = prob;
 		myRandom = new Random();
-		myGrid = new TorusGrid(size, neighborhood);
 	}
 	
+	public CellularAutomata init(Grid grid, double prob){
+		myProb = prob;
+		myGrid = grid;
+		setUpInitialConfig();	
+		return this;
+	}
+
 	
 	public abstract void setUpInitialConfig();
+	
+	
+	public void setUpInitialConfig(double probA, double probB){
+		
+	}
+	
+	public void rule(Cell cell, Predicate<Cell> tester,Consumer<Cell> change){
+		if (tester.test(cell)){
+			change.accept(cell);
+		}	
+	}
 	
 	public void updateNextGen(){
 		checkRules();
 		handleUpdate();
 	}
 	
-	public abstract void checkRules();
+	public void checkRules(Cell cell){
+		
+	}
+	
+	public void checkRules(){
+		for (Cell[] c: getGrid().getCells()){
+			for (Cell cell: c){
+				checkRules(cell);
+			}
+		}
+	}
 	
 	public void handleUpdate(){
 		for (Cell[] c: getGrid().getCells()){
@@ -46,11 +73,7 @@ public abstract class CellularAutomata {
 		return myName;
 	}
 
-	public int[][] getMyNeighborhood() {
-		return myNeighborhood;
-	}
-
-	public double getMyProb() {
+	public double getProb() {
 		return myProb;
 	}
 
