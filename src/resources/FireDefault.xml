@@ -1,14 +1,19 @@
 <?xml version="1.0"?>
 <Simulation>
-		   <Parameters name="Fire"> 
-		   			<Author>Brooks Sime, Tony Qiao, and James Mosca</Author>
-		   			<GameSize>500</GameSize>
-		   			<cellNum>50</cellNum>
-		   			<GridType>Grid</GridType>
-		   			<prob></prob>
-		   			<onFire>COLOR.RED</onFire>
-		   			<empty>COLOR.YELLOW</empty>
-		   			<tree>Color.GREEN</tree>
-		   			<prob></prob>
-		   </Parameters>
+			<Type>Fire</Type>
+		   	<Author>Brooks Sime, Tony Qiao, and James Mosca</Author>
+		   	<Grid>
+		   		<neighborhood>Moore 8</neighborhood>
+		   		<cellNum>50</cellNum>
+		   		<GridType>default</GridType>
+		   	</Grid>
+		   		<number>
+		   			<prob>15</prob>
+		   		</number>
+			<Colors>
+		   		<onFire color = "red">0.01 </onFire>
+		   		<empty color = "yellow">0</empty>
+		   		<tree color = "green">0.99</tree>
+		   	</Colors>
+
 </Simulation>

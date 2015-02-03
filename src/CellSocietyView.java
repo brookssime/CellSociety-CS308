@@ -16,6 +16,7 @@ import javafx.util.Duration;
 
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import com.sun.prism.paint.Color;
 
 /**
  * Displays the grid and contained cells for each simulation
@@ -38,19 +39,19 @@ public class CellSocietyView {
 	private Scene myScene;
 	private int myWidth;
 	private int myHeight;
+	private XMLReader myReader;
 	private ResourceBundle myButtonNames;
 	private BorderPane myRoot;
-	private HashMap<String, CellularAutomata> gameTypes;
-	private HashMap<String, Grid> gridTypes;
-	private HashMap<String, int[][]> nbhoodTypes;
+
 
 	public CellSocietyView(int width, int height, String shape) {
 		myRoot = new BorderPane();
 		myButtonNames = ResourceBundle.getBundle(DEFAULT_RESOURCE_PACKAGE
 				+ "UIButtons");
-		setUp();
+
 		myWidth = width;
 		myHeight = height;
+		myReader = new XMLReader();
 		myRoot.setCenter(new Rectangle(width, height));
 		myRoot.setRight(makeLoadButton());;
 		myScene = new Scene(myRoot);
@@ -104,20 +105,24 @@ public class CellSocietyView {
 			return;
 		}
 		parseFile(chooser.getSelectedFile());
+		myReader.chooseFile();
+		makeCAGame();
 	}
 
-	private void parseFile(File file) {
-		int cellNum = 20;
-		String neighborhood = "Moore";
-		double prob = .3;
-		String gridType = "torus";
-		String gameName = "Wator";
-		makeCAGame(gameName, cellNum, neighborhood, prob, gridType);
-	}
+
 	
-	private void makeCAGame(String gameName, int cellNum, String neighborhood, double prob, String gridType){
+/*	private void makeCAGame(String gameName, int cellNum, String neighborhood, String gridType, String[] colors, int[][][] points){
 		Grid grid = gridTypes.get(gridType).init(cellNum, nbhoodTypes.get(neighborhood));
-		myCA = gameTypes.get(gameName).init(grid, prob);
+		myCA = gameTypes.get(gameName).init(grid, parameters, colors, points);
+		myGridView = new GridDrawer(myCA.getGrid(), "square");
+		myRoot.setCenter(myGridView.makeGrid(myWidth, myHeight));
+		myRoot.setRight(makeButtons());
+		myGridView.updateNextGen();
+		makeTimeline(FRAME_RATE);
+	}*/
+	
+	private void makeCAGame(){
+		myCA = myReader.makeCA();
 		myGridView = new GridDrawer(myCA.getGrid(), "square");
 		myRoot.setCenter(myGridView.makeGrid(myWidth, myHeight));
 		myRoot.setRight(makeButtons());

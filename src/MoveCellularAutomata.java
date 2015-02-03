@@ -49,6 +49,7 @@ public abstract class MoveCellularAutomata extends CellularAutomata {
 	}
 	
 	private void move(Mover mover, Cell to){
+		
 		mover.getCell().setState(empty);
 		mover.move(to);
 		to.setState(mover.getState());
