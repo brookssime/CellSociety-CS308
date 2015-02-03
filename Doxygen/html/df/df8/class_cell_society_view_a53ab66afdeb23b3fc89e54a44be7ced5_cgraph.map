@@ -1,0 +1,36 @@
+<map id="CellSocietyView.CellSocietyView" name="CellSocietyView.CellSocietyView">
+<area shape="rect" id="node2" href="$df/df8/class_cell_society_view.html#a656cfed0ba32bc41bbd0c4087860db4b" title="CellSocietyView.makeLoad\lButton" alt="" coords="278,733,469,774"/>
+<area shape="rect" id="node3" href="$df/df8/class_cell_society_view.html#ae09ddc20f81e90312e628d712a5c6afc" title="CellSocietyView.makeUIButton" alt="" coords="1560,803,1776,829"/>
+<area shape="rect" id="node4" href="$df/df8/class_cell_society_view.html#a2c047a3972078bb0a5490ed225ef2dfa" title="CellSocietyView.loadNewFile" alt="" coords="518,499,717,525"/>
+<area shape="rect" id="node5" href="$d7/db3/class_x_m_l_reader.html#a9f7a6e53fc5114be22cbd0b9f6184ef0" title="XMLReader.chooseFile" alt="" coords="794,231,955,257"/>
+<area shape="rect" id="node7" href="$df/df8/class_cell_society_view.html#a6a72ed4ee014a9c3f0368ab26be873d6" title="CellSocietyView.makeCAGame" alt="" coords="766,499,983,525"/>
+<area shape="rect" id="node6" href="$d7/db3/class_x_m_l_reader.html#a016fb8ab3899a6c41ac4daec9e64cb90" title="XMLReader.parseXML" alt="" coords="1060,56,1217,83"/>
+<area shape="rect" id="node8" href="$d7/db3/class_x_m_l_reader.html#a0c634622bb0c8f4ee65f2d91218e8917" title="XMLReader.makeCA" alt="" coords="1064,467,1213,493"/>
+<area shape="rect" id="node12" href="$d2/d40/class_cellular_automata.html#a34ceed434c942d34ff03169b92684726" title="CellularAutomata.getGrid" alt="" coords="2387,543,2571,569"/>
+<area shape="rect" id="node13" href="$dd/d97/class_grid_drawer.html#ab8aa1cc79c89cfbc7b9d8516a5dee463" title="GridDrawer.makeGrid" alt="" coords="1059,281,1218,308"/>
+<area shape="rect" id="node22" href="$df/df8/class_cell_society_view.html#a7bdbd4e8fd3893e672eb22015603f6dc" title="CellSocietyView.makeButtons" alt="" coords="1033,740,1244,767"/>
+<area shape="rect" id="node32" href="$dd/d97/class_grid_drawer.html#a8853ef53b515fd60ca524f05a3dbf897" title="GridDrawer.updateNextGen" alt="" coords="1845,275,2043,301"/>
+<area shape="rect" id="node35" href="$df/df8/class_cell_society_view.html#adf6a6b0542d00677a9fffbb8e3c03ffe" title="CellSocietyView.makeTimeline" alt="" coords="1032,531,1245,557"/>
+<area shape="rect" id="node9" href="$d7/db3/class_x_m_l_reader.html#a656927862103b26830df1596c1f65925" title="XMLReader.getTextValue" alt="" coords="1580,441,1756,468"/>
+<area shape="rect" id="node10" href="$d7/db3/class_x_m_l_reader.html#a373d7102833e61dbaac8e91b0567d03c" title="XMLReader.makeGrid" alt="" coords="1324,391,1481,417"/>
+<area shape="rect" id="node11" href="$d7/db3/class_x_m_l_reader.html#add9bc5354b7e5ab29eab10f671ee9686" title="XMLReader.makeParam" alt="" coords="1317,441,1489,468"/>
+<area shape="rect" id="node14" href="$dd/d97/class_grid_drawer.html#af9a09b2ee81450f13a117261b67718e0" title="GridDrawer.makeUnitGrid" alt="" coords="1311,157,1495,184"/>
+<area shape="rect" id="node19" href="$dd/d97/class_grid_drawer.html#a54f548bdc35a2afef9af05a134c149f5" title="GridDrawer.calculateCell\lWidth" alt="" coords="1315,209,1491,250"/>
+<area shape="rect" id="node20" href="$dd/d97/class_grid_drawer.html#a3f6bb5e9307bf84f9f8f4ae467ec85cf" title="GridDrawer.calculateCell\lHeight" alt="" coords="1315,274,1491,315"/>
+<area shape="rect" id="node21" href="$dd/d97/class_grid_drawer.html#a8fba9cca18cee03651775b5785722778" title="GridDrawer.scale" alt="" coords="1338,340,1467,367"/>
+<area shape="rect" id="node15" href="$dd/d97/class_grid_drawer.html#a69ef437bdcbcdb3dca6b206b73a1ab1f" title="GridDrawer.drawUnitCell" alt="" coords="1581,56,1755,83"/>
+<area shape="rect" id="node16" href="$dd/d97/class_grid_drawer.html#a53b8613b7621224084096d76e2316452" title="GridDrawer.drawTriangle" alt="" coords="1857,5,2031,32"/>
+<area shape="rect" id="node17" href="$dd/d97/class_grid_drawer.html#a08b9d58cde5fafa07e226d4ed2ebc655" title="GridDrawer.drawSquare" alt="" coords="1858,56,2030,83"/>
+<area shape="rect" id="node18" href="$dd/d97/class_grid_drawer.html#a260f7ce1d53af7f88e1c4ee3a4a3de2b" title="GridDrawer.drawHexagon" alt="" coords="1853,107,2035,133"/>
+<area shape="rect" id="node23" href="$df/df8/class_cell_society_view.html#a1531c1a5ad4e0630046bfe4e8c3127e8" title="CellSocietyView.makePlay\lButton" alt="" coords="1309,827,1496,869"/>
+<area shape="rect" id="node24" href="$df/df8/class_cell_society_view.html#ae177299e365c8c48502004eb87a03cf1" title="CellSocietyView.makePause\lButton" alt="" coords="1303,893,1502,934"/>
+<area shape="rect" id="node25" href="$df/df8/class_cell_society_view.html#ae4f695e25edd84b67be004d3b1a7a437" title="CellSocietyView.makeFFButton" alt="" coords="1294,711,1511,737"/>
+<area shape="rect" id="node26" href="$df/df8/class_cell_society_view.html#a304edeb753eed8cedb1c8e0ad952a4d8" title="CellSocietyView.makeSlow\lButton" alt="" coords="1308,762,1497,803"/>
+<area shape="rect" id="node27" href="$df/df8/class_cell_society_view.html#aec6e94a6cf275f0b5d64a4b8adccd7d0" title="CellSocietyView.makeStep\lButton" alt="" coords="1307,645,1498,686"/>
+<area shape="rect" id="node28" href="$df/df8/class_cell_society_view.html#ad52b914fa03b45d8bc9d64fc407660f3" title="CellSocietyView.updateView" alt="" coords="1569,543,1767,569"/>
+<area shape="rect" id="node29" href="$d2/d40/class_cellular_automata.html#a8f4c8a2f32137db67dd31f5afb4b62c3" title="CellularAutomata.updateNextGen" alt="" coords="1825,543,2063,569"/>
+<area shape="rect" id="node30" href="$d2/d40/class_cellular_automata.html#ab6b9e3ca964f405470ec0acc064d9b3a" title="CellularAutomata.checkRules" alt="" coords="2122,543,2329,569"/>
+<area shape="rect" id="node31" href="$d2/d40/class_cellular_automata.html#ab39b5164764f20382801aa9a4663eb4b" title="CellularAutomata.handleUpdate" alt="" coords="2112,492,2339,519"/>
+<area shape="rect" id="node33" href="$da/d74/class_grid.html#a2f2ccb1511e367a7d6e9bcb3f708cd38" title="Grid.getCellAt" alt="" coords="2170,300,2281,327"/>
+<area shape="rect" id="node34" href="$dd/d11/class_cell.html#aac3ac473652b817fe344534f4bec7e6f" title="Cell.getState" alt="" coords="2173,249,2278,276"/>
+</map>

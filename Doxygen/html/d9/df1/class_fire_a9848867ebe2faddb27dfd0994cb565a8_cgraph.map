@@ -1,0 +1,14 @@
+<map id="Fire.checkRules" name="Fire.checkRules">
+<area shape="rect" id="node2" href="$d9/df1/class_fire.html#a65c7d316a113807e7bdf626a789e2bf5" title="Fire.checkNextToFire" alt="" coords="203,107,354,133"/>
+<area shape="rect" id="node10" href="$d2/d40/class_cellular_automata.html#ac2c674c8f80e624e4b63c131b4200a34" title="CellularAutomata.getProb" alt="" coords="185,157,372,184"/>
+<area shape="rect" id="node11" href="$d2/d40/class_cellular_automata.html#a3e303e691cc17b9a478a3e0e167a37e6" title="CellularAutomata.getRandom\lDouble" alt="" coords="173,209,384,250"/>
+<area shape="rect" id="node12" href="$dd/d11/class_cell.html#aa625dbd39334a9a13a7bb87c98d5fcbe" title="Cell.isState" alt="" coords="231,275,326,301"/>
+<area shape="rect" id="node13" href="$d2/d40/class_cellular_automata.html#a42e30e977acd201acf1aa8d4db292310" title="CellularAutomata.rule" alt="" coords="198,325,359,352"/>
+<area shape="rect" id="node3" href="$da/d74/class_grid.html#a43e84876ecfc5265a5e37a39e64e794e" title="Grid.findNeighbors" alt="" coords="454,81,594,108"/>
+<area shape="rect" id="node9" href="$d2/d40/class_cellular_automata.html#a34ceed434c942d34ff03169b92684726" title="CellularAutomata.getGrid" alt="" coords="432,132,616,159"/>
+<area shape="rect" id="node4" href="$da/d74/class_grid.html#a33b84a1d6b40a447bdd4a33fa3daf555" title="Grid.getNeighbors" alt="" coords="664,81,803,108"/>
+<area shape="rect" id="node5" href="$dd/d11/class_cell.html#a4725094202cf38c727f2adcc3cf8b96f" title="Cell.getPosX" alt="" coords="869,5,971,32"/>
+<area shape="rect" id="node6" href="$dd/d11/class_cell.html#ac445ab365d1ec19483e98841be73d11e" title="Cell.getPosY" alt="" coords="870,56,970,83"/>
+<area shape="rect" id="node7" href="$da/d74/class_grid.html#a669941947881f795a6ab4a70adf05172" title="Grid.getTorusPoint" alt="" coords="851,107,989,133"/>
+<area shape="rect" id="node8" href="$da/d74/class_grid.html#ab87098d7bfaf1eaf367e4342a5bce0ae" title="Grid.checkBounds" alt="" coords="851,157,989,184"/>
+</map>
