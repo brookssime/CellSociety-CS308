@@ -2,6 +2,9 @@ import javafx.scene.Group;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Shape;
 
+/**
+ * Creates visual representation of grid for simulation
+ */
 
 public class GridDrawer {
 	private Grid myGrid;

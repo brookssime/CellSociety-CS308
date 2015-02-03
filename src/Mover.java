@@ -1,5 +1,8 @@
 import javafx.scene.paint.Paint;
 
+/**
+ * Allows cell states to be moved to next cell
+ */
 
 public class Mover {
 	private Cell myCell;

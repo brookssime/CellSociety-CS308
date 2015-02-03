@@ -1,6 +1,9 @@
 import javafx.scene.paint.Paint;
 
-
+/**
+ * Cell representation
+ * Keeps track of color and coordinates
+ */
 
 public class Cell{
 	private Paint nextColor;

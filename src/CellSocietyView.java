@@ -17,10 +17,18 @@ import javafx.util.Duration;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+/**
+ * Displays the grid and contained cells for each simulation
+ */
+
 public class CellSocietyView {
 
+	private static final double ACCELERATE_RATE = 1.25;
+	private static final double SLOW_RATE = .8;
+	private static final int[][] NEAR_NEIGHBORHOOD = new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
+	private static final int[][] MOORE_NEIGHBORHOOD = new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}, {-1, -1}, {-1, 1}, {1, -1}, {1, 1}};
+	//resource package contains backend button labels and xml files
 	private static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
-	
 	private static final int FRAME_RATE = 2000;
 	
 	private CellularAutomata myCA;
@@ -73,8 +81,10 @@ public class CellSocietyView {
 	
 	private void setUpNbhoodTypes(){
 		nbhoodTypes = new HashMap<>();
-		nbhoodTypes.put("Moore", new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}, {-1, -1}, {-1, 1}, {1, -1}, {1, 1}});
-		nbhoodTypes.put("nearest", new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}});
+		//"Moore" neighborhood includeds 8 surrounding cells
+		nbhoodTypes.put("Moore", MOORE_NEIGHBORHOOD);
+		//"Nearest" neighborhood includes only vert. and horiz. cells
+		nbhoodTypes.put("nearest", NEAR_NEIGHBORHOOD);
 	}
 	
 	public Scene getScene() {
@@ -85,6 +95,7 @@ public class CellSocietyView {
 		if (myAnimation != null) {
 			myAnimation.stop();
 		}
+		//allows file to be chosen
 		JFileChooser chooser = new JFileChooser(System.getProperty("user.dir"));
 		chooser.setFileFilter(new FileNameExtensionFilter("XML","xml"));
 		int returnVal = chooser.showOpenDialog(null);
@@ -133,20 +144,46 @@ public class CellSocietyView {
 	
 	private VBox makeButtons() {
 		VBox buttons = new VBox();
-		Button play = makeUIButton(myButtonNames.getString("PlayCommand"),
-				e -> myAnimation.play());
-		Button pause = makeUIButton(myButtonNames.getString("PauseCommand"),
-				e -> myAnimation.pause());
-		Button fastForward = makeUIButton(
-				myButtonNames.getString("AccelerateCommand"),
-				e -> myAnimation.setRate(myAnimation.getRate() * 1.25));
-		Button slowDown = makeUIButton(myButtonNames.getString("SlowCommand"),
-				e -> myAnimation.setRate(myAnimation.getRate() * .8));
-		Button step = makeUIButton(myButtonNames.getString("StepCommand"),
-				e -> updateView());
+		Button play = makePlayButton();
+		Button pause = makePauseButton();
+		Button fastForward = makeFFButton();
+		Button slowDown = makeSlowButton();
+		Button step = makeStepButton();
 		Button newFile = makeLoadButton();
+		//adds buttons as UI on right side of screen
 		buttons.getChildren().addAll(newFile, play, pause, fastForward, slowDown, step);
 		return buttons;
+	}
+
+	private Button makeStepButton() {
+		Button step = makeUIButton(myButtonNames.getString("StepCommand"),
+				e -> updateView());
+		return step;
+	}
+
+	private Button makeSlowButton() {
+		Button slowDown = makeUIButton(myButtonNames.getString("SlowCommand"),
+				e -> myAnimation.setRate(myAnimation.getRate() * SLOW_RATE));
+		return slowDown;
+	}
+
+	private Button makeFFButton() {
+		Button fastForward = makeUIButton(
+				myButtonNames.getString("AccelerateCommand"),
+				e -> myAnimation.setRate(myAnimation.getRate() * ACCELERATE_RATE));
+		return fastForward;
+	}
+
+	private Button makePauseButton() {
+		Button pause = makeUIButton(myButtonNames.getString("PauseCommand"),
+				e -> myAnimation.pause());
+		return pause;
+	}
+
+	private Button makePlayButton() {
+		Button play = makeUIButton(myButtonNames.getString("PlayCommand"),
+				e -> myAnimation.play());
+		return play;
 	}
 
 	private Button makeUIButton(String name, EventHandler<MouseEvent> e) {

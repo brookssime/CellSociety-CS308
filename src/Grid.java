@@ -3,8 +3,10 @@ import java.util.ArrayList;
 import javafx.scene.Group;
 import javafx.scene.paint.Paint;
 
-//in order to possibly apply this for other shapes, we may need to remove the GridPane part
-//for other shapes, we may want to manually position each thing based on its position (x,y)
+/**
+ * Holds all cells in 2D array
+ * Keeps track of neighbors for given cell
+ */
 public class Grid extends Group{
 	private int myGridSize;
 	private Cell[][] myCells;

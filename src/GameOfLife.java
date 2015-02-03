@@ -1,7 +1,12 @@
 import javafx.scene.paint.Color;
 
+/**
+ * Creates rules for GameOfLife
+ */
 
 public class GameOfLife extends CellularAutomata{
+	private static final double PROBABILITY_ALIVE = 0.5;
+
 	private Color alive = Color.BLACK;
 	private Color dead = Color.WHITE;
 	
@@ -12,7 +17,7 @@ public class GameOfLife extends CellularAutomata{
 	public void setUpInitialConfig(){
 		for (Cell[] c: getGrid().getCells()){
 			for (Cell cell: c){
-				if (getRandomDouble() <0.5){
+				if (getRandomDouble() <PROBABILITY_ALIVE){
 					cell.setNextState(alive);
 				}
 				else {

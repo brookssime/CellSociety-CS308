@@ -2,21 +2,27 @@ import java.util.ArrayList;
 
 import javafx.scene.paint.Color;
 
+/**
+ * Creates rules for Segregation simulation
+ */
 
 public class Segregation extends MoveCellularAutomata {
+	
+	private double percentColorTwo = 0.25;
+	private double percentColorOne = 0.25;
 	private ArrayList<Cell> emptyCells;
-	private Color blue = Color.BLUE;
-	private Color red = Color.RED;
-	private Color white = Color.WHITE;
+	private Color color1 = Color.RED;
+	private Color color2 = Color.BLUE;
+	private Color empty = Color.WHITE;
 	
 	public Segregation(){
 		super("Segregation");
-		setEmptyColor(white);
+		setEmptyColor(empty);
 		emptyCells = new ArrayList<Cell>();
 	}
 
 	public void setUpInitialConfig(){
-		setUpInitialConfig(0.25, 0.25);
+		setUpInitialConfig(percentColorOne, percentColorTwo);
 	}
 	
 	public void setUpInitialConfig(double probA, double probB){
@@ -24,13 +30,13 @@ public class Segregation extends MoveCellularAutomata {
 			for (Cell cell: c){
 				double x= getRandomDouble();
 				if (x < probA){
-					addMover(new Mover(cell, red));
+					addMover(new Mover(cell, color1));
 				}
 				else if (x< probA + probB){
-					addMover(new Mover(cell, blue));
+					addMover(new Mover(cell, color2));
 				}
 				else{
-					cell.setState(white);
+					cell.setState(empty);
 					emptyCells.add(cell);
 				}
 			}
@@ -42,7 +48,7 @@ public class Segregation extends MoveCellularAutomata {
 	}
 
 	private void ruleOne(Mover mover){
-		if (mover.isState(white)){
+		if (mover.isState(empty)){
 			return;
 		}
 		
@@ -63,7 +69,7 @@ public class Segregation extends MoveCellularAutomata {
 	
 	private double getSamePercent(Cell cell) {
 		double count = getGrid().findNeighbors(cell, cell.getState()).size();
-		double total = getGrid().findNeighbors(cell, red).size() + getGrid().findNeighbors(cell, blue).size();
+		double total = getGrid().findNeighbors(cell, empty).size() + getGrid().findNeighbors(cell, color2).size();
 		double samePercent;
 		//avoid division by zero
 		if (total ==0){

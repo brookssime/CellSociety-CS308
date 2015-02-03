@@ -1,4 +1,7 @@
-
+/**
+ * Creates alternative grid type TorusGrid
+ * Allows cells states to "move" from one edge of grid to the opposite
+ */
 public class TorusGrid extends Grid {
 
 	public TorusGrid() {
