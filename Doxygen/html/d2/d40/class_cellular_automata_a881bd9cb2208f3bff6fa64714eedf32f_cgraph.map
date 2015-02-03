@@ -1,6 +1,0 @@
-<map id="CellularAutomata.init" name="CellularAutomata.init">
-<area shape="rect" id="node2" href="$d2/d40/class_cellular_automata.html#a1eff79cea4946a38023fcc3a92670aff" title="CellularAutomata.init" alt="" coords="237,5,393,32"/>
-<area shape="rect" id="node3" href="$d2/d40/class_cellular_automata.html#ae0dc3747c80392dfc7d36e80e86805a5" title="CellularAutomata.setUpInitial\lConfig" alt="" coords="211,57,419,98"/>
-<area shape="rect" id="node4" href="$d2/d40/class_cellular_automata.html#a34ceed434c942d34ff03169b92684726" title="CellularAutomata.getGrid" alt="" coords="480,35,664,61"/>
-<area shape="rect" id="node5" href="$d2/d40/class_cellular_automata.html#a3e303e691cc17b9a478a3e0e167a37e6" title="CellularAutomata.getRandom\lDouble" alt="" coords="467,86,677,127"/>
-</map>

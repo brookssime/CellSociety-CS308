@@ -1,9 +1,0 @@
-<map id="CellularAutomata.getRandomDouble" name="CellularAutomata.getRandomDouble">
-<area shape="rect" id="node2" href="$d9/df1/class_fire.html#a9848867ebe2faddb27dfd0994cb565a8" title="Fire.checkRules" alt="" coords="309,5,427,32"/>
-<area shape="rect" id="node3" href="$d9/df1/class_fire.html#accc21ae2162fd526d8ca66c472a62a28" title="Fire.ruleTwo" alt="" coords="321,56,415,83"/>
-<area shape="rect" id="node4" href="$d9/df1/class_fire.html#afd16418c5ea360c815613862a4ea1c33" title="Fire.setUpInitialConfig" alt="" coords="289,107,447,133"/>
-<area shape="rect" id="node5" href="$da/d1e/class_segregation.html#ae51122aa23967e3e2af576026eb1d912" title="Segregation.setUpInitial\lConfig" alt="" coords="281,158,455,199"/>
-<area shape="rect" id="node6" href="$d2/d40/class_cellular_automata.html#ae0dc3747c80392dfc7d36e80e86805a5" title="CellularAutomata.setUpInitial\lConfig" alt="" coords="264,223,472,265"/>
-<area shape="rect" id="node8" href="$d0/db0/class_wator.html#a0338ba17229ff94cb2310835a43c8513" title="Wator.setUpInitialConfig" alt="" coords="282,289,454,316"/>
-<area shape="rect" id="node7" href="$d2/d40/class_cellular_automata.html#a881bd9cb2208f3bff6fa64714eedf32f" title="CellularAutomata.init" alt="" coords="521,231,677,257"/>
-</map>
