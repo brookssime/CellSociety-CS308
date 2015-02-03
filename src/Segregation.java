@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Map;
 
 import javafx.scene.paint.Color;
 
@@ -8,8 +9,7 @@ import javafx.scene.paint.Color;
 
 public class Segregation extends MoveCellularAutomata {
 	
-	private double percentColorTwo = 0.25;
-	private double percentColorOne = 0.25;
+
 	private ArrayList<Cell> emptyCells;
 	private Color color1 = Color.RED;
 	private Color color2 = Color.BLUE;
@@ -17,23 +17,31 @@ public class Segregation extends MoveCellularAutomata {
 	
 	public Segregation(){
 		super("Segregation");
+
+		emptyCells = new ArrayList<Cell>();
+	}
+	
+	public void init(Grid grid, Map<String, Integer> parameters, String[] colors){
+		super.init(grid, parameters, colors);
+		color1 = Color.web(colors[1]);
+		color2 = Color.web(colors[0]);
+		empty = Color.web(colors[2]);
+		setEmptyColor(empty);
 		setEmptyColor(empty);
 		emptyCells = new ArrayList<Cell>();
 	}
-
-	public void setUpInitialConfig(){
-		setUpInitialConfig(percentColorOne, percentColorTwo);
-	}
 	
-	public void setUpInitialConfig(double probA, double probB){
+	public void setUpInitialConfig(String[] colors, double[] probs){
 		for (Cell[] c: getGrid().getCells()){
 			for (Cell cell: c){
 				double x= getRandomDouble();
-				if (x < probA){
-					addMover(new Mover(cell, color1));
-				}
-				else if (x< probA + probB){
+
+				if (x < probs[0]){		
 					addMover(new Mover(cell, color2));
+				}
+				else if (x< probs[0]+ probs[1]){		
+					addMover(new Mover(cell, color1));
+
 				}
 				else{
 					cell.setState(empty);

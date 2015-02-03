@@ -8,11 +8,11 @@
 Design:
 CellularAutomata
 	Summary
-		Grid with cells
+		Grid with cells (contained within 2D array)
 		Cells have finite states
 		Cells have neighborhoods
 	Variables
-		Color States
+		Color States - alive/dead etc.
 		Grid
 		generation
 		animation?
@@ -21,7 +21,7 @@ CellularAutomata
 		checkRules(cell)
 		nextGen()
 	Subclasses
-		GameOfLife
+		GameOfLife - only one to not need probability
 		Fire
 		MoveCellularAutomata
 			Checks rule and then updates instantly. 
@@ -60,7 +60,7 @@ Fish extends Movers
 		breed
 		survive
 		
-Shark extends Fish
+Shark extends Fish - not needed?
 	Variables
 		energySpent
 	Methods
@@ -103,6 +103,12 @@ Grid
 		TorusGrid
 			makes the grid a torus shape.
 			changes gridPoint
+
+XMLReader - 
+	Chooses file with JChooser
+	uses constructor to set file chosen
+	parses xml into doc and then parses doc
+	establishes variables from xml files so can be used by CellSocietyView
 			
 Animation?
 	Summary
@@ -126,7 +132,7 @@ Rules?
 	Comments
 		sometimes we need the arraylist that we create in checkneighborstates
 		
-Parameters:
+Parameters: (initially read/stored in xml files)
 	Type of grid (torus or not)
 	Shape of cell (square, triangle, hexagon)
 	Grid size (possibly infinite)
@@ -171,5 +177,15 @@ Grid
 Should create an iterator class?
 How do we change the shape of the grid based on a parameter
 
-
+/resources:
+Contains backend names for all UIButtons in game 
+Contains xml files which read in default info
+	xml:
+	Node - "Simulation"
+	Tag - "Parameters" - get this tag's info with method to go through all tags
+	(there's only 1)
+	colors - cell states
+	initial parameters: cell num, grid type, grid size, etc.
+	All simulations need probability parameter except for GameOfLife (prob)
+*Need to link XMLReader to CellSocietyView	
 

@@ -1,3 +1,5 @@
+import java.util.Map;
+
 import javafx.scene.paint.Color;
 
 /**
@@ -5,28 +7,23 @@ import javafx.scene.paint.Color;
  */
 
 public class GameOfLife extends CellularAutomata{
+
+	private Color alive;
+	private Color dead;
+
 	private static final double PROBABILITY_ALIVE = 0.5;
 
-	private Color alive = Color.BLACK;
-	private Color dead = Color.WHITE;
 	
 	public GameOfLife(){
 		super("Game of Life");
 	}
 	
-	public void setUpInitialConfig(){
-		for (Cell[] c: getGrid().getCells()){
-			for (Cell cell: c){
-				if (getRandomDouble() <PROBABILITY_ALIVE){
-					cell.setNextState(alive);
-				}
-				else {
-					cell.setNextState(dead);
-				}
-			}
-		}
-		handleUpdate();
+	public void init(Grid grid, Map<String, Integer> parameters, String[] colors){
+		super.init(grid, parameters, colors);
+		alive = Color.web(colors[0]); 
+		dead = Color.web(colors[1]);
 	}
+	
 	
 	public void checkRules(Cell cell){
 		int count = getGrid().findNeighbors(cell, alive).size();
