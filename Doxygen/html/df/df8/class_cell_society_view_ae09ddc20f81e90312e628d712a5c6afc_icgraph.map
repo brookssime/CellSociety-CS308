@@ -1,0 +1,13 @@
+<map id="CellSocietyView.makeUIButton" name="CellSocietyView.makeUIButton">
+<area shape="rect" id="node2" href="$df/df8/class_cell_society_view.html#ae4f695e25edd84b67be004d3b1a7a437" title="CellSocietyView.makeFFButton" alt="" coords="270,5,487,32"/>
+<area shape="rect" id="node7" href="$df/df8/class_cell_society_view.html#a656cfed0ba32bc41bbd0c4087860db4b" title="CellSocietyView.makeLoad\lButton" alt="" coords="1539,206,1730,247"/>
+<area shape="rect" id="node9" href="$df/df8/class_cell_society_view.html#ae177299e365c8c48502004eb87a03cf1" title="CellSocietyView.makePause\lButton" alt="" coords="279,57,478,98"/>
+<area shape="rect" id="node10" href="$df/df8/class_cell_society_view.html#a1531c1a5ad4e0630046bfe4e8c3127e8" title="CellSocietyView.makePlay\lButton" alt="" coords="285,122,472,163"/>
+<area shape="rect" id="node11" href="$df/df8/class_cell_society_view.html#a304edeb753eed8cedb1c8e0ad952a4d8" title="CellSocietyView.makeSlow\lButton" alt="" coords="284,187,473,229"/>
+<area shape="rect" id="node12" href="$df/df8/class_cell_society_view.html#aec6e94a6cf275f0b5d64a4b8adccd7d0" title="CellSocietyView.makeStep\lButton" alt="" coords="283,253,474,294"/>
+<area shape="rect" id="node3" href="$df/df8/class_cell_society_view.html#a7bdbd4e8fd3893e672eb22015603f6dc" title="CellSocietyView.makeButtons" alt="" coords="536,163,747,189"/>
+<area shape="rect" id="node4" href="$df/df8/class_cell_society_view.html#a767ab215ca329ba41b1493702141f841" title="CellSocietyView.makeCAGame" alt="" coords="795,163,1013,189"/>
+<area shape="rect" id="node5" href="$df/df8/class_cell_society_view.html#a2ee793e471cc5731ce39c1450f058dd5" title="CellSocietyView.parseFile" alt="" coords="1062,163,1242,189"/>
+<area shape="rect" id="node6" href="$df/df8/class_cell_society_view.html#a2c047a3972078bb0a5490ed225ef2dfa" title="CellSocietyView.loadNewFile" alt="" coords="1291,163,1490,189"/>
+<area shape="rect" id="node8" href="$df/df8/class_cell_society_view.html#a53ab66afdeb23b3fc89e54a44be7ced5" title="CellSocietyView.CellSocietyView" alt="" coords="1779,213,2002,240"/>
+</map>

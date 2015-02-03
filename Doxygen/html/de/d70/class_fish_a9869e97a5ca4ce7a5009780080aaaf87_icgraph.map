@@ -1,0 +1,6 @@
+<map id="Fish.canBreed" name="Fish.canBreed">
+<area shape="rect" id="node2" href="$d0/db0/class_wator.html#a48bebe2ccefc55d2e433578eb0c22684" title="Wator.breedIfCan" alt="" coords="165,31,296,57"/>
+<area shape="rect" id="node3" href="$d0/db0/class_wator.html#a0afccb8f97e33c1d21e51ee1a3f4922b" title="Wator.ruleOne" alt="" coords="345,5,455,32"/>
+<area shape="rect" id="node5" href="$d0/db0/class_wator.html#aa8dba59120d9d6d7d7521f3a4ee7b454" title="Wator.ruleTwo" alt="" coords="347,56,453,83"/>
+<area shape="rect" id="node4" href="$d0/db0/class_wator.html#a422810cdcb035633301b3469cbee5e34" title="Wator.checkRules" alt="" coords="504,31,635,57"/>
+</map>

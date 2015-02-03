@@ -1,0 +1,12 @@
+<map id="Cell.setNextState" name="Cell.setNextState">
+<area shape="rect" id="node2" href="$d8/d84/class_game_of_life.html#aca7cd11a349cf14c940011021f91127f" title="GameOfLife.ruleOne" alt="" coords="190,5,341,32"/>
+<area shape="rect" id="node3" href="$d9/df1/class_fire.html#a08de9a15877f76fa5bc6c8872559f79f" title="Fire.ruleOne" alt="" coords="216,56,315,83"/>
+<area shape="rect" id="node4" href="$d8/d84/class_game_of_life.html#a6b6c946c47342fd7e4595710d72a9217" title="GameOfLife.ruleTwo" alt="" coords="192,107,339,133"/>
+<area shape="rect" id="node5" href="$d9/df1/class_fire.html#accc21ae2162fd526d8ca66c472a62a28" title="Fire.ruleTwo" alt="" coords="218,157,313,184"/>
+<area shape="rect" id="node6" href="$dd/d11/class_cell.html#aaaf321e273ef5b6ac3fae80e36d19629" title="Cell.setState" alt="" coords="213,208,317,235"/>
+<area shape="rect" id="node7" href="$d9/df1/class_fire.html#afd16418c5ea360c815613862a4ea1c33" title="Fire.setUpInitialConfig" alt="" coords="414,132,573,159"/>
+<area shape="rect" id="node8" href="$da/de8/class_move_cellular_automata.html#a90e79ebdb8723f3674bd90a264a143b8" title="MoveCellularAutomata.move" alt="" coords="390,183,597,209"/>
+<area shape="rect" id="node9" href="$dc/d06/class_mover.html#af157bc60c3ea8c2f1eb4672489251d57" title="Mover.Mover" alt="" coords="442,233,545,260"/>
+<area shape="rect" id="node10" href="$d0/db0/class_wator.html#aa8dba59120d9d6d7d7521f3a4ee7b454" title="Wator.ruleTwo" alt="" coords="440,284,547,311"/>
+<area shape="rect" id="node11" href="$d0/db0/class_wator.html#a422810cdcb035633301b3469cbee5e34" title="Wator.checkRules" alt="" coords="645,284,776,311"/>
+</map>

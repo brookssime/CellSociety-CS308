@@ -1,0 +1,11 @@
+<map id="GridDrawer.updateNextGen" name="GridDrawer.updateNextGen">
+<area shape="rect" id="node2" href="$df/df8/class_cell_society_view.html#a767ab215ca329ba41b1493702141f841" title="CellSocietyView.makeCAGame" alt="" coords="761,41,978,68"/>
+<area shape="rect" id="node8" href="$df/df8/class_cell_society_view.html#ad52b914fa03b45d8bc9d64fc407660f3" title="CellSocietyView.updateView" alt="" coords="251,71,450,97"/>
+<area shape="rect" id="node3" href="$df/df8/class_cell_society_view.html#a2ee793e471cc5731ce39c1450f058dd5" title="CellSocietyView.parseFile" alt="" coords="1027,16,1207,43"/>
+<area shape="rect" id="node4" href="$df/df8/class_cell_society_view.html#a2c047a3972078bb0a5490ed225ef2dfa" title="CellSocietyView.loadNewFile" alt="" coords="1257,16,1455,43"/>
+<area shape="rect" id="node5" href="$df/df8/class_cell_society_view.html#a656cfed0ba32bc41bbd0c4087860db4b" title="CellSocietyView.makeLoad\lButton" alt="" coords="1505,5,1695,46"/>
+<area shape="rect" id="node6" href="$df/df8/class_cell_society_view.html#a53ab66afdeb23b3fc89e54a44be7ced5" title="CellSocietyView.CellSocietyView" alt="" coords="1745,12,1967,39"/>
+<area shape="rect" id="node7" href="$df/df8/class_cell_society_view.html#a7bdbd4e8fd3893e672eb22015603f6dc" title="CellSocietyView.makeButtons" alt="" coords="1751,71,1961,97"/>
+<area shape="rect" id="node9" href="$df/df8/class_cell_society_view.html#aec6e94a6cf275f0b5d64a4b8adccd7d0" title="CellSocietyView.makeStep\lButton" alt="" coords="774,114,965,155"/>
+<area shape="rect" id="node10" href="$df/df8/class_cell_society_view.html#adf6a6b0542d00677a9fffbb8e3c03ffe" title="CellSocietyView.makeTimeline" alt="" coords="499,71,712,97"/>
+</map>
