@@ -20,10 +20,8 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import com.sun.prism.paint.Color;
 
 public class CellSocietyView {
-
-	private static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
-	
-	private static final int FRAME_RATE = 2000;
+    private static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
+	private static final int FRAME_RATE = 2000;	
 	
 	private CellularAutomata myCA;
 	private GridDrawer myGridView;

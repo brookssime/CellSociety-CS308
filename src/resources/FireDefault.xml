@@ -1,9 +1,14 @@
 <?xml version="1.0"?>
 <Simulation>
 		   <Parameters name="Fire"> 
-		   			<Author></Author>
+		   			<Author>Brooks Sime, Tony Qiao, and James Mosca</Author>
 		   			<GameSize>500</GameSize>
-		   			<CellNumber>50</CellNumber>
+		   			<cellNum>50</cellNum>
 		   			<GridType>Grid</GridType>
+		   			<prob></prob>
+		   			<onFire>COLOR.RED</onFire>
+		   			<empty>COLOR.YELLOW</empty>
+		   			<tree>Color.GREEN</tree>
+		   			<prob></prob>
 		   </Parameters>
 </Simulation>
