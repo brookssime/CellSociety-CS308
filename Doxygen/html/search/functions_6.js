@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['gameoflife',['GameOfLife',['../d8/d84/class_game_of_life.html#adec27379fa990e8208fcaac36af577c1',1,'GameOfLife']]],
+  ['getcell',['getCell',['../dc/d06/class_mover.html#adf476a60dad6e0feb9bedb3f6af313b5',1,'Mover']]],
+  ['getcellat',['getCellAt',['../da/d74/class_grid.html#a2f2ccb1511e367a7d6e9bcb3f708cd38',1,'Grid']]],
+  ['getcells',['getCells',['../da/d74/class_grid.html#aba1e1b4dba7072955cad21806ef1c753',1,'Grid']]],
+  ['getgrid',['getGrid',['../d2/d40/class_cellular_automata.html#a34ceed434c942d34ff03169b92684726',1,'CellularAutomata']]],
+  ['getgridsize',['getGridSize',['../da/d74/class_grid.html#a5f4c70cc0b2718fca839fd8755fcfff4',1,'Grid']]],
+  ['getname',['getName',['../d2/d40/class_cellular_automata.html#ad8e068dc2395ca5598e5e4164ecfe6b2',1,'CellularAutomata']]],
+  ['getneighbors',['getNeighbors',['../da/d74/class_grid.html#a33b84a1d6b40a447bdd4a33fa3daf555',1,'Grid']]],
+  ['getposx',['getPosX',['../dd/d11/class_cell.html#a4725094202cf38c727f2adcc3cf8b96f',1,'Cell']]],
+  ['getposy',['getPosY',['../dd/d11/class_cell.html#ac445ab365d1ec19483e98841be73d11e',1,'Cell']]],
+  ['getprob',['getProb',['../d2/d40/class_cellular_automata.html#ac2c674c8f80e624e4b63c131b4200a34',1,'CellularAutomata']]],
+  ['getrandomcell',['getRandomCell',['../da/de8/class_move_cellular_automata.html#a51d0684d1393a9ad01e371119f37c039',1,'MoveCellularAutomata']]],
+  ['getrandomdouble',['getRandomDouble',['../d2/d40/class_cellular_automata.html#a3e303e691cc17b9a478a3e0e167a37e6',1,'CellularAutomata']]],
+  ['getsamepercent',['getSamePercent',['../da/d1e/class_segregation.html#ae7696748513b436c2578ff68b02d889d',1,'Segregation']]],
+  ['getscene',['getScene',['../df/df8/class_cell_society_view.html#aa866e58862a7937c2b18938dcd68d882',1,'CellSocietyView']]],
+  ['getstate',['getState',['../dd/d11/class_cell.html#aac3ac473652b817fe344534f4bec7e6f',1,'Cell.getState()'],['../dc/d06/class_mover.html#aa8711e427647a7c980d42a89588270ba',1,'Mover.getState()']]],
+  ['gettextvalue',['getTextValue',['../d7/db3/class_x_m_l_reader.html#a656927862103b26830df1596c1f65925',1,'XMLReader']]],
+  ['gettoruspoint',['getTorusPoint',['../da/d74/class_grid.html#a669941947881f795a6ab4a70adf05172',1,'Grid.getTorusPoint()'],['../d8/d27/class_torus_grid.html#ad529a0eef2c1d0ea8f2716e9658c9fa4',1,'TorusGrid.getTorusPoint()']]],
+  ['grid',['Grid',['../da/d74/class_grid.html#aba154eaba6f107849eb6cf2460b3f4bf',1,'Grid']]],
+  ['griddrawer',['GridDrawer',['../dd/d97/class_grid_drawer.html#a175e899f65559e8292814df2d4eab07d',1,'GridDrawer']]]
+];

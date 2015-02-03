@@ -1,0 +1,15 @@
+<map id="CellularAutomata.findState" name="CellularAutomata.findState">
+<area shape="rect" id="node2" href="$da/d1e/class_segregation.html#ad8954892f14329825efd9cace6b9235a" title="Segregation.handleUpdate" alt="" coords="257,5,452,32"/>
+<area shape="rect" id="node3" href="$da/d1e/class_segregation.html#a49b8fcb38373080b203a974f5c24d166" title="Segregation.ruleOne" alt="" coords="277,56,432,83"/>
+<area shape="rect" id="node5" href="$d9/df1/class_fire.html#a08de9a15877f76fa5bc6c8872559f79f" title="Fire.ruleOne" alt="" coords="305,107,404,133"/>
+<area shape="rect" id="node7" href="$d8/d84/class_game_of_life.html#aca7cd11a349cf14c940011021f91127f" title="GameOfLife.ruleOne" alt="" coords="279,208,430,235"/>
+<area shape="rect" id="node9" href="$d9/df1/class_fire.html#accc21ae2162fd526d8ca66c472a62a28" title="Fire.ruleTwo" alt="" coords="307,157,402,184"/>
+<area shape="rect" id="node10" href="$d8/d84/class_game_of_life.html#a6b6c946c47342fd7e4595710d72a9217" title="GameOfLife.ruleTwo" alt="" coords="281,259,428,285"/>
+<area shape="rect" id="node11" href="$d9/df1/class_fire.html#afd16418c5ea360c815613862a4ea1c33" title="Fire.setUpInitialConfig" alt="" coords="275,309,434,336"/>
+<area shape="rect" id="node13" href="$d8/d84/class_game_of_life.html#a1bd82fd7debd0ccbba848dc16024c024" title="GameOfLife.setUpInitialConfig" alt="" coords="249,360,461,387"/>
+<area shape="rect" id="node4" href="$da/d1e/class_segregation.html#a45e57140276ed3b1897cf8212b6283d4" title="Segregation.applyRules" alt="" coords="509,56,680,83"/>
+<area shape="rect" id="node6" href="$d9/df1/class_fire.html#a7e440468aacc413772a274bb8029e8bb" title="Fire.applyRules" alt="" coords="537,132,652,159"/>
+<area shape="rect" id="node8" href="$d8/d84/class_game_of_life.html#a8085307c182bb4d9149f98dfc8f26979" title="GameOfLife.applyRules" alt="" coords="511,233,679,260"/>
+<area shape="rect" id="node12" href="$d9/df1/class_fire.html#a22e1b892843e691d4e6e3fcf8e6a893a" title="Fire.init" alt="" coords="561,309,628,336"/>
+<area shape="rect" id="node14" href="$d8/d84/class_game_of_life.html#a9ffd6f1b93454f54600e1db30540c21d" title="GameOfLife.init" alt="" coords="535,360,655,387"/>
+</map>
