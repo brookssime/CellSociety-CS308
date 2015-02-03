@@ -10,9 +10,6 @@ public class GameOfLife extends CellularAutomata{
 
 	private Color alive;
 	private Color dead;
-
-	private static final double PROBABILITY_ALIVE = 0.5;
-
 	
 	public GameOfLife(){
 		super("Game of Life");
