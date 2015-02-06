@@ -1,20 +1,23 @@
 <?xml version="1.0"?>
 <Simulation>
-		   <Parameters name="Wator"> 
-		   			<Author>Brooks Sime, Tony Qiao, and James Mosca</Author>
-		   			<GameSize>500</GameSize>
-		   			<cellNum>50</cellNum>
-		   			<GridType>torus</GridType>
-		   			<neighborhood>Moore 8</neighborhood>
-		   			<prob></prob>
-		   			<cellNum>20</cellNum>
-		   			<waterColor></waterColor>
-		   			<sharkColor></sharkColor>
-		   </Parameters>
-		<Numbers>
-					
-		   			<breedTime></breedTime>
-		   			<fishEnergy></fishEnergy>
-		   			<startEnergy></startEnergy>
-		
+
+		   <Type>Wator</Type>
+		   <Author>Brooks Sime, Tony Qiao, and James Mosca</Author>
+		   <Grid>
+		   		<cellNum>50</cellNum>
+		   		<GridType>torus</GridType>
+		   		<neighborhood>nearest</neighborhood>
+		   </Grid>
+		   <number>
+		   		<breedTime>5</breedTime>
+		   		<fishEnergy>5</fishEnergy>
+		   		<startEnergy>5</startEnergy>
+				<prob>30</prob>
+		   </number>
+		   <Colors>
+		   		<waterColor color = "blue"> 0.5</waterColor>
+		   		<fishColor color = "yellow">0.25</fishColor>
+		   		<sharkColor color= "purple" >0.25</sharkColor>
+		   </Colors>
+
 </Simulation>

@@ -1,38 +1,38 @@
 import javafx.scene.paint.Paint;
 
+/**
+ * Keeps track of fish stats
+ */
 
 public class Fish extends Mover {
-	private static final int startEnergy = 5;
-	private static final int fishEnergy =5;
-	private static final int breedTime = 5;
 	private int spawnTime;
 	private int energyLeft;
-	
+
 	public Fish(Cell cell, Paint color, int spawn, int energy) {
 		super(cell, color);
 		spawnTime = spawn;
 		energyLeft = energy;
 	}
-	
-	public boolean canBreed(){
+
+	public boolean canBreed(int breedTime) {
 		return (spawnTime >= breedTime);
 	}
-	
-	public Fish breed(Cell cell){
+
+	public Fish breed(Cell cell, int startEnergy) {
 		spawnTime = 0;
 		return new Fish(cell, getState(), 0, startEnergy);
 	}
-	
-	public void surviveTurn(){
-		spawnTime ++;
+
+	public void surviveTurn() {
+		spawnTime++;
 		energyLeft--;
 	}
-	
-	public boolean checkEnergy(){
+
+	public boolean checkEnergy() {
 		return (energyLeft <= 0);
 	}
-	
-	public void eat(){
+
+	public void eat(int fishEnergy) {
 		energyLeft += fishEnergy;
 	}
 }

@@ -1,5 +1,3 @@
-import java.io.File;
-import java.util.HashMap;
 import java.util.ResourceBundle;
 
 import javafx.animation.Animation;
@@ -14,67 +12,43 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
-import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
+/**
+ * Displays the grid and contained cells for each simulation
+ */
 
 public class CellSocietyView {
-    private static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
-	private static final int FRAME_RATE = 2000;	
-	
+
+	private static final double ACCELERATE_RATE = 1.25;
+	private static final double SLOW_RATE = .8;
+
+	// resource package contains backend button labels and xml files
+	private static final String DEFAULT_RESOURCE_PACKAGE = "resources/";
+	private static final int FRAME_RATE = 2000;
+
 	private CellularAutomata myCA;
 	private GridDrawer myGridView;
 	private Timeline myAnimation;
 	private Scene myScene;
 	private int myWidth;
 	private int myHeight;
+	private XMLReader myReader;
 	private ResourceBundle myButtonNames;
 	private BorderPane myRoot;
-	private HashMap<String, CellularAutomata> gameTypes;
-	private HashMap<String, Grid> gridTypes;
-	private HashMap<String, int[][]> nbhoodTypes;
 
 	public CellSocietyView(int width, int height, String shape) {
 		myRoot = new BorderPane();
 		myButtonNames = ResourceBundle.getBundle(DEFAULT_RESOURCE_PACKAGE
 				+ "UIButtons");
-		setUp();
+
 		myWidth = width;
 		myHeight = height;
+		myReader = new XMLReader();
 		myRoot.setCenter(new Rectangle(width, height));
-		myRoot.setRight(makeLoadButton());;
+		myRoot.setRight(makeLoadButton());
+		;
 		myScene = new Scene(myRoot);
 	}
-	
-	private void setUp(){
-		setUpGameTypes();
-		setUpGridTypes();
-		setUpNbhoodTypes();
-	}
-	
-	private void setUpGameTypes(){
-		gameTypes = new HashMap<>();
-		addGameType(new GameOfLife());
-		addGameType(new Fire());
-		addGameType(new Segregation());
-		addGameType(new Wator());
-	}
-	
-	private void addGameType(CellularAutomata ca){
-		gameTypes.put(ca.getName(), ca);
-	}
-	
-	private void setUpGridTypes(){
-		gridTypes = new HashMap<>();
-		gridTypes.put("default", new Grid());
-		gridTypes.put("torus", new TorusGrid());
-	}
-	
-	private void setUpNbhoodTypes(){
-		nbhoodTypes = new HashMap<>();
-		nbhoodTypes.put("Moore", new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}, {-1, -1}, {-1, 1}, {1, -1}, {1, 1}});
-		nbhoodTypes.put("nearest", new int[][] {{-1, 0}, {1, 0}, {0, 1}, {0, -1}});
-	}
-	
+
 	public Scene getScene() {
 		return myScene;
 	}
@@ -83,27 +57,25 @@ public class CellSocietyView {
 		if (myAnimation != null) {
 			myAnimation.stop();
 		}
-		JFileChooser chooser = new JFileChooser(System.getProperty("user.dir"));
-		chooser.setFileFilter(new FileNameExtensionFilter("XML","xml"));
-		int returnVal = chooser.showOpenDialog(null);
-		if (returnVal != JFileChooser.APPROVE_OPTION) {
-			return;
-		}
-		parseFile(chooser.getSelectedFile());
+
+		myReader.chooseFile();
+		makeCAGame();
+
 	}
 
-	private void parseFile(File file) {
-		int cellNum = 20;
-		String neighborhood = "Moore";
-		double prob = .3;
-		String gridType = "torus";
-		String gameName = "Wator";
-		makeCAGame(gameName, cellNum, neighborhood, prob, gridType);
-	}
-	
-	private void makeCAGame(String gameName, int cellNum, String neighborhood, double prob, String gridType){
-		Grid grid = gridTypes.get(gridType).init(cellNum, nbhoodTypes.get(neighborhood));
-		myCA = gameTypes.get(gameName).init(grid, prob);
+	/*
+	 * private void makeCAGame(String gameName, int cellNum, String
+	 * neighborhood, String gridType, String[] colors, int[][][] points){ Grid
+	 * grid = gridTypes.get(gridType).init(cellNum,
+	 * nbhoodTypes.get(neighborhood)); myCA = gameTypes.get(gameName).init(grid,
+	 * parameters, colors, points); myGridView = new GridDrawer(myCA.getGrid(),
+	 * "square"); myRoot.setCenter(myGridView.makeGrid(myWidth, myHeight));
+	 * myRoot.setRight(makeButtons()); myGridView.updateNextGen();
+	 * makeTimeline(FRAME_RATE); }
+	 */
+
+	private void makeCAGame() {
+		myCA = myReader.makeCA();
 		myGridView = new GridDrawer(myCA.getGrid(), "square");
 		myRoot.setCenter(myGridView.makeGrid(myWidth, myHeight));
 		myRoot.setRight(makeButtons());
@@ -124,27 +96,58 @@ public class CellSocietyView {
 		myAnimation.getKeyFrames().add(frame);
 		myAnimation.play();
 	}
-	
-	private Button makeLoadButton(){
-		return makeUIButton(myButtonNames.getString("LoadCommand"), e-> loadNewFile());
+
+	private Button makeLoadButton() {
+		return makeUIButton(myButtonNames.getString("LoadCommand"),
+				e -> loadNewFile());
 	}
-	
+
+	/** 
+	 * Adds buttons as UI on right side of screen
+	 */
 	private VBox makeButtons() {
 		VBox buttons = new VBox();
-		Button play = makeUIButton(myButtonNames.getString("PlayCommand"),
-				e -> myAnimation.play());
-		Button pause = makeUIButton(myButtonNames.getString("PauseCommand"),
-				e -> myAnimation.pause());
-		Button fastForward = makeUIButton(
-				myButtonNames.getString("AccelerateCommand"),
-				e -> myAnimation.setRate(myAnimation.getRate() * 1.25));
-		Button slowDown = makeUIButton(myButtonNames.getString("SlowCommand"),
-				e -> myAnimation.setRate(myAnimation.getRate() * .8));
+		Button play = makePlayButton();
+		Button pause = makePauseButton();
+		Button fastForward = makeFFButton();
+		Button slowDown = makeSlowButton();
+		Button step = makeStepButton();
+		Button newFile = makeLoadButton();
+		buttons.getChildren().addAll(newFile, play, pause, fastForward,
+				slowDown, step);
+		return buttons;
+	}
+
+	private Button makeStepButton() {
 		Button step = makeUIButton(myButtonNames.getString("StepCommand"),
 				e -> updateView());
-		Button newFile = makeLoadButton();
-		buttons.getChildren().addAll(newFile, play, pause, fastForward, slowDown, step);
-		return buttons;
+		return step;
+	}
+
+	private Button makeSlowButton() {
+		Button slowDown = makeUIButton(myButtonNames.getString("SlowCommand"),
+				e -> myAnimation.setRate(myAnimation.getRate() * SLOW_RATE));
+		return slowDown;
+	}
+
+	private Button makeFFButton() {
+		Button fastForward = makeUIButton(
+				myButtonNames.getString("AccelerateCommand"),
+				e -> myAnimation.setRate(myAnimation.getRate()
+						* ACCELERATE_RATE));
+		return fastForward;
+	}
+
+	private Button makePauseButton() {
+		Button pause = makeUIButton(myButtonNames.getString("PauseCommand"),
+				e -> myAnimation.pause());
+		return pause;
+	}
+
+	private Button makePlayButton() {
+		Button play = makeUIButton(myButtonNames.getString("PlayCommand"),
+				e -> myAnimation.play());
+		return play;
 	}
 
 	private Button makeUIButton(String name, EventHandler<MouseEvent> e) {
